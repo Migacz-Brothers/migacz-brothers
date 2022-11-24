@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
+import coolIlustration from '../public/cool_ilustration.svg';
+import purpleLogo from '../public/logo.svg';
 
 export default function Home() {
   return (
@@ -11,19 +13,49 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main></main>
+      <main>
+        <CustomLogo src={purpleLogo} alt='Migacz Brothers' />
+        <Title>This Website is Under Construction</Title>
+        <CustomIlustration
+          src={coolIlustration}
+          alt='People working on a constuction site'
+        />
+      </main>
 
-      <footer>
+      <Footer>
         <p>© Copyrights Migacz Borthers | All Rights Reserved</p>
-      </footer>
+      </Footer>
     </PageWrapper>
   );
 }
 
+const CustomLogo = styled(Image)`
+  margin: 60px 0 32px 135px;
+`;
+
+const CustomIlustration = styled(Image)`
+  margin: 0;
+  width: 100%;
+`;
+
 const PageWrapper = styled.div`
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   background-color: #1d1b3d;
   color: #f4f4f4;
+  font-family: 'Poppins', 'sans-serif';
+`;
+
+const Title = styled.h1`
+  font-size: 32px;
+  font-weight: medium;
+  text-align: center;
+  margin-bottom: 12px;
+`;
+
+const Footer = styled.footer`
+  display: inline-block;
+  margin: auto 0 32px 135px;
 `;
