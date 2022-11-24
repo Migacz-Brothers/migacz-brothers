@@ -1,5 +1,6 @@
-/****** Elad Shechter's RESET *******/
-/*** box sizing border-box for all elements ***/
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -71,3 +72,6 @@ fieldset {
   padding: 0;
   margin: 0;
 }
+`;
+
+export default GlobalStyle;

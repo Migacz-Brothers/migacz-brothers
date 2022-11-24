@@ -14,7 +14,7 @@ export default function Home() {
       <main></main>
 
       <footer>
-        <p>©Copyrights Migacz Borthers | All Rights Reserved</p>
+        <p>© Copyrights Migacz Borthers | All Rights Reserved</p>
       </footer>
     </PageWrapper>
   );
