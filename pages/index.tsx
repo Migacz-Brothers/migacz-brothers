@@ -31,6 +31,11 @@ export default function Home() {
 
 const CustomLogo = styled(Image)`
   margin: 60px 0 32px 135px;
+
+  @media (max-width: 700px) {
+    margin: 60px 0 32px 0;
+    width: 100%;
+  }
 `;
 
 const CustomIlustration = styled(Image)`
@@ -41,11 +46,12 @@ const CustomIlustration = styled(Image)`
 const PageWrapper = styled.div`
   display: inline-flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: #1d1b3d;
   color: #f4f4f4;
   font-family: 'Poppins', 'sans-serif';
+  padding: 0 12px;
 `;
 
 const Title = styled.h1`
@@ -58,4 +64,8 @@ const Title = styled.h1`
 const Footer = styled.footer`
   display: inline-block;
   margin: auto 0 32px 135px;
+
+  @media (max-width: 700px) {
+    margin: auto auto 32px auto;
+  }
 `;
