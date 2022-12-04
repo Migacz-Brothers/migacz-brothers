@@ -24,6 +24,7 @@ button {
 body {
   margin: 0;
   height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
 div#__next {
