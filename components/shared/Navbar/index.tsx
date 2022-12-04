@@ -53,7 +53,14 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled(Link)`
-  margin: 0 18px;
+  margin: -6px 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: 200ms;
+
+  :hover {
+    background-color: #ffffff12;
+  }
 `;
 
 const ContactButton = styled(Link)`
