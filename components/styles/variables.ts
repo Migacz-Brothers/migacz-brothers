@@ -15,9 +15,9 @@ const Variables = createGlobalStyle<VariablesProps>`
     --primary-50: #00796b80;
     --primary-20: #00796b33;
 
-    --brackground-primary: ${(props) =>
+    --background-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--dark-primary)' : 'var(--light-primary)'};
-    --brackground-secondary: v${(props) =>
+    --background-secondary: v${(props) =>
       props.theme === 'dark'
         ? 'var(--dark-secondary)'
         : 'var(--light-secondary)'};
