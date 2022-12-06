@@ -14,7 +14,6 @@ const ThemeSelector = (): JSX.Element => {
 };
 
 const ThemeSelectorButton = styled.button`
-  padding: 6px;
   margin: -6px;
   width: 35px;
   height: 35px;

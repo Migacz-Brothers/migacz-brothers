@@ -1,7 +1,9 @@
+import styled from 'styled-components';
+
 const Icon = (): JSX.Element => (
-  <svg
-    width='24'
-    height='24'
+  <Svg
+    width='32'
+    height='32'
     viewBox='0 0 24 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -76,7 +78,28 @@ const Icon = (): JSX.Element => (
         <rect width='24' height='24' fill='white' />
       </clipPath>
     </defs>
-  </svg>
+  </Svg>
 );
+
+const Svg = styled.svg`
+  border-radius: 50%;
+  padding: 4px;
+
+  :hover {
+    background-color: rgb(240, 185, 11, 0.05) !important;
+
+    path {
+      fill: rgb(240, 185, 11) !important;
+      stroke: rgb(240, 185, 11) !important;
+    }
+  }
+
+  path {
+    transition: all 200ms;
+
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+`;
 
 export default Icon;
