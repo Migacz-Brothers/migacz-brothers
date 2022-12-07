@@ -37,6 +37,7 @@ const TextAreaInput = ({
         {label}
       </Label>
       <CustomTextArea
+        rows={5}
         textAreaTriggered={textAreaTriggered}
         value={value}
         onChange={(e) => {
