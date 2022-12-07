@@ -37,6 +37,7 @@ const Form = styled.form`
   padding: 62px 72px;
   background-color: var(--background);
   border-radius: var(--rounded);
+  width: 488px;
 `;
 
 export default ContactForm;

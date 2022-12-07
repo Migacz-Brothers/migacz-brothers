@@ -14,63 +14,63 @@ const Icon = (): JSX.Element => (
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M12 1V3'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M12 21V23'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M4.2207 4.2207L5.6407 5.6407'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M18.3594 18.3594L19.7794 19.7794'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M1 12H3'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M21 12H23'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M4.2207 19.7794L5.6407 18.3594'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
       <path
         d='M18.3594 5.6407L19.7794 4.2207'
         stroke='white'
         stroke-width='2'
         stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinejoin='round'
       />
     </g>
     <defs>
