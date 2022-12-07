@@ -9,18 +9,26 @@ const Variables = createGlobalStyle<VariablesProps>`
   :root {
     --dark-primary: #161616;
     --dark-secondary: #242424;
+
     --light-primary: #ffffff;
     --light-secondary: #f4f4f4;
+
     --primary: #00796b;
     --primary-50: #00796b80;
     --primary-20: #00796b33;
 
+    --grey-100: #7C7C7C;
+    --grey-200: #26272E;
+    --grey-500: #101010;
+
     --background-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--dark-primary)' : 'var(--light-primary)'};
-    --background-secondary: v${(props) =>
+    --background-secondary: ${(props) =>
       props.theme === 'dark'
         ? 'var(--dark-secondary)'
         : 'var(--light-secondary)'};
+
+    --background: #101010;
     --text-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--light-primary)' : 'var(--dark-primary)'};
     

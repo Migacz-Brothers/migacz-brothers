@@ -6,10 +6,10 @@ import ContactForm from './ContactForm';
 const Contact = () => {
   return (
     <Main>
-      <GenericSection>
+      <ContactSection>
         <ContactInfo />
         <ContactForm />
-      </GenericSection>
+      </ContactSection>
     </Main>
   );
 };
@@ -19,6 +19,11 @@ const Main = styled.main`
   color: var(--light-primary);
   padding-top: 126px;
   padding-bottom: 180px;
+`;
+
+const ContactSection = styled(GenericSection)`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default Contact;
