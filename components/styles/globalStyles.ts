@@ -42,6 +42,11 @@ input::-moz-focus-inner {
   margin: 0;
 }
 
+input,
+textarea {
+  font-family: inherit;
+}
+
 ul,
 ol,
 dd {
