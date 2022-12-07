@@ -16,11 +16,21 @@ const ContactInput = ({
   value,
   setValue,
 }: ContactInput): JSX.Element => {
-  return type === 'text-area' ? (
-    <TextAreaInput label={label} value={value} setValue={setValue} />
-  ) : (
-    <Input label={label} type={type} value={value} setValue={setValue} />
-  );
+  switch (type) {
+    case 'text-area': {
+      return <TextAreaInput label={label} value={value} setValue={setValue} />;
+    }
+
+    case 'select': {
+      return <></>;
+    }
+
+    default: {
+      return (
+        <Input label={label} type={type} value={value} setValue={setValue} />
+      );
+    }
+  }
 };
 
 // styled components
