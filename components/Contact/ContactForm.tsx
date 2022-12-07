@@ -22,7 +22,17 @@ const ContactForm = (): JSX.Element => {
         value={form.email}
         setValue={(value) => setForm((prev) => ({ ...prev, email: value }))}
       />
-      {/* <ContactInput label='Budget:' type='select' /> */}
+      <ContactInput
+        label='Budget'
+        type='select'
+        options={[
+          { name: 'Less then 14', value: '234234' },
+          { name: 'Less then 23', value: '234234' },
+          { name: 'Less then 4534', value: '345' },
+        ]}
+        setValue={(value) => setForm((prev) => ({ ...prev, budget: value }))}
+        value={form.budget}
+      />
       <ContactInput
         label='Message'
         type='text-area'

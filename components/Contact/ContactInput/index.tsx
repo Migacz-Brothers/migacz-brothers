@@ -2,12 +2,17 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Input from './Input';
 import TextAreaInput from './TextArea';
+import Select from './Select';
 
-interface ContactInput {
+interface ContactInputProps {
   label: string;
   type?: 'text' | 'text-area' | 'select';
   value: string;
   setValue: (value: string) => void;
+  options?: {
+    value: string;
+    name: string;
+  }[];
 }
 
 const ContactInput = ({
@@ -15,14 +20,22 @@ const ContactInput = ({
   type = 'text',
   value,
   setValue,
-}: ContactInput): JSX.Element => {
+  options,
+}: ContactInputProps): JSX.Element => {
   switch (type) {
     case 'text-area': {
       return <TextAreaInput label={label} value={value} setValue={setValue} />;
     }
 
     case 'select': {
-      return <></>;
+      return (
+        <Select
+          label={label}
+          value={value}
+          setValue={setValue}
+          options={options}
+        />
+      );
     }
 
     default: {
