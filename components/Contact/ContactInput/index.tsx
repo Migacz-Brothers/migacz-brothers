@@ -30,7 +30,7 @@ const ContactInput = ({
 const Input = ({ label, type, value, setValue }: ContactInput): JSX.Element => {
   const [focused, setFocused] = useState(false);
 
-  const active = value.length > 0 || focused;
+  const inputTriggered = value.length > 0 || focused;
 
   return (
     <InputWrapper>
@@ -42,22 +42,22 @@ const Input = ({ label, type, value, setValue }: ContactInput): JSX.Element => {
           color: 'var(--light)',
         }}
         animate={{
-          y: active ? 1 : 10,
-          fontSize: active ? '12px' : '16px',
-          color: active ? 'var(--primary)' : 'var(--grey-100)',
+          y: inputTriggered ? 1 : 10,
+          fontSize: inputTriggered ? '12px' : '16px',
+          color: inputTriggered ? 'var(--primary)' : 'var(--grey-100)',
         }}
       >
         {label}
       </Label>
       <CustomInput
-        active={active}
+        inputTriggered={inputTriggered}
         type={type}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
         animate={{
-          borderColor: active
+          borderColor: inputTriggered
             ? 'var(--primary)'
             : 'var(--background-secondary)',
         }}
@@ -88,13 +88,13 @@ const Label = styled(motion.label)`
 `;
 
 interface CustomInputProps {
-  active: boolean;
+  inputTriggered: boolean;
 }
 
 const CustomInput = styled(motion.input)<CustomInputProps>`
   border: 1px solid
     ${(props) =>
-      props.active ? 'var(--background-secondary)' : 'var(--primary)'};
+      props.inputTriggered ? 'var(--background-secondary)' : 'var(--primary)'};
   width: 100%;
   padding: 17px 12px 4px 12px;
   background-color: var(--background-secondary);

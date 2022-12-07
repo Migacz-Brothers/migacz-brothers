@@ -84,8 +84,8 @@ const Icon = (): JSX.Element => (
         y2='39.9417'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#00796B' />
-        <stop offset='1' stop-color='#004D3B' />
+        <stop stopColor='#00796B' />
+        <stop offset='1' stopColor='#004D3B' />
       </linearGradient>
       <linearGradient
         id='paint1_linear_1291_704'
@@ -95,8 +95,8 @@ const Icon = (): JSX.Element => (
         y2='39.9094'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#00796B' />
-        <stop offset='1' stop-color='#004D3B' />
+        <stop stopColor='#00796B' />
+        <stop offset='1' stopColor='#004D3B' />
       </linearGradient>
       <linearGradient
         id='paint2_linear_1291_704'
@@ -106,8 +106,8 @@ const Icon = (): JSX.Element => (
         y2='39.8807'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#00796B' />
-        <stop offset='1' stop-color='#004D3B' />
+        <stop stopColor='#00796B' />
+        <stop offset='1' stopColor='#004D3B' />
       </linearGradient>
       <linearGradient
         id='paint3_linear_1291_704'
@@ -117,8 +117,8 @@ const Icon = (): JSX.Element => (
         y2='39.9993'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#00796B' />
-        <stop offset='1' stop-color='#004D3B' />
+        <stop stopColor='#00796B' />
+        <stop offset='1' stopColor='#004D3B' />
       </linearGradient>
     </defs>
   </svg>
