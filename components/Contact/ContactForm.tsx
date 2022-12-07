@@ -24,7 +24,7 @@ const ContactForm = (): JSX.Element => {
       />
       {/* <ContactInput label='Budget:' type='select' /> */}
       <ContactInput
-        label='Message:'
+        label='Message'
         type='text-area'
         value={form.message}
         setValue={(value) => setForm((prev) => ({ ...prev, message: value }))}
