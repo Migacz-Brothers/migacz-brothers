@@ -26,6 +26,7 @@ const ContactForm = (): JSX.Element => {
         label='Budget'
         type='select'
         options={[
+          { name: '', value: '' },
           { name: 'Less then 14', value: '234234' },
           { name: 'Less then 23', value: '234234' },
           { name: 'Less then 4534', value: '345' },
