@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Logo from '../../Icons/logo';
 import MobileMenu from './MobileMenu';
-import ThemeSelector from './ThemeSelector';
+import ThemeSelector from '../ThemeSelector';
 
 const Navbar = (): JSX.Element => {
   return (

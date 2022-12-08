@@ -1,7 +1,7 @@
-import Sun from '../../Icons/sun';
-import Moon from '../../Icons/moon';
+import Sun from '../Icons/sun';
+import Moon from '../Icons/moon';
 import styled from 'styled-components';
-import { useTheme } from '../../Contexts/ThemeContext';
+import { useTheme } from '../Contexts/ThemeContext';
 
 const ThemeSelector = (): JSX.Element => {
   const { theme, toggleTheme } = useTheme();
