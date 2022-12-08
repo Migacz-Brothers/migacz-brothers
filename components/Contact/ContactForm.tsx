@@ -51,6 +51,16 @@ const Form = styled.form`
   background-color: var(--background);
   border-radius: var(--rounded);
   width: 488px;
+  margin-left: 16px;
+
+  @media (max-width: 700px) {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    padding: 56px 32px;
+  }
 `;
 
 export default ContactForm;
