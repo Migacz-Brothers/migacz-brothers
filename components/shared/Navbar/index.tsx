@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Logo from '../../Icons/logo';
+import MobileMenu from './MobileMenu';
 import ThemeSelector from './ThemeSelector';
 
 const Navbar = (): JSX.Element => {
@@ -24,6 +25,7 @@ const Navbar = (): JSX.Element => {
         </NavList>
         <ThemeSelector />
         <ContactButton href='/contact'>Contact Us</ContactButton>
+        <MobileMenu />
       </NavInnerContainer>
     </Nav>
   );
@@ -41,15 +43,32 @@ const NavInnerContainer = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+
+  @media (max-width: 980px) {
+    padding: 8px 16px;
+  }
 `;
 
 const LogoContainer = styled(Link)`
   margin-right: auto;
+
+  @media (max-width: 980px) {
+    order: 1;
+    margin-left: auto;
+
+    svg {
+      width: 160px;
+    }
+  }
 `;
 
 const NavList = styled.ul`
   display: flex;
   margin-right: 32px;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -70,6 +89,10 @@ const ContactButton = styled(Link)`
   font-size: 16px;
   border-radius: var(--rounded);
   margin-left: 34px;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
 
 export default Navbar;
