@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -24,97 +24,113 @@ const MobileMenu = (): JSX.Element => {
       <Button onClick={toggleOpen}>
         <MobileMenuIcon />
       </Button>
-      {open ? (
-        <MobileNavigationContainer>
-          <CloseMenuButton onClick={toggleOpen}>
-            <CloseMobileMenuIcon />
-          </CloseMenuButton>
-          <LinksList>
-            <NavItemContainer
-              initial={{
-                y: 60,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                delay: 0,
-              }}
-            >
-              <NavigationLink href='/' onClick={closeMenu}>
-                Home
-              </NavigationLink>
-            </NavItemContainer>
-            <NavItemContainer
-              initial={{
-                y: 60,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                delay: 0.1,
-              }}
-            >
-              <NavigationLink href='/about' onClick={closeMenu}>
-                About
-              </NavigationLink>
-            </NavItemContainer>
-            <NavItemContainer
-              initial={{
-                y: 60,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                delay: 0.2,
-              }}
-            >
-              <NavigationLink href='/contact' onClick={closeMenu}>
-                Contact
-              </NavigationLink>
-            </NavItemContainer>
-          </LinksList>
-          <SocialLinksList
+      <AnimatePresence>
+        {open ? (
+          <MobileNavigationContainer
             initial={{
-              y: 60,
               opacity: 0,
             }}
             animate={{
-              y: 0,
               opacity: 1,
             }}
+            exit={{
+              opacity: 0,
+            }}
             transition={{
-              delay: 0.3,
+              duration: 0.2,
             }}
           >
-            <li>
-              <SocialLinkContainer href='https://www.linkedin.com/company/migacz-brothers'>
-                <LinkedinIcon />
-              </SocialLinkContainer>
-            </li>
-            <li>
-              <SocialLinkContainer href='mailto:hello@migaczbrothers.com'>
-                <EmailIcon />
-              </SocialLinkContainer>
-            </li>
-          </SocialLinksList>
-        </MobileNavigationContainer>
-      ) : null}
+            <CloseMenuButton onClick={toggleOpen}>
+              <CloseMobileMenuIcon />
+            </CloseMenuButton>
+            <LinksList>
+              <NavItemContainer
+                initial={{
+                  y: 60,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  delay: 0,
+                }}
+              >
+                <NavigationLink href='/' onClick={closeMenu}>
+                  Home
+                </NavigationLink>
+              </NavItemContainer>
+              <NavItemContainer
+                initial={{
+                  y: 60,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  delay: 0.1,
+                }}
+              >
+                <NavigationLink href='/about' onClick={closeMenu}>
+                  About
+                </NavigationLink>
+              </NavItemContainer>
+              <NavItemContainer
+                initial={{
+                  y: 60,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  delay: 0.2,
+                }}
+              >
+                <NavigationLink href='/contact' onClick={closeMenu}>
+                  Contact
+                </NavigationLink>
+              </NavItemContainer>
+            </LinksList>
+            <SocialLinksList
+              initial={{
+                y: 60,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                delay: 0.3,
+              }}
+            >
+              <li>
+                <SocialLinkContainer href='https://www.linkedin.com/company/migacz-brothers'>
+                  <LinkedinIcon />
+                </SocialLinkContainer>
+              </li>
+              <li>
+                <SocialLinkContainer href='mailto:hello@migaczbrothers.com'>
+                  <EmailIcon />
+                </SocialLinkContainer>
+              </li>
+            </SocialLinksList>
+          </MobileNavigationContainer>
+        ) : null}
+      </AnimatePresence>
     </>
   );
 };
 
 const Button = styled.button`
   order: 2;
-  padding: 7px 4px;
+  padding: 7px 5.5px;
+  margin: -7px -5.5px;
 
   @media (min-width: 980px) {
     display: none;
@@ -138,15 +154,14 @@ const MobileNavigationContainer = styled(motion.div)`
 
   background-color: var(--background-primary);
 
-  padding-top: 40px;
+  padding-top: 22px;
 `;
 
 const CloseMenuButton = styled.button`
   border: 0;
   align-self: flex-end;
-  margin-right: 24px;
   padding: 6px;
-  margin: -6px 18px -6px -6px;
+  margin: -6px 15px -6px -6px;
 `;
 
 const LinksList = styled.ul`
