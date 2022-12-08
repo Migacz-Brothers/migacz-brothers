@@ -43,6 +43,7 @@ input::-moz-focus-inner {
 }
 
 input,
+button,
 select,
 textarea {
   font-family: inherit;

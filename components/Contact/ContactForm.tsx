@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import ContactInput from './ContactInput';
+import SubmitButton from './SubmitButton';
 
 const ContactForm = (): JSX.Element => {
   const [form, setForm] = useState({
@@ -40,6 +41,7 @@ const ContactForm = (): JSX.Element => {
         value={form.message}
         setValue={(value) => setForm((prev) => ({ ...prev, message: value }))}
       />
+      <SubmitButton />
     </Form>
   );
 };
