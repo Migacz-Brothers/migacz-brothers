@@ -61,7 +61,7 @@ const FooterInnerWrapper = styled.div`
   padding: 80px 16px 40px 16px;
   margin: 0 auto;
 
-  color: var(--white);
+  color: var(--text-primary);
 
   display: grid;
   grid-auto-flow: column;
@@ -108,7 +108,7 @@ const SocialMediaList = styled.ul`
 
 const SocialMediaIcon = styled(Link)`
   path {
-    stroke: var(--white) !important;
+    stroke: var(--text-primary) !important;
   }
 `;
 
@@ -123,6 +123,11 @@ const SitemapList = styled.ul`
     justify-self: center;
     grid-column: 1 / 3;
   }
+
+  path {
+    stroke: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
+  }
 `;
 
 const CopyrightDisclaimer = styled.p`
@@ -130,6 +135,8 @@ const CopyrightDisclaimer = styled.p`
   text-align: center;
   font-size: 14px;
   padding: 4px 0;
+
+  color: var(--text-primary);
 `;
 
 export default FooterComponent;

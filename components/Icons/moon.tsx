@@ -24,8 +24,8 @@ const Svg = styled.svg`
     background-color: #cdb7f210;
 
     path {
-      fill: #5249ab;
-      stroke: #5249ab;
+      fill: #5249ab !important;
+      stroke: #5249ab !important;
     }
   }
 
