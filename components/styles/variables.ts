@@ -10,8 +10,9 @@ const Variables = createGlobalStyle<VariablesProps>`
     --dark-primary: #161616;
     --dark-secondary: #242424;
 
-    --light-primary: #ffffff;
-    --light-secondary: #fafafa;
+    --white: #ffffff;
+    --light-primary: #f4f4f4;
+    --light-secondary: #e4e4e4;
     --light-tertiary: #CDD1D6;
 
     --primary: #00796b;
@@ -24,18 +25,21 @@ const Variables = createGlobalStyle<VariablesProps>`
 
     --background-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--dark-primary)' : 'var(--light-primary)'};
+
     --background-secondary: ${(props) =>
       props.theme === 'dark'
         ? 'var(--dark-secondary)'
         : 'var(--light-secondary)'};
 
-    --background: #101010;
-    
+    --background-variant: ${(props) =>
+      props.theme === 'dark' ? 'var(--grey-500)' : 'var(--light-secondary)'};
+
+
     --text-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--light-secondary)' : 'var(--grey-200)'};
 
     --text-secondary: ${(props) =>
-      props.theme === 'dark' ? 'var(--light-tertiary)' : 'var(--grey-200)'};
+      props.theme === 'dark' ? 'var(--light-tertiary)' : 'var(--grey-100)'};
 
     --text-tertiary: ${(props) =>
       props.theme === 'dark' ? 'var(--grey-100)' : 'var(--grey-200)'};

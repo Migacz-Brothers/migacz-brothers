@@ -34,7 +34,7 @@ const Navbar = (): JSX.Element => {
 const Nav = styled.div`
   width: 100%;
   background-color: var(--dark-primary);
-  color: var(--light-primary);
+  color: var(--white);
 `;
 
 const NavInnerContainer = styled.div`

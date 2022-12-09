@@ -69,8 +69,8 @@ const Select = styled.select<CustomSelectProps>`
   width: 100%;
   padding: 19px 12px 6px 12px;
   border-radius: var(--rounded);
-  background-color: var(--background-secondary);
-  color: var(--light);
+  background-color: var(--background-primary);
+  color: var(--text-secondary);
 `;
 
 export default SelectComponent;

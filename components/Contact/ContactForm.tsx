@@ -48,7 +48,7 @@ const ContactForm = (): JSX.Element => {
 
 const Form = styled.form`
   padding: 62px 72px;
-  background-color: var(--background);
+  background-color: var(--background-variant);
   border-radius: var(--rounded);
   width: 488px;
   margin-left: 16px;

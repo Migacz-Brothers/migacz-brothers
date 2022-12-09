@@ -34,6 +34,7 @@ const ContactInfoWrapper = styled.div`
 const Title = styled.h1`
   font-size: 72px;
   margin-bottom: 38px;
+  color: var(--text-primary);
 
   @media (max-width: 980px) {
     font-size: 40px;
@@ -88,6 +89,7 @@ const ContactInfoContainer = styled.p`
   margin-left: 44px;
   margin-bottom: 15px;
   font-size: 18px;
+  color: var(--text-secondary);
 
   @media (max-width: 700px) {
     text-align: center;

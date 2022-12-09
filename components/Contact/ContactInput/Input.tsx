@@ -66,10 +66,11 @@ export const CustomInput = styled(motion.input)<CustomInputProps>`
       props.$inputTriggered ? 'var(--background-secondary)' : 'var(--primary)'};
   width: 100%;
   padding: 17px 12px 4px 12px;
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   border-radius: var(--rounded);
   color: var(--light);
   font-size: 16px;
+  color: var(--text-secondary);
 `;
 
 export default Input;

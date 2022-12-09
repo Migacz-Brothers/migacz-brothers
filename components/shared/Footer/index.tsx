@@ -61,7 +61,7 @@ const FooterInnerWrapper = styled.div`
   padding: 80px 16px 40px 16px;
   margin: 0 auto;
 
-  color: var(--light-primary);
+  color: var(--white);
 
   display: grid;
   grid-auto-flow: column;
@@ -108,7 +108,7 @@ const SocialMediaList = styled.ul`
 
 const SocialMediaIcon = styled(Link)`
   path {
-    stroke: var(--light-primary) !important;
+    stroke: var(--white) !important;
   }
 `;
 
@@ -126,7 +126,7 @@ const SitemapList = styled.ul`
 `;
 
 const CopyrightDisclaimer = styled.p`
-  color: var(--light-primary);
+  color: var(--white);
   text-align: center;
   font-size: 14px;
   padding: 4px 0;

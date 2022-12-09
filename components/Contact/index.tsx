@@ -16,7 +16,7 @@ const Contact = () => {
 
 const Main = styled.main`
   background-color: var(--background-primary);
-  color: var(--light-primary);
+  color: var(--white);
   padding-top: 126px;
   padding-bottom: 180px;
 `;
