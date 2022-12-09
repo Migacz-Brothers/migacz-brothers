@@ -66,6 +66,15 @@ const FooterInnerWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+
+  @media (max-width: 980px) {
+    grid-auto-flow: unset;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 60px;
+    padding: 80px 16px 60px 16px;
+  }
 `;
 
 // Languages List
@@ -73,6 +82,10 @@ const FooterInnerWrapper = styled.div`
 const LanguagesList = styled.ul`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 980px) {
+    justify-self: flex-end;
+  }
 `;
 
 const ActiveLink = styled(Link)`
@@ -84,9 +97,13 @@ const ActiveLink = styled(Link)`
 
 const SocialMediaList = styled.ul`
   display: flex;
-  gap: 26px;
+  gap: 24px;
   align-items: center;
   justify-self: center;
+
+  @media (max-width: 980px) {
+    justify-self: flex-start;
+  }
 `;
 
 const SocialMediaIcon = styled(Link)`
@@ -99,8 +116,13 @@ const SocialMediaIcon = styled(Link)`
 
 const SitemapList = styled.ul`
   display: flex;
-  gap: 40px;
+  gap: 30px;
   justify-self: flex-end;
+
+  @media (max-width: 980px) {
+    justify-self: center;
+    grid-column: 1 / 3;
+  }
 `;
 
 const CopyrightDisclaimer = styled.p`
