@@ -35,9 +35,9 @@ const FooterComponent = (): JSX.Element => {
           <li>
             <Link href='/about'>About Us</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href='/services'>Services</Link>
-          </li>
+          </li> */}
           <li>
             <Link href='/contact'>Contact</Link>
           </li>
@@ -63,8 +63,9 @@ const FooterInnerWrapper = styled.div`
 
   color: var(--light-primary);
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 `;
 
 // Languages List
@@ -85,6 +86,7 @@ const SocialMediaList = styled.ul`
   display: flex;
   gap: 26px;
   align-items: center;
+  justify-self: center;
 `;
 
 const SocialMediaIcon = styled(Link)`
@@ -98,6 +100,7 @@ const SocialMediaIcon = styled(Link)`
 const SitemapList = styled.ul`
   display: flex;
   gap: 40px;
+  justify-self: flex-end;
 `;
 
 const CopyrightDisclaimer = styled.p`

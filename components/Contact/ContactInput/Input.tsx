@@ -34,7 +34,7 @@ const Input = ({ label, type, value, setValue }: InputProps): JSX.Element => {
         {label}
       </Label>
       <CustomInput
-        inputTriggered={inputTriggered}
+        $inputTriggered={inputTriggered}
         type={type}
         value={value}
         onChange={(e) => {
@@ -57,13 +57,13 @@ const Input = ({ label, type, value, setValue }: InputProps): JSX.Element => {
 };
 
 interface CustomInputProps {
-  inputTriggered: boolean;
+  $inputTriggered: boolean;
 }
 
 export const CustomInput = styled(motion.input)<CustomInputProps>`
   border: 1px solid
     ${(props) =>
-      props.inputTriggered ? 'var(--background-secondary)' : 'var(--primary)'};
+      props.$inputTriggered ? 'var(--background-secondary)' : 'var(--primary)'};
   width: 100%;
   padding: 17px 12px 4px 12px;
   background-color: var(--background-secondary);

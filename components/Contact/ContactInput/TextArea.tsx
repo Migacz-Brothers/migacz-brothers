@@ -38,7 +38,7 @@ const TextAreaInput = ({
       </Label>
       <CustomTextArea
         rows={5}
-        textAreaTriggered={textAreaTriggered}
+        $textAreaTriggered={textAreaTriggered}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
@@ -60,13 +60,13 @@ const TextAreaInput = ({
 };
 
 interface CustomTextAreaProps {
-  textAreaTriggered: boolean;
+  $textAreaTriggered: boolean;
 }
 
 export const CustomTextArea = styled(motion.textarea)<CustomTextAreaProps>`
   border: 1px solid
     ${(props) =>
-      props.textAreaTriggered
+      props.$textAreaTriggered
         ? 'var(--background-secondary)'
         : 'var(--primary)'};
   width: 100%;
