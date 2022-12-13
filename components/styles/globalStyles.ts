@@ -26,6 +26,8 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Inter', sans-serif;
+
+  background-color: var(--background-primary);
 }
 
 div#__next {
