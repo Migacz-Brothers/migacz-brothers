@@ -28,7 +28,7 @@ const AboutUs = (): JSX.Element => {
 };
 
 const SectionWrapper = styled(GenericSectionWrapper)`
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   padding: 132px 0;
 `;
 
