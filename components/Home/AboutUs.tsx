@@ -72,6 +72,7 @@ const Paragraph = styled.p`
 
 const CallToAction = styled(Link)`
   background-color: var(--primary);
+  color: var(--light-primary);
   padding: 10px 34px;
   border-radius: var(--rounded);
 `;
