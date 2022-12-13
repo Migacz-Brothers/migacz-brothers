@@ -1,5 +1,10 @@
 import Head from 'next/head';
-import { FirstSection, AboutUs, WeAreAnAgency } from '../components/Home';
+import {
+  FirstSection,
+  AboutUs,
+  WeAreAnAgency,
+  CallToAction,
+} from '../components/Home';
 
 export default function Home() {
   return (
@@ -16,6 +21,7 @@ export default function Home() {
         <FirstSection />
         <AboutUs />
         <WeAreAnAgency />
+        <CallToAction />
       </main>
     </>
   );
