@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { FirstSection } from '../components/Home';
+import { FirstSection, AboutUs } from '../components/Home';
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <FirstSection />
+        <AboutUs />
       </main>
     </>
   );
