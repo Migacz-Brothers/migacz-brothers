@@ -21,7 +21,11 @@ const AboutUs = (): JSX.Element => {
           </Paragraph>
           <CallToAction href='/about-us'>Get to know us more</CallToAction>
         </DataWrapper>
-        <Media src={AboutUsImage} alt='company ilustration' />
+        <Media
+          src={AboutUsImage}
+          alt='company ilustration'
+          layout='responsive'
+        />
       </AboutUsWrapper>
     </SectionWrapper>
   );
@@ -80,6 +84,8 @@ const CallToAction = styled(Link)`
 const Media = styled(Image)`
   margin-left: 16px;
   border-radius: var(--rounded);
+  object-fit: cover;
+  max-width: 488px;
 
   @media (max-width: 980px) {
     margin-left: 0px;
