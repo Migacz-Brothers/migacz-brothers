@@ -69,7 +69,7 @@ const DataContainer = styled(motion.div)`
   height: 100%;
 
   padding: 0 70px;
-  color: var(--text-primary);
+  color: var(--light-primary);
   letter-spacing: -0.01em;
 
   background-color: rgba(0, 0, 0, 0.75);
