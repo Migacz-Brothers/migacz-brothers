@@ -25,6 +25,7 @@ const AboutUs = (): JSX.Element => {
           src={AboutUsImage}
           alt='company ilustration'
           layout='responsive'
+          placeholder='blur'
         />
       </AboutUsWrapper>
     </SectionWrapper>

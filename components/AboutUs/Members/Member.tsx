@@ -24,7 +24,11 @@ const MemberComponent = ({
   return (
     <Member>
       <MemberButton onClick={toggleActive}>
-        <Image src={picture} alt={`Picture of member ${name}`} />
+        <Image
+          src={picture}
+          alt={`Picture of member ${name}`}
+          placeholder='blur'
+        />
         <AnimatePresence>
           {active ? (
             <DataContainer

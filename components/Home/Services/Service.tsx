@@ -14,7 +14,12 @@ const ServiceComponent = ({
 }: ServiceComponent): JSX.Element => {
   return (
     <Service>
-      <CustomImage src={background} alt='product design ilustration' fill />
+      <CustomImage
+        src={background}
+        alt='product design ilustration'
+        fill
+        placeholder='blur'
+      />
       <DataWrapper>
         <Tag>Services</Tag>
         <Title>{title}</Title>
