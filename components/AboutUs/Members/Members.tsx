@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import { Invitation, Member } from '.';
+import Gustavo from '../../../public/members/gustavo.jpeg';
+import Pedro from '../../../public/members/pedro.jpg';
 
 const Members = (): JSX.Element => {
   return (
     <MerbersList>
-      <Member />
-      <Member />
-      <Member />
-      <Member />
-      <Member />
+      <Member
+        name='Pedro H. G. Migacz'
+        position='Co-Founder'
+        description='Web developer with 5+ years of experience in web development, Pedro has a deep understanding of creating systems from responsive websites to complex backend systems.'
+        picture={Pedro}
+      />
+      <Member
+        name='Gustavo G. Migacz'
+        position='Junior Engineer'
+        description='Meet Gustavo, our talented junior frontend developer. He has a passion for creating user-friendly and visually appealing interfaces.'
+        picture={Gustavo}
+      />
       <Invitation />
     </MerbersList>
   );

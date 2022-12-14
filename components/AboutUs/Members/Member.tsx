@@ -1,11 +1,22 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-import Gustavo from '../../../public/members/gustavo.jpeg';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const MemberComponent = (): JSX.Element => {
+interface MemberComponentProps {
+  name: string;
+  position: string;
+  description: string;
+  picture: StaticImageData;
+}
+
+const MemberComponent = ({
+  name,
+  position,
+  description,
+  picture,
+}: MemberComponentProps): JSX.Element => {
   const [active, setActive] = useState(false);
 
   const toggleActive = () => setActive((prev) => !prev);
@@ -13,7 +24,7 @@ const MemberComponent = (): JSX.Element => {
   return (
     <Member>
       <MemberButton onClick={toggleActive}>
-        <Image src={Gustavo} alt='Picture of member Gustavo' />
+        <Image src={picture} alt={`Picture of member ${name}`} />
         <AnimatePresence>
           {active ? (
             <DataContainer
@@ -22,13 +33,9 @@ const MemberComponent = (): JSX.Element => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <CardTitle>Gustavo G. Migacz</CardTitle>
-              <CardSubheader>Junior Engineer</CardSubheader>
-              <CardDescription>
-                Meet Gustavo, our talented junior frontend developer. He has a
-                passion for creating user-friendly and visually appealing
-                interfaces.
-              </CardDescription>
+              <CardTitle>{name}</CardTitle>
+              <CardSubheader>{position}</CardSubheader>
+              <CardDescription>{description}</CardDescription>
             </DataContainer>
           ) : null}
         </AnimatePresence>
