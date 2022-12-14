@@ -31,6 +31,11 @@ const Services = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   min-height: 450px;
+
+  @media (max-width: 980px) {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export default ServicesList;

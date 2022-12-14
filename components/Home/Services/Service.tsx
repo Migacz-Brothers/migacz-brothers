@@ -14,7 +14,7 @@ const ServiceComponent = ({
 }: ServiceComponent): JSX.Element => {
   return (
     <Service>
-      <CustomImage src={background} alt='product design ilustration' />
+      <CustomImage src={background} alt='product design ilustration' fill />
       <DataWrapper>
         <Tag>Services</Tag>
         <Title>{title}</Title>
@@ -32,11 +32,21 @@ const Service = styled.li`
 
   img {
     transition: ease transform 0.4s;
+    width: 100%;
+    object-fit: cover;
   }
+
   :hover {
     img {
       transform: scale(1.1);
     }
+  }
+
+  @media (max-width: 980px) {
+    min-width: 288px;
+    width: 100%;
+    max-width: 480px;
+    min-height: 200px;
   }
 `;
 
@@ -56,6 +66,14 @@ const DataWrapper = styled.div`
 
   box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.08);
   border-radius: var(--rounded);
+
+  @media (max-width: 1150px) {
+    padding: 80px 16px 0 16px;
+  }
+
+  @media (max-width: 980px) {
+    padding: 0 16px 0 16px;
+  }
 `;
 
 const Tag = styled.span`
@@ -67,13 +85,21 @@ const Tag = styled.span`
 const Title = styled.h3`
   font-weight: 700;
   font-size: 40px;
-
   margin-bottom: 16px;
+
+  @media (max-width: 980px) {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
 `;
 
 const Description = styled.p`
   font-size: 18px;
   line-height: 24px;
+
+  @media (max-width: 980px) {
+    font-size: 16px;
+  }
 `;
 
 export default ServiceComponent;
