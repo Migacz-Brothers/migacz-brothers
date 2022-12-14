@@ -73,6 +73,10 @@ const DataContainer = styled(motion.div)`
   letter-spacing: -0.01em;
 
   background-color: rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 1150px) {
+    padding: 0 35px;
+  }
 `;
 
 const CardTitle = styled.h3`

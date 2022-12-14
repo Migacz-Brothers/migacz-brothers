@@ -21,6 +21,7 @@ const Invitation = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  aspect-ratio: 1/1;
 
   position: relative;
 `;
