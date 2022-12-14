@@ -29,8 +29,8 @@ const WireTranferIcon = (): JSX.Element => (
       strokeLinejoin='round'
     />
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M33.0431 21.8546C27.9856 30.2983 27.9856 41.2026 33.0431 49.6463C34.5236 52.1191 37.9764 52.1191 39.4569 49.6463C44.5144 41.2026 44.5144 30.2983 39.4569 21.8546C37.9746 19.3818 34.5236 19.3818 33.0431 21.8546Z'
       stroke='#FAFAFA'
       strokeWidth='2'
