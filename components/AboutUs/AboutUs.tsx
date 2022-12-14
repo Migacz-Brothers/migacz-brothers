@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Members } from '.';
 import {
   GenericSection,
   GenericSectionWrapper,
@@ -18,6 +19,7 @@ const AboutUsPage = (): JSX.Element => {
           backgrounds allow us to handle projects of any size and complexity. We
           strive to exceed our clients&apos; expectations on every project.
         </Paragraph>
+        <Members />
       </AboutUsSEction>
     </GenericSectionWrapper>
   );
@@ -25,6 +27,7 @@ const AboutUsPage = (): JSX.Element => {
 
 const AboutUsSEction = styled(GenericSection)`
   text-align: center;
+  margin-top: 128px;
 `;
 
 const Title = styled.h2`
