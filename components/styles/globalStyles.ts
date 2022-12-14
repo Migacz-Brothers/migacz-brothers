@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
 *::after {
   box-sizing: border-box;
   outline: none;
+  letter-spacing: -0.01em;
 }
 
 a {
