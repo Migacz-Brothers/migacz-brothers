@@ -16,8 +16,8 @@ const AboutUs = (): JSX.Element => {
         <DataWrapper>
           <PageTitle>About Us</PageTitle>
           <Paragraph>
-            We develop solutions and web experience for our clients, meet our
-            team
+            A team specialized in high-quality software solutions to help your
+            businesses show their online presence
           </Paragraph>
           <CallToAction href='/about-us'>Get to know us more</CallToAction>
         </DataWrapper>
