@@ -74,7 +74,7 @@ const MobileMenu = (): JSX.Element => {
                   delay: 0.1,
                 }}
               >
-                <NavigationLink href='/about' onClick={closeMenu}>
+                <NavigationLink href='/about-us' onClick={closeMenu}>
                   About
                 </NavigationLink>
               </NavItemContainer>

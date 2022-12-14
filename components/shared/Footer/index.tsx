@@ -33,7 +33,7 @@ const FooterComponent = (): JSX.Element => {
             <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href='/about'>About Us</Link>
+            <Link href='/about-us'>About Us</Link>
           </li>
           {/* <li>
             <Link href='/services'>Services</Link>
