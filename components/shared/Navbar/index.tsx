@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
             <NavItem href='/'>Home</NavItem>
           </li>
           <li>
-            <NavItem href='/services'>Services</NavItem>
+            <NavItem href='#services'>Services</NavItem>
           </li>
           <li>
             <NavItem href='/about-us'>About us</NavItem>

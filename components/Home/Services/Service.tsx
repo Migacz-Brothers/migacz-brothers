@@ -1,0 +1,79 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
+
+interface ServiceComponent {
+  title: string;
+  description: string;
+  background: StaticImageData;
+}
+
+const ServiceComponent = ({
+  title,
+  description,
+  background,
+}: ServiceComponent): JSX.Element => {
+  return (
+    <Service>
+      <CustomImage src={background} alt='product design ilustration' />
+      <DataWrapper>
+        <Tag>Services</Tag>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+      </DataWrapper>
+    </Service>
+  );
+};
+
+const Service = styled.li`
+  position: relative;
+  border-radius: var(--rounded);
+  overflow: hidden;
+  color: var(--light-primary);
+
+  img {
+    transition: ease transform 0.4s;
+  }
+  :hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+const CustomImage = styled(Image)`
+  position: absolute;
+`;
+
+const DataWrapper = styled.div`
+  position: absolute;
+  height: 100%;
+  padding: 80px 32px 0 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.08);
+  border-radius: var(--rounded);
+`;
+
+const Tag = styled.span`
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 10px;
+`;
+
+const Title = styled.h3`
+  font-weight: 700;
+  font-size: 40px;
+
+  margin-bottom: 16px;
+`;
+
+const Description = styled.p`
+  font-size: 18px;
+  line-height: 24px;
+`;
+
+export default ServiceComponent;

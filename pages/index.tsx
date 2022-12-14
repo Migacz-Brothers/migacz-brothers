@@ -5,6 +5,7 @@ import {
   WeAreAnAgency,
   CallToAction,
   PaymentMethods,
+  Services,
 } from '../components/Home';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <FirstSection />
         <AboutUs />
         <WeAreAnAgency />
+        <Services />
         <PaymentMethods />
         <CallToAction />
       </main>
