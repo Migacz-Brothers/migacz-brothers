@@ -62,6 +62,7 @@ const MemberButton = styled.button`
     position: absolute;
     left: 0;
     top: 0;
+    scale: 1.01;
   }
 `;
 

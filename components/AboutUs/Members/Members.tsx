@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Invitation, Member } from '.';
 import Gustavo from '../../../public/members/gustavo.jpeg';
 import Pedro from '../../../public/members/pedro.jpg';
+import Brenno from '../../../public/members/brenno.jpg';
 
 const Members = (): JSX.Element => {
   return (
@@ -17,6 +18,12 @@ const Members = (): JSX.Element => {
         position='Junior Engineer'
         description='Meet Gustavo, our talented junior frontend developer. He has a passion for creating user-friendly and visually appealing interfaces.'
         picture={Gustavo}
+      />
+      <Member
+        name='Francisco B. S. Rufino'
+        position='Junior Engineer'
+        description='Meet Brenno, he has been working closely with our senior developers to learn the ropes and has already made significant contributions to several of our ongoing projects.'
+        picture={Brenno}
       />
       <Invitation />
     </MerbersList>
