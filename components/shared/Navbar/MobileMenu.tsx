@@ -21,7 +21,7 @@ const MobileMenu = (): JSX.Element => {
 
   return (
     <>
-      <Button onClick={toggleOpen}>
+      <Button onClick={toggleOpen} aria-label='Open menu'>
         <MobileMenuIcon />
       </Button>
       <AnimatePresence>
@@ -40,7 +40,7 @@ const MobileMenu = (): JSX.Element => {
               duration: 0.2,
             }}
           >
-            <CloseMenuButton onClick={toggleOpen}>
+            <CloseMenuButton onClick={toggleOpen} aria-label='Close menu'>
               <CloseMobileMenuIcon />
             </CloseMenuButton>
             <LinksList>

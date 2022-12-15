@@ -7,7 +7,10 @@ const ThemeSelector = (): JSX.Element => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <ThemeSelectorButton onClick={toggleTheme}>
+    <ThemeSelectorButton
+      onClick={toggleTheme}
+      aria-label='Toggle page coloscheme'
+    >
       {theme === 'dark' ? <Sun /> : <Moon />}
     </ThemeSelectorButton>
   );
