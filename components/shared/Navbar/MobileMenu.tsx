@@ -110,12 +110,18 @@ const MobileMenu = (): JSX.Element => {
               }}
             >
               <li>
-                <SocialLinkContainer href='https://www.linkedin.com/company/migacz-brothers'>
+                <SocialLinkContainer
+                  href='https://www.linkedin.com/company/migacz-brothers'
+                  aria-label='Company Linkedin'
+                >
                   <LinkedinIcon />
                 </SocialLinkContainer>
               </li>
               <li>
-                <SocialLinkContainer href='mailto:hello@migaczbrothers.com'>
+                <SocialLinkContainer
+                  href='mailto:hello@migaczbrothers.com'
+                  aria-label='Company Email'
+                >
                   <EmailIcon />
                 </SocialLinkContainer>
               </li>

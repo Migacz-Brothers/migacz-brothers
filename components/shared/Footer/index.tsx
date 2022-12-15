@@ -18,12 +18,18 @@ const FooterComponent = (): JSX.Element => {
         </LanguagesList>
         <SocialMediaList>
           <li>
-            <SocialMediaIcon href='https://www.linkedin.com/company/migacz-brothers'>
+            <SocialMediaIcon
+              href='https://www.linkedin.com/company/migacz-brothers'
+              aria-label='Company Linkedin'
+            >
               <LinkedinIcon />
             </SocialMediaIcon>
           </li>
           <li>
-            <SocialMediaIcon href='mailto:hello@migaczbrothers.com'>
+            <SocialMediaIcon
+              href='mailto:hello@migaczbrothers.com'
+              aria-label='Company Email'
+            >
               <MailIcon />
             </SocialMediaIcon>
           </li>

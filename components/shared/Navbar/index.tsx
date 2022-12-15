@@ -8,7 +8,7 @@ const Navbar = (): JSX.Element => {
   return (
     <Nav>
       <NavInnerContainer>
-        <LogoContainer href='/'>
+        <LogoContainer href='/' aria-label='Home page'>
           <Logo />
         </LogoContainer>
 
