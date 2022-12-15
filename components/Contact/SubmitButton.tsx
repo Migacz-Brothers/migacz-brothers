@@ -15,7 +15,7 @@ const Button = styled.button<SubmitButtonProps>`
   background-color: ${(props) =>
     props.loading ? 'var(--grey-100)' : 'var(--primary)'};
   color: ${(props) =>
-    props.loading ? 'var(--grey-200)' : 'var(--text-primary)'};
+    props.loading ? 'var(--grey-200)' : 'var(--light-primary)'};
   padding: 13.5px 4px;
 `;
 
