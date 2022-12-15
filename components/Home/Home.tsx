@@ -10,24 +10,14 @@ import {
 
 const Home = (): JSX.Element => {
   return (
-    <>
-      <Head>
-        <title>Migacz Brothers company</title>
-        <meta
-          name='description'
-          content='A software company that cares about design as art and science!'
-        />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <main>
-        <FirstSection />
-        <AboutUs />
-        <WeAreAnAgency />
-        <Services />
-        <PaymentMethods />
-        <CallToAction />
-      </main>
-    </>
+    <main>
+      <FirstSection />
+      <AboutUs />
+      <WeAreAnAgency />
+      <Services />
+      <PaymentMethods />
+      <CallToAction />
+    </main>
   );
 };
 
