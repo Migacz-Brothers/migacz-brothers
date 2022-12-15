@@ -24,9 +24,9 @@ const TextAreaInput = ({
       <Label
         initial={{
           x: 0,
-          y: 1,
+          y: 10,
           fontSize: '16px',
-          color: 'var(--light)',
+          color: 'var(--grey-100)',
         }}
         animate={{
           y: textAreaTriggered ? 1 : 10,
@@ -42,6 +42,9 @@ const TextAreaInput = ({
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+        }}
+        initial={{
+          borderColor: 'var(--background-secondary)',
         }}
         animate={{
           borderColor: textAreaTriggered

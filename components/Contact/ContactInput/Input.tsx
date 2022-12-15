@@ -21,9 +21,9 @@ const Input = ({ label, type, value, setValue }: InputProps): JSX.Element => {
       <Label
         initial={{
           x: 0,
-          y: 1,
+          y: 10,
           fontSize: '16px',
-          color: 'var(--light)',
+          color: 'var(--grey-100)',
         }}
         animate={{
           y: inputTriggered ? 1 : 10,
@@ -39,6 +39,9 @@ const Input = ({ label, type, value, setValue }: InputProps): JSX.Element => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+        }}
+        initial={{
+          borderColor: 'var(--background-secondary)',
         }}
         animate={{
           borderColor: inputTriggered

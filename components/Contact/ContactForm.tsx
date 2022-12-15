@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import ContactInput from './ContactInput';
 import SubmitButton from './SubmitButton';
@@ -11,8 +12,36 @@ const ContactForm = (): JSX.Element => {
     message: '',
   });
 
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<false | string>(false);
+  const [success, setSuccess] = useState<false | string>(false);
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (loading) return;
+
+    setLoading(true);
+    try {
+      await axios({
+        method: 'POST',
+        url: '/api/contact',
+        data: form,
+      });
+
+      setSuccess(
+        'Your message was sent successfully, and we will be in touch as soon as possible.'
+      );
+    } catch (err) {
+      setError(
+        "There is something wrong on our systems. Please contact us via 'hello@migaczbrothers.com'"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Form>
+    <Form onSubmit={submit}>
       <ContactInput
         label='Name'
         value={form.name}
@@ -28,9 +57,11 @@ const ContactForm = (): JSX.Element => {
         type='select'
         options={[
           { name: '', value: '' },
-          { name: 'Less then 14', value: '234234' },
-          { name: 'Less then 23', value: '234234' },
-          { name: 'Less then 4534', value: '345' },
+          { name: 'Less then $3,000', value: 'Less then $3000' },
+          { name: '$3,000 - $5,000', value: '$3000 - $5000' },
+          { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
+          { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
+          { name: 'More then $15,000', value: 'More then $15,000' },
         ]}
         setValue={(value) => setForm((prev) => ({ ...prev, budget: value }))}
         value={form.budget}
@@ -41,7 +72,7 @@ const ContactForm = (): JSX.Element => {
         value={form.message}
         setValue={(value) => setForm((prev) => ({ ...prev, message: value }))}
       />
-      <SubmitButton />
+      <SubmitButton loading={loading} />
     </Form>
   );
 };

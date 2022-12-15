@@ -27,9 +27,9 @@ const SelectComponent = ({
         <Label
           initial={{
             x: 0,
-            y: 1,
+            y: 10,
             fontSize: '16px',
-            color: 'var(--light)',
+            color: 'var(--grey-100)',
           }}
           animate={{
             y: selectTriggered ? 1 : 10,
