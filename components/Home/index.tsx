@@ -1,3 +1,4 @@
+export { default as default } from './Home';
 export { default as FirstSection } from './FirstSection';
 export { default as AboutUs } from './AboutUs';
 export { default as WeAreAnAgency } from './WeAreAnAgency';
