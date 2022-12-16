@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import ContactInput from './ContactInput';
@@ -19,6 +20,24 @@ const ContactForm = (): JSX.Element => {
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loading) return;
+    setError('');
+
+    if (form.name === '') {
+      return setError('Name is a required field');
+    }
+    if (form.email === '') {
+      return setError('Email is a required field');
+    }
+    if (
+      !form.email.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+      )
+    ) {
+      return setError('This is not a valid email address');
+    }
+    if (form.message === '') {
+      return setError('Message is a required field');
+    }
 
     setLoading(true);
     try {
@@ -62,6 +81,7 @@ const ContactForm = (): JSX.Element => {
           { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
           { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
           { name: 'More then $15,000', value: 'More then $15,000' },
+          { name: 'Too be defined', value: 'Too be defined' },
         ]}
         setValue={(value) => setForm((prev) => ({ ...prev, budget: value }))}
         value={form.budget}
@@ -73,12 +93,13 @@ const ContactForm = (): JSX.Element => {
         setValue={(value) => setForm((prev) => ({ ...prev, message: value }))}
       />
       <SubmitButton loading={loading} />
+      <FeedbackError>{error}</FeedbackError>
     </Form>
   );
 };
 
 const Form = styled.form`
-  padding: 62px 72px;
+  padding: 62px 72px 42px 72px;
   background-color: var(--background-variant);
   border-radius: var(--rounded);
   width: 488px;
@@ -92,6 +113,11 @@ const Form = styled.form`
   @media (max-width: 400px) {
     padding: 56px 32px;
   }
+`;
+
+const FeedbackError = styled(motion.span)`
+  color: tomato;
+  height: 20px;
 `;
 
 export default ContactForm;
