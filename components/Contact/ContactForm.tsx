@@ -59,51 +59,79 @@ const ContactForm = (): JSX.Element => {
     }
   };
 
+  const resetForm = () => {
+    setForm({
+      name: '',
+      email: '',
+      budget: '',
+      message: '',
+    });
+    setError(false);
+    setLoading(false);
+    setSuccess(false);
+  };
+
   return (
-    <Form onSubmit={submit}>
-      <ContactInput
-        label='Name'
-        value={form.name}
-        setValue={(value) => setForm((prev) => ({ ...prev, name: value }))}
-      />
-      <ContactInput
-        label='Email'
-        value={form.email}
-        setValue={(value) => setForm((prev) => ({ ...prev, email: value }))}
-      />
-      <ContactInput
-        label='Budget'
-        type='select'
-        options={[
-          { name: '', value: '' },
-          { name: 'Less then $3,000', value: 'Less then $3000' },
-          { name: '$3,000 - $5,000', value: '$3000 - $5000' },
-          { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
-          { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
-          { name: 'More then $15,000', value: 'More then $15,000' },
-          { name: 'Too be defined', value: 'Too be defined' },
-        ]}
-        setValue={(value) => setForm((prev) => ({ ...prev, budget: value }))}
-        value={form.budget}
-      />
-      <ContactInput
-        label='Message'
-        type='text-area'
-        value={form.message}
-        setValue={(value) => setForm((prev) => ({ ...prev, message: value }))}
-      />
-      <SubmitButton loading={loading} />
-      <FeedbackError>{error}</FeedbackError>
-    </Form>
+    <FormWrapper>
+      {!success ? (
+        <Form onSubmit={submit}>
+          <ContactInput
+            label='Name'
+            value={form.name}
+            setValue={(value) => setForm((prev) => ({ ...prev, name: value }))}
+          />
+          <ContactInput
+            label='Email'
+            value={form.email}
+            setValue={(value) => setForm((prev) => ({ ...prev, email: value }))}
+          />
+          <ContactInput
+            label='Budget'
+            type='select'
+            options={[
+              { name: '', value: '' },
+              { name: 'Less then $3,000', value: 'Less then $3000' },
+              { name: '$3,000 - $5,000', value: '$3000 - $5000' },
+              { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
+              { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
+              { name: 'More then $15,000', value: 'More then $15,000' },
+              { name: 'Too be defined', value: 'Too be defined' },
+            ]}
+            setValue={(value) =>
+              setForm((prev) => ({ ...prev, budget: value }))
+            }
+            value={form.budget}
+          />
+          <ContactInput
+            label='Message'
+            type='text-area'
+            value={form.message}
+            setValue={(value) =>
+              setForm((prev) => ({ ...prev, message: value }))
+            }
+          />
+          <SubmitButton loading={loading} />
+          <FeedbackError>{error}</FeedbackError>
+        </Form>
+      ) : (
+        <SuccessWrapper>
+          <SuccessMessage>{success}</SuccessMessage>
+          <SendAnotherMessageButton onClick={resetForm}>
+            Send another message
+          </SendAnotherMessageButton>
+        </SuccessWrapper>
+      )}
+    </FormWrapper>
   );
 };
 
-const Form = styled.form`
-  padding: 62px 72px 42px 72px;
-  background-color: var(--background-variant);
-  border-radius: var(--rounded);
+const FormWrapper = styled.div`
   width: 488px;
   margin-left: 16px;
+  border-radius: var(--rounded);
+  background-color: var(--background-variant);
+  padding: 62px 72px 42px 72px;
+  height: 514px;
 
   @media (max-width: 700px) {
     margin-left: 0px;
@@ -112,12 +140,41 @@ const Form = styled.form`
 
   @media (max-width: 400px) {
     padding: 56px 32px;
+    height: 505px;
   }
+`;
+
+const Form = styled.form`
+  width: 100%;
 `;
 
 const FeedbackError = styled(motion.span)`
   color: tomato;
   height: 20px;
+`;
+
+const SuccessWrapper = styled(motion.div)`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SuccessMessage = styled.div`
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 18px;
+  max-width: 300px;
+  margin: 0 auto;
+`;
+
+const SendAnotherMessageButton = styled.button`
+  background: var(--primary);
+  border-radius: var(--rounded);
+  font-size: 16px;
+  padding: 10px 32px;
+  margin-top: 24px;
 `;
 
 export default ContactForm;
