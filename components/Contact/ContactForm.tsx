@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import ContactInput from './ContactInput';
@@ -73,54 +73,79 @@ const ContactForm = (): JSX.Element => {
 
   return (
     <FormWrapper>
-      {!success ? (
-        <Form onSubmit={submit}>
-          <ContactInput
-            label='Name'
-            value={form.name}
-            setValue={(value) => setForm((prev) => ({ ...prev, name: value }))}
-          />
-          <ContactInput
-            label='Email'
-            value={form.email}
-            setValue={(value) => setForm((prev) => ({ ...prev, email: value }))}
-          />
-          <ContactInput
-            label='Budget'
-            type='select'
-            options={[
-              { name: '', value: '' },
-              { name: 'Less then $3,000', value: 'Less then $3000' },
-              { name: '$3,000 - $5,000', value: '$3000 - $5000' },
-              { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
-              { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
-              { name: 'More then $15,000', value: 'More then $15,000' },
-              { name: 'Too be defined', value: 'Too be defined' },
-            ]}
-            setValue={(value) =>
-              setForm((prev) => ({ ...prev, budget: value }))
-            }
-            value={form.budget}
-          />
-          <ContactInput
-            label='Message'
-            type='text-area'
-            value={form.message}
-            setValue={(value) =>
-              setForm((prev) => ({ ...prev, message: value }))
-            }
-          />
-          <SubmitButton loading={loading} />
-          <FeedbackError>{error}</FeedbackError>
-        </Form>
-      ) : (
-        <SuccessWrapper>
-          <SuccessMessage>{success}</SuccessMessage>
-          <SendAnotherMessageButton onClick={resetForm}>
-            Send another message
-          </SendAnotherMessageButton>
-        </SuccessWrapper>
-      )}
+      <AnimatePresence mode='wait'>
+        {!success ? (
+          <Form
+            onSubmit={submit}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ContactInput
+              label='Name'
+              value={form.name}
+              setValue={(value) =>
+                setForm((prev) => ({ ...prev, name: value }))
+              }
+            />
+            <ContactInput
+              label='Email'
+              value={form.email}
+              setValue={(value) =>
+                setForm((prev) => ({ ...prev, email: value }))
+              }
+            />
+            <ContactInput
+              label='Budget'
+              type='select'
+              options={[
+                { name: '', value: '' },
+                { name: 'Less then $3,000', value: 'Less then $3000' },
+                { name: '$3,000 - $5,000', value: '$3000 - $5000' },
+                { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
+                { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
+                { name: 'More then $15,000', value: 'More then $15,000' },
+                { name: 'Too be defined', value: 'Too be defined' },
+              ]}
+              setValue={(value) =>
+                setForm((prev) => ({ ...prev, budget: value }))
+              }
+              value={form.budget}
+            />
+            <ContactInput
+              label='Message'
+              type='text-area'
+              value={form.message}
+              setValue={(value) =>
+                setForm((prev) => ({ ...prev, message: value }))
+              }
+            />
+            <SubmitButton loading={loading} />
+            <FeedbackError
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: error ? 1 : 0,
+                transition: { duration: 0.2 },
+              }}
+            >
+              {error}
+            </FeedbackError>
+          </Form>
+        ) : (
+          <SuccessWrapper
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <SuccessMessage>{success}</SuccessMessage>
+            <SendAnotherMessageButton onClick={resetForm}>
+              Send another message
+            </SendAnotherMessageButton>
+          </SuccessWrapper>
+        )}{' '}
+      </AnimatePresence>
     </FormWrapper>
   );
 };
@@ -144,7 +169,7 @@ const FormWrapper = styled.div`
   }
 `;
 
-const Form = styled.form`
+const Form = styled(motion.form)`
   width: 100%;
 `;
 
