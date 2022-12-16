@@ -75,6 +75,7 @@ const ContactButton = styled(Link)`
   padding: 10px 64px;
   margin-right: 22px;
   border-radius: var(--rounded);
+  color: var(--light-primary);
 
   @media (max-width: 500px) {
     margin-right: 0;
