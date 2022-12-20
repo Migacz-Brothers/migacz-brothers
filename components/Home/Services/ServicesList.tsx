@@ -10,17 +10,17 @@ const ServicesList = (): JSX.Element => {
       <Service
         background={product_design_image}
         title='Custom design'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text'
+        description='We can create a UI/UX for your business that is backed by multiple tried-and-true design components.'
       />
       <Service
         background={product_development}
         title='Development'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text'
+        description='Our highly-skilled engineers are prepared to create high-performance, scalable software solutions, covering the full stack from backend to frontend.'
       />
       <Service
         background={product_maintenance}
         title='Maintenence'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text'
+        description="If you're looking for a reliable service to maintain your website or system, we'll provide you with the best care at an unbeatable price."
       />
     </Services>
   );

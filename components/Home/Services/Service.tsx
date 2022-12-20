@@ -51,7 +51,7 @@ const Service = styled.li`
     min-width: 288px;
     width: 100%;
     max-width: 480px;
-    min-height: 200px;
+    min-height: 220px;
   }
 `;
 
@@ -62,11 +62,11 @@ const CustomImage = styled(Image)`
 const DataWrapper = styled.div`
   position: absolute;
   height: 100%;
-  padding: 80px 32px 0 32px;
+  padding: 200px 32px 0 32px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 
   box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.08);
@@ -77,6 +77,7 @@ const DataWrapper = styled.div`
   }
 
   @media (max-width: 980px) {
+    justify-content: center;
     padding: 0 16px 0 16px;
   }
 `;
