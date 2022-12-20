@@ -21,12 +21,17 @@ const AboutUs = (): JSX.Element => {
           </Paragraph>
           <CallToAction href='/about-us'>Get to know us more</CallToAction>
         </DataWrapper>
-        <Media
-          src={AboutUsImage}
-          alt='company ilustration'
-          layout='responsive'
-          placeholder='blur'
-        />
+        <MediaWrapper>
+          <Media
+            src={AboutUsImage}
+            alt='company ilustration'
+            // layout='responsive'
+            fill
+            sizes='(max-width: 520px) 100vw,
+                  488px'
+            placeholder='blur'
+          />
+        </MediaWrapper>
       </AboutUsWrapper>
     </SectionWrapper>
   );
@@ -82,16 +87,24 @@ const CallToAction = styled(Link)`
   border-radius: var(--rounded);
 `;
 
-const Media = styled(Image)`
+const MediaWrapper = styled.div`
+  position: relative;
   margin-left: 16px;
-  border-radius: var(--rounded);
-  object-fit: cover;
   max-width: 488px;
+  width: 100%;
 
   @media (max-width: 980px) {
     margin-left: 0px;
     margin-top: 38px;
   }
+`;
+
+const Media = styled(Image)`
+  position: relative !important;
+  width: 100%;
+  height: auto;
+  border-radius: var(--rounded);
+  object-fit: cover;
 `;
 
 export default AboutUs;
