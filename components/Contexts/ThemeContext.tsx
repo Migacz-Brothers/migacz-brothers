@@ -1,5 +1,5 @@
 // context/todoContext.tsx
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import Variables from '../styles/variables';
 
 export type themeOptions = 'light' | 'dark';
@@ -28,8 +28,22 @@ const ThemeContextProvider = ({
   const [theme, setTheme] = useState<themeOptions>('dark');
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setTheme((prev) => {
+      localStorage.setItem('theme', prev === 'light' ? 'dark' : 'light');
+      return prev === 'light' ? 'dark' : 'light';
+    });
   };
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme === 'light' ? 'light' : 'dark');
+    }
+    //  else {
+    //   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    //   setTheme(mediaQuery.matches ? 'dark' : 'light');
+    // }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
