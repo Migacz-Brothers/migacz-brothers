@@ -10,11 +10,11 @@ const FooterComponent = (): JSX.Element => {
       <FooterInnerWrapper>
         <LanguagesList>
           <li>
-            <ActiveLink href='/'>EN</ActiveLink>
+            <ActiveLink>EN</ActiveLink>
           </li>
-          <li>
-            <Link href='https://pt.migaczbrothers.com/'>PT</Link>
-          </li>
+          <BlockedLink>
+            <span>PT</span>
+          </BlockedLink>
         </LanguagesList>
         <SocialMediaList>
           <li>
@@ -94,9 +94,10 @@ const LanguagesList = styled.ul`
   }
 `;
 
-const ActiveLink = styled(Link)`
+const ActiveLink = styled.span`
   text-decoration: underline;
   color: var(--primary);
+  cursor: pointer;
 `;
 
 // Social Media List
@@ -143,6 +144,10 @@ const CopyrightDisclaimer = styled.p`
   padding: 4px 0;
 
   color: var(--text-primary);
+`;
+
+const BlockedLink = styled.li`
+  cursor: not-allowed;
 `;
 
 export default FooterComponent;
