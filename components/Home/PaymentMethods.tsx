@@ -35,13 +35,14 @@ const PaymentMethods = (): JSX.Element => {
 };
 
 const PaymentMethodsSectionWrapper = styled(GenericSectionWrapper)`
-  background-color: var(--background-secondary);
+  padding-top: 80px;
   display: inline-block;
+  background-color: var(--background-secondary);
 `;
 
 const PaymentMethodsSection = styled(GenericSection)`
-  margin: 80px 0 180px 0;
-  padding: 0;
+  background-color: var(--background-primary);
+  padding: 44px 0 100px 0;
   max-width: unset;
 
   color: var(--text-primary);
@@ -64,6 +65,9 @@ const PaymentMethodsListContainer = styled.div`
 const PaymentMethodsList = styled.ul`
   display: flex;
   justify-content: space-evenly;
+
+  background-color: var(--background-variant);
+  border-radius: var(--rounded);
 
   margin: 0 auto;
   max-width: 1216px;
