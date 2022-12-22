@@ -22,7 +22,7 @@ const Members = (): JSX.Element => {
         picture={Iago}
       />
       <Member
-        name='Arthur V. Franceschini'
+        name='Arthur F. Valério'
         position='Marketing Director'
         description='With knowledge both in marketing and development, he brings a wealth of experience to the organization. He is passionate about creating innovative and successful campaigns that will help drive growth.'
         picture={Arthur}
