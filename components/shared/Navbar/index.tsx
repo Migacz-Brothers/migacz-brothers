@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Logo from '../../Icons/logo';
-import MobileMenu from './MobileMenu';
 import ThemeSelector from '../ThemeSelector';
+import dynamic from 'next/dynamic';
+
+const MobileMenu = dynamic(() => import('./MobileMenu'), {
+  suspense: true,
+});
 
 const Navbar = (): JSX.Element => {
   return (
