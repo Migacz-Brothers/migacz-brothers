@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
+import { setCookie, hasCookie } from 'cookies-next';
+
 function Consent() {
   const [consent, setConsent] = useState(false);
-  // useEffect(() => {
-  //   setConsent(hasCookie('localConsent'));
-  // }, []);
+  useEffect(() => {
+    setConsent(hasCookie('localConsent'));
+  }, []);
 
   const acceptCookie = () => {
     setConsent(true);
-    // setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
+    setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
   };
 
   return (
