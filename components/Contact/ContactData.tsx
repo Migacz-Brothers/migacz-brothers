@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import LinkedinIcon from '../Icons/linkedin';
 import MailIcon from '../Icons/mail';
@@ -12,15 +13,21 @@ const ContactInfo = (): JSX.Element => {
         </ContactIconContainer>
         <ContactInfoTitle>Linkedin</ContactInfoTitle>
       </ContactInfoTitleWrapper>
-      <ContactInfoContainer>Migacz Brothers</ContactInfoContainer>
+      <ContactInfoContainer href='https://www.linkedin.com/company/migacz-brothers'>
+        Migacz Brothers
+      </ContactInfoContainer>
       <ContactInfoTitleWrapper>
         <ContactIconContainer>
           <MailIcon />
         </ContactIconContainer>
         <ContactInfoTitle>Email</ContactInfoTitle>
       </ContactInfoTitleWrapper>
-      <ContactInfoContainer>hello@migaczbrothers.com</ContactInfoContainer>
-      <ContactInfoContainer>pedro@migaczbrothers.com</ContactInfoContainer>
+      <ContactInfoContainer href='mailto:hello@migaczbrothers.com'>
+        hello@migaczbrothers.com
+      </ContactInfoContainer>
+      <ContactInfoContainer href='mailto:pedro@migaczbrothers.com'>
+        pedro@migaczbrothers.com
+      </ContactInfoContainer>
     </ContactInfoWrapper>
   );
 };
@@ -85,7 +92,8 @@ const ContactInfoTitle = styled.h2`
   color: var(--primary);
 `;
 
-const ContactInfoContainer = styled.p`
+const ContactInfoContainer = styled(Link)`
+  display: block;
   margin-left: 44px;
   margin-bottom: 15px;
   font-size: 18px;
