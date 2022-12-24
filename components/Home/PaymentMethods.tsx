@@ -14,20 +14,22 @@ const PaymentMethods = (): JSX.Element => {
       <PaymentMethodsSection>
         <Title>Payment methods</Title>
         <PaymentMethodsListContainer>
-          <PaymentMethodsList>
-            <ListItem>
-              <WireTranferIcon />
-              Wire transfer
-            </ListItem>
-            <ListItem>
-              <CreditCardIcon />
-              Credit card
-            </ListItem>
-            <ListItem>
-              <CryptoIcon />
-              Crypto
-            </ListItem>
-          </PaymentMethodsList>
+          <PaymentMethodsListInnerContainer>
+            <PaymentMethodsList>
+              <ListItem>
+                <WireTranferIcon />
+                Wire transfer
+              </ListItem>
+              <ListItem>
+                <CreditCardIcon />
+                Credit card
+              </ListItem>
+              <ListItem>
+                <CryptoIcon />
+                Crypto
+              </ListItem>
+            </PaymentMethodsList>
+          </PaymentMethodsListInnerContainer>
         </PaymentMethodsListContainer>
       </PaymentMethodsSection>
     </PaymentMethodsSectionWrapper>
@@ -62,6 +64,12 @@ const PaymentMethodsListContainer = styled.div`
   background-color: var(--background-primary);
 `;
 
+const PaymentMethodsListInnerContainer = styled.div`
+  max-width: 1216px;
+  padding: 0 16px;
+  margin: 0 auto;
+`;
+
 const PaymentMethodsList = styled.ul`
   display: flex;
   justify-content: space-evenly;
@@ -69,9 +77,7 @@ const PaymentMethodsList = styled.ul`
   background-color: var(--background-variant);
   border-radius: var(--rounded);
 
-  margin: 0 auto;
-  max-width: 1216px;
-  padding: 100px 16px;
+  padding: 100px 0;
 
   @media (max-width: 980px) {
     flex-direction: column;
