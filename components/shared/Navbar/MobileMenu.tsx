@@ -159,6 +159,7 @@ const MobileNavigationContainer = styled(motion.div)`
   z-index: 999;
 
   background-color: var(--background-primary);
+  color: var(--text-primary);
 
   padding-top: 22px;
 `;
@@ -168,6 +169,10 @@ const CloseMenuButton = styled.button`
   align-self: flex-end;
   padding: 6px;
   margin: -6px 15px -6px -6px;
+
+  path {
+    stroke: var(--text-primary) !important;
+  }
 `;
 
 const LinksList = styled.ul`
