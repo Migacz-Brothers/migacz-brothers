@@ -5,3 +5,4 @@ export { default as WeAreAnAgency } from './WeAreAnAgency';
 export { default as CallToAction } from './CallToAction';
 export { default as Services } from './Services';
 export { default as PaymentMethods } from './PaymentMethods';
+export { default as TechStack } from './TechStack';
