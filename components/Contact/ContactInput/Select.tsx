@@ -71,6 +71,7 @@ const Select = styled.select<CustomSelectProps>`
   border-radius: var(--rounded);
   background-color: var(--background-primary);
   color: var(--text-secondary);
+  height: 43px !important;
 `;
 
 export default SelectComponent;
