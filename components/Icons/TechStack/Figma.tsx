@@ -6,7 +6,7 @@ const FigmaIcon = (): JSX.Element => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <g clip-path='url(#clip0_1783_345)'>
+    <g clipPath='url(#clip0_1783_345)'>
       <path
         d='M15.003 80C23.2813 80 30 74.0266 30 66.6666V53.3333H15.003C6.72465 53.3333 0.0059967 59.3066 0.0059967 66.6666C0.0059967 74.0266 6.72465 80 15.003 80Z'
         fill='#0ACF83'
