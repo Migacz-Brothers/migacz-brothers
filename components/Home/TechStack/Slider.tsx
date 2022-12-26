@@ -9,9 +9,15 @@ import NetflixIcon from '../../Icons/TechStack/companies/Netflix';
 import NodeIcon from '../../Icons/TechStack/Node';
 
 import FigmaIcon from '../../Icons/TechStack/Figma';
+import AirbnbIcon from '../../Icons/TechStack/companies/Airbnb';
+import ZoomIcon from '../../Icons/TechStack/companies/Zoom';
+
 import NextIcon from '../../Icons/TechStack/Next';
 import PostgreSqlIcon from '../../Icons/TechStack/PostgreSql';
+
 import SanityIcon from '../../Icons/TechStack/Sanity';
+import NikeIcon from '../../Icons/TechStack/companies/Nike';
+import CloudflareIcon from '../../Icons/TechStack/companies/Cloudflare';
 
 const TechStackList = [
   {
@@ -40,14 +46,14 @@ const TechStackList = [
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: SanityIcon,
-    socialProof: [NetflixIcon, MediumIcon],
+    socialProof: [CloudflareIcon, NikeIcon],
   },
   {
     title: 'Figma',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: FigmaIcon,
-    socialProof: [NetflixIcon, MediumIcon],
+    socialProof: [ZoomIcon, AirbnbIcon],
   },
 ];
 

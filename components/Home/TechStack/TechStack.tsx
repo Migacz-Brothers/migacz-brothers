@@ -20,7 +20,7 @@ const TechStackComponent = (): JSX.Element => {
 const TechStackWrapper = styled(GenericSectionWrapper)`
   padding-top: 52px;
   padding-bottom: 84px;
-  max-width: 1920px;
+  max-width: 2080px;
   margin: 0 auto;
 `;
 
