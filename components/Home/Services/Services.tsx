@@ -18,6 +18,7 @@ const ServicesComponent = (): JSX.Element => {
 
 const ServicesWrapper = styled(GenericSectionWrapper)`
   background-color: var(--background-secondary);
+  padding-bottom: 40px;
 `;
 
 const Title = styled.h2`
@@ -25,6 +26,7 @@ const Title = styled.h2`
   text-align: center;
   font-size: 40px;
   margin-bottom: 70px;
+  padding-top: 100px;
 `;
 
 export default ServicesComponent;

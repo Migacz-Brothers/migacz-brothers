@@ -1,27 +1,31 @@
 import styled from 'styled-components';
-import MediumIcon from '../../Icons/TechStack/companies/Medium';
-import NetflixIcon from '../../Icons/TechStack/companies/Netflix';
-import NodeIcon from '../../Icons/TechStack/Node';
 
-const TechItemComponent = (): JSX.Element => {
+interface TechItemProps {
+  title: string;
+  paragraph: string;
+  Icon: () => JSX.Element;
+  socialProof: (() => JSX.Element)[];
+}
+
+const TechItemComponent = ({
+  title,
+  paragraph,
+  Icon,
+  socialProof,
+}: TechItemProps): JSX.Element => {
   return (
     <TechItemContainer>
       <IconContainer>
-        <NodeIcon />
+        <Icon />
       </IconContainer>
-      <Title>Node</Title>
-      <Paragraph>
-        NodeJS is a powerful and reliable tool for writing backend code. This is
-        the basis for many of our services including APIs, CMS, custom systems,
-        Discord bots, etc.
-      </Paragraph>
+      <Title>{title}</Title>
+      <Paragraph>{paragraph}</Paragraph>
       <ShowcaseList>
-        <li>
-          <NetflixIcon />
-        </li>
-        <li>
-          <MediumIcon />
-        </li>
+        {socialProof.map((SocialProofIcon, key) => (
+          <li key={`SocialProofIcon_${key}`}>
+            <SocialProofIcon />
+          </li>
+        ))}
       </ShowcaseList>
     </TechItemContainer>
   );
