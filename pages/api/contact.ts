@@ -14,8 +14,8 @@ export default async function handler(
   sendGrid.setApiKey(process.env.SENDGRID_API_KEY as string);
   const msg = {
     to: 'hello@migaczbrothers.com',
-    from: 'contact_form@migaczbrothers.com',
-    subject: 'Contact',
+    from: 'contactForm@migaczbrothers.com',
+    subject: `Contact from ${email}`,
     text: `
     name: ${name}
     email: ${email}
