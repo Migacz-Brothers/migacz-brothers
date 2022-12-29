@@ -101,11 +101,11 @@ const ContactForm = (): JSX.Element => {
               type='select'
               options={[
                 { name: '', value: '' },
-                { name: 'Less then $3,000', value: 'Less then $3000' },
+                { name: 'Less than $3,000', value: 'Less than $3000' },
                 { name: '$3,000 - $5,000', value: '$3000 - $5000' },
                 { name: '$5,000 - $10,000', value: '$5,000 - $10,000' },
                 { name: '$10,000 - $15,000', value: '$10,000 - $15,000' },
-                { name: 'More then $15,000', value: 'More then $15,000' },
+                { name: 'More than $15,000', value: 'More than $15,000' },
                 { name: 'Too be defined', value: 'Too be defined' },
               ]}
               setValue={(value) =>
