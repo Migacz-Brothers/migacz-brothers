@@ -44,6 +44,7 @@ const SectionWrapper = styled(GenericSectionWrapper)`
 
 const AboutUsWrapper = styled(GenericSection)`
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: 980px) {
     flex-direction: column;

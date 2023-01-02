@@ -63,7 +63,7 @@ const Footer = styled.footer`
 `;
 
 const FooterInnerWrapper = styled.div`
-  max-width: 1216px;
+  max-width: var(--container-width);
   padding: 80px 16px 40px 16px;
   margin: 0 auto;
 

@@ -39,6 +39,7 @@ const SectionWrapper = styled(GenericSectionWrapper)`
 
 const FirstSection = styled(GenericSection)`
   display: flex;
+  justify-content: space-between;
 `;
 
 const DataWrapper = styled.div`
