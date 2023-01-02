@@ -25,21 +25,21 @@ const TechStackList = [
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: NodeIcon,
-    socialProof: [NetflixIcon, MediumIcon],
+    socialProof: [MediumIcon, NetflixIcon],
   },
   {
     title: 'PostgreSQL',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: PostgreSqlIcon,
-    socialProof: [NetflixIcon, MediumIcon],
+    socialProof: [MediumIcon, NetflixIcon],
   },
   {
     title: 'Next',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: NextIcon,
-    socialProof: [NetflixIcon, MediumIcon],
+    socialProof: [MediumIcon, NetflixIcon],
   },
   {
     title: 'Sanity',
@@ -78,6 +78,10 @@ const CustomSwiperSlide = styled(SwiperSlide)`
   max-width: 384px;
   min-width: 300px;
   width: 100%;
+
+  @media (max-width: 400px) {
+    width: calc(100% - 32px);
+  }
 `;
 
 export default TechStackSliderComponent;

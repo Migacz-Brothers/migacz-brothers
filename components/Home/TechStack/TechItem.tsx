@@ -65,7 +65,9 @@ const Paragraph = styled.p`
 `;
 
 const ShowcaseList = styled.ul`
-  display: flex;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
   gap: 22px;
 `;
 
