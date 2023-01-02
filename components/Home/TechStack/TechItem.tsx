@@ -22,9 +22,9 @@ const TechItemComponent = ({
       <Paragraph>{paragraph}</Paragraph>
       <ShowcaseList>
         {socialProof.map((SocialProofIcon, key) => (
-          <li key={`SocialProofIcon_${key}`}>
+          <SocialProofIconWrapper key={`SocialProofIcon_${key}`}>
             <SocialProofIcon />
-          </li>
+          </SocialProofIconWrapper>
         ))}
       </ShowcaseList>
     </TechItemContainer>
@@ -69,6 +69,12 @@ const ShowcaseList = styled.ul`
   place-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+`;
+
+const SocialProofIconWrapper = styled.li`
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
 `;
 
 export default TechItemComponent;

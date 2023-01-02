@@ -1,7 +1,6 @@
 const AirbnbIcon = (): JSX.Element => (
   <svg
-    width='78'
-    height='24'
+    height='32'
     viewBox='0 0 78 24'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'

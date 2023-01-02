@@ -12,18 +12,23 @@ import FigmaIcon from '../../Icons/TechStack/Figma';
 import AirbnbIcon from '../../Icons/TechStack/companies/Airbnb';
 import ZoomIcon from '../../Icons/TechStack/companies/Zoom';
 
-import NextIcon from '../../Icons/TechStack/Next';
 import PostgreSqlIcon from '../../Icons/TechStack/PostgreSql';
+import NasaIcon from '../../Icons/TechStack/companies/Nasa';
+import RobinhoodIcon from '../../Icons/TechStack/companies/Robinhood';
+
+import NextIcon from '../../Icons/TechStack/Next';
+import TypeformIcon from '../../Icons/TechStack/companies/Typeform';
+import NotionIcon from '../../Icons/TechStack/companies/Notion';
 
 import SanityIcon from '../../Icons/TechStack/Sanity';
+import NetlifyIcon from '../../Icons/TechStack/companies/Netlify';
 import NikeIcon from '../../Icons/TechStack/companies/Nike';
-import CloudflareIcon from '../../Icons/TechStack/companies/Cloudflare';
 
 const TechStackList = [
   {
     title: 'Node',
     paragraph:
-      'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
+      'odeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discord bots, etc.',
     icon: NodeIcon,
     socialProof: [MediumIcon, NetflixIcon],
   },
@@ -32,28 +37,28 @@ const TechStackList = [
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: PostgreSqlIcon,
-    socialProof: [MediumIcon, NetflixIcon],
+    socialProof: [RobinhoodIcon, NasaIcon],
   },
   {
     title: 'Next',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: NextIcon,
-    socialProof: [MediumIcon, NetflixIcon],
+    socialProof: [TypeformIcon, NotionIcon],
   },
   {
     title: 'Sanity',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: SanityIcon,
-    socialProof: [CloudflareIcon, NikeIcon],
+    socialProof: [NetlifyIcon, NikeIcon],
   },
   {
     title: 'Figma',
     paragraph:
       'NodeJS is a powerful and reliable tool for writing backend code. This is the basis for many of our services including APIs, CMS, custom systems, Discod bots, etc.',
     icon: FigmaIcon,
-    socialProof: [ZoomIcon, AirbnbIcon],
+    socialProof: [AirbnbIcon, ZoomIcon],
   },
 ];
 

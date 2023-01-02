@@ -1,7 +1,6 @@
 const NikeIcon = (): JSX.Element => (
   <svg
-    width='73'
-    height='26'
+    height='32'
     viewBox='0 0 73 26'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
