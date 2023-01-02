@@ -6,6 +6,7 @@ import {
   CallToAction,
   PaymentMethods,
   Services,
+  TechStack,
 } from '.';
 
 const Home = (): JSX.Element => {
@@ -14,6 +15,7 @@ const Home = (): JSX.Element => {
       <FirstSection />
       <AboutUs />
       <WeAreAnAgency />
+      <TechStack />
       <Services />
       <PaymentMethods />
       <CallToAction />

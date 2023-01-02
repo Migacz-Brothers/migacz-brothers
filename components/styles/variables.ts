@@ -23,6 +23,8 @@ const Variables = createGlobalStyle<VariablesProps>`
     --grey-200: #26272E;
     --grey-500: #101010;
 
+    --container-width: 1400px;
+
     --background-primary: ${(props) =>
       props.theme === 'dark' ? 'var(--dark-primary)' : 'var(--light-primary)'};
 

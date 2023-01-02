@@ -42,7 +42,7 @@ const Nav = styled.nav`
 `;
 
 const NavInnerContainer = styled.div`
-  max-width: 1216px;
+  max-width: var(--container-width);
   padding: 24px 16px;
   margin: 0 auto;
   display: flex;
