@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import {
   FirstSection,
   AboutUs,
@@ -6,8 +6,11 @@ import {
   CallToAction,
   PaymentMethods,
   Services,
-  TechStack,
 } from '.';
+
+const TechStack = dynamic(() => import('./TechStack'), {
+  suspense: true,
+});
 
 const Home = (): JSX.Element => {
   return (

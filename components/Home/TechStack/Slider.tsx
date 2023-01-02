@@ -83,6 +83,7 @@ const CustomSwiperSlide = styled(SwiperSlide)`
   max-width: 384px;
   min-width: 300px;
   width: 100%;
+  height: 520px;
 
   @media (max-width: 400px) {
     width: calc(100% - 32px);
