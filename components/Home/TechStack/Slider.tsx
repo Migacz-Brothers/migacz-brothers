@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { TechItem } from '.';
 
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import styled from 'styled-components';
 
 import MediumIcon from '../../Icons/TechStack/companies/Medium';
@@ -23,6 +24,7 @@ import NotionIcon from '../../Icons/TechStack/companies/Notion';
 import SanityIcon from '../../Icons/TechStack/Sanity';
 import NetlifyIcon from '../../Icons/TechStack/companies/Netlify';
 import NikeIcon from '../../Icons/TechStack/companies/Nike';
+import { Autoplay } from 'swiper';
 
 const TechStackList = [
   {
@@ -64,7 +66,16 @@ const TechStackList = [
 
 const TechStackSliderComponent = (): JSX.Element => {
   return (
-    <Swiper spaceBetween={32} slidesPerView={'auto'} centeredSlides loop>
+    <Swiper
+      spaceBetween={32}
+      slidesPerView={'auto'}
+      centeredSlides
+      loop
+      autoplay={{
+        disableOnInteraction: true,
+      }}
+      modules={[Autoplay]}
+    >
       {TechStackList.map((tech, key) => (
         <CustomSwiperSlide key={`tech_${tech.title + key}`}>
           <TechItem
@@ -84,6 +95,7 @@ const CustomSwiperSlide = styled(SwiperSlide)`
   min-width: 300px;
   width: 100%;
   height: 520px;
+  cursor: pointer;
 
   @media (max-width: 400px) {
     width: calc(100% - 32px);
