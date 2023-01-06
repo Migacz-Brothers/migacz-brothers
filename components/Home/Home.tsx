@@ -7,6 +7,7 @@ import {
   PaymentMethods,
   Services,
 } from '.';
+import Pitch from './Pitch';
 
 const TechStack = dynamic(() => import('./TechStack'), {
   suspense: true,
@@ -16,8 +17,9 @@ const Home = (): JSX.Element => {
   return (
     <main>
       <FirstSection />
-      <AboutUs />
-      <WeAreAnAgency />
+      {/* <AboutUs /> */}
+      {/* <WeAreAnAgency /> */}
+      <Pitch />
       <TechStack />
       <Services />
       <PaymentMethods />
