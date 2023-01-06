@@ -52,7 +52,9 @@ const FooterComponent = (): JSX.Element => {
           </li>
         </SitemapList>
       </FooterInnerWrapper>
-      <CopyrightDisclaimer>Copyright ©2022 Migacz Brothers</CopyrightDisclaimer>
+      <CopyrightDisclaimer>
+        Copyright ©{new Date().getFullYear()} Migacz Brothers
+      </CopyrightDisclaimer>
     </Footer>
   );
 };
