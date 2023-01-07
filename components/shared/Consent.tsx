@@ -30,6 +30,7 @@ function Consent() {
           exit={{
             x: 600,
           }}
+          data-nosnippet='data-nosnippet'
         >
           We use cookies to improve our website and assist with our marketing
           campaigns. By clicking &quot;Accept Cookies&quot;, you consent to the
