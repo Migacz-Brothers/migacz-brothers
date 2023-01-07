@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import styled from 'styled-components';
 
@@ -17,11 +18,21 @@ const PitchArticle = ({
   return (
     <Article>
       <ArticleInnerContainer $reversed={reversed}>
-        <DataContainer>
+        <motion.div
+          initial={{ opacity: 0, x: reversed ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.5 }}
+        >
           <Title>{title}</Title>
           <Paragraph>{description}</Paragraph>
-        </DataContainer>
-        <Aside>
+        </motion.div>
+        <Aside
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8 }}
+        >
           <CustomImage
             src={image}
             alt={`${title} ilustration`}
@@ -42,6 +53,7 @@ const Article = styled.article`
   margin: 0 auto;
   margin-bottom: 160px;
   padding: 0 16px;
+  width: 100%;
 
   @media (max-width: 980px) {
     margin-bottom: 100px;
@@ -67,12 +79,6 @@ const ArticleInnerContainer = styled.div<ArticleInnerContainerProps>`
     flex-direction: column-reverse;
     gap: 0;
   }
-`;
-
-const DataContainer = styled.div`
-  /* @media (max-width: 980px) { */
-  /* max-width: 600px; */
-  /* } */
 `;
 
 const Title = styled.h2`
@@ -105,7 +111,7 @@ const Paragraph = styled.p`
   } */
 `;
 
-const Aside = styled.aside`
+const Aside = styled(motion.aside)`
   position: relative;
   min-width: 489px;
   display: inline-block;
