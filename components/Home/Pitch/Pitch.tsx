@@ -5,6 +5,7 @@ import DesignAndCopyImage from '../../../public/Pitch/DesignAndCopy.png';
 import PaymentMethods from '../../../public/Pitch/PaymentMethods.png';
 import Maintenance from '../../../public/Pitch/Maintenance.png';
 import CustomSystems from '../../../public/Pitch/CustomSystems.png';
+import styled from 'styled-components';
 
 const PitchList = [
   {
@@ -41,7 +42,7 @@ const PitchList = [
 
 const PitchComponent = (): JSX.Element => {
   return (
-    <section>
+    <Section>
       {PitchList.map(({ title, description, image }, i) => (
         <PitchArticle
           title={title}
@@ -51,8 +52,15 @@ const PitchComponent = (): JSX.Element => {
           reversed={Boolean(i % 2)}
         />
       ))}
-    </section>
+    </Section>
   );
 };
+
+const Section = styled.section`
+  background-color: var(--background-secondary);
+  padding: 160px 0 0 0;
+  display: inline-block;
+  width: 100%;
+`;
 
 export default PitchComponent;
