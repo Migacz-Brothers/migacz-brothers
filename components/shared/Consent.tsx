@@ -61,6 +61,7 @@ const Modal = styled(motion.div)`
   padding: 32px 48px;
   max-width: 500px;
   box-shadow: 0px 4px 9px rgba(255, 255, 255, 0.02);
+  z-index: 5;
 
   display: block;
 `;
