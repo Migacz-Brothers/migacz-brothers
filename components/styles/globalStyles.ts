@@ -27,6 +27,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 
   background-color: var(--background-primary);
 }
