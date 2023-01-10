@@ -33,12 +33,12 @@ const Members = (): JSX.Element => {
         description='Meet Gustavo, our talented junior frontend developer. He has a passion for creating user-friendly and visually appealing interfaces.'
         picture={Gustavo}
       />
-      <Member
+      {/* <Member
         name='Francisco B. S. Rufino'
         position='Junior Engineer'
         description='Meet Brenno, he has been working closely with our senior developers to learn the ropes and has already made significant contributions to several of our ongoing projects.'
         picture={Brenno}
-      />
+      /> */}
       <Invitation />
     </MerbersList>
   );
