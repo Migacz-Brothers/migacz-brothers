@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
-import styled from 'styled-components';
+import { motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
+import styled from "styled-components";
 
 interface PitchArticleProps {
   title: string;
@@ -54,6 +54,7 @@ const Article = styled.article`
   margin-bottom: 160px;
   padding: 0 16px;
   width: 100%;
+  overflow-x: hidden;
 
   @media (max-width: 980px) {
     margin-bottom: 100px;
@@ -66,7 +67,7 @@ interface ArticleInnerContainerProps {
 
 const ArticleInnerContainer = styled.div<ArticleInnerContainerProps>`
   display: flex;
-  flex-direction: ${({ $reversed }) => ($reversed ? 'row-reverse' : 'row')};
+  flex-direction: ${({ $reversed }) => ($reversed ? "row-reverse" : "row")};
   gap: 100px;
   justify-content: space-between;
   align-items: center;
