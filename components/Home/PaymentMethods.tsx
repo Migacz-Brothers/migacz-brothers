@@ -39,7 +39,7 @@ const PaymentMethods = (): JSX.Element => {
 const PaymentMethodsSectionWrapper = styled(GenericSectionWrapper)`
   padding-top: 80px;
   display: inline-block;
-  background-color: var(--background-secondary);
+  /* background-color: var(--background-secondary); */
 `;
 
 const PaymentMethodsSection = styled(GenericSection)`

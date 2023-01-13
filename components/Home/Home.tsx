@@ -21,7 +21,7 @@ const Home = (): JSX.Element => {
       {/* <WeAreAnAgency /> */}
       <Pitch />
       <TechStack />
-      <Services />
+      {/* <Services /> */}
       <PaymentMethods />
       <CallToAction />
     </main>
