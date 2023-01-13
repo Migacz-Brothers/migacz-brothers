@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 
 interface PitchArticleProps {
   title: string;
@@ -22,7 +22,7 @@ const PitchArticle = ({
           initial={{ opacity: 0, x: reversed ? 100 : -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.25 }}
         >
           <Title>{title}</Title>
           <Paragraph>{description}</Paragraph>
@@ -30,7 +30,7 @@ const PitchArticle = ({
         <Aside
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8 }}
         >
           <CustomImage
@@ -67,7 +67,7 @@ interface ArticleInnerContainerProps {
 
 const ArticleInnerContainer = styled.div<ArticleInnerContainerProps>`
   display: flex;
-  flex-direction: ${({ $reversed }) => ($reversed ? "row-reverse" : "row")};
+  flex-direction: ${({ $reversed }) => ($reversed ? 'row-reverse' : 'row')};
   gap: 100px;
   justify-content: space-between;
   align-items: center;
