@@ -5,8 +5,10 @@
 :root {
   --main-background: #050505;
   --main-foreground: #ede8ec;
-  --cta: #f4f4f4;
+
+  --cta-background: #f4f4f4;
   --cta-foreground: #121212;
+
   --blue: #4967fd;
   --purple: #8d5ac5;
 }
@@ -45,4 +47,13 @@ body {
 
 .light-noise-background {
   background: url(/clear_noise_texture.png) repeat;
+}
+
+.gradient-bold {
+  background: linear-gradient(91deg, var(--purple) 32.12%, var(--blue) 95.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-body);
+  font-weight: 700;
 }
