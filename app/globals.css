@@ -3,25 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --main-background: #050505;
+  --main-foreground: #ede8ec;
 
+  --cta-background: #f4f4f4;
+  --cta-foreground: #121212;
+
+  --blue: #4967fd;
+  --purple: #8d5ac5;
+}
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--main-background);
+  color: var(--main-foreground);
+}
+
+.blue-noise-background {
+  background: url(/dark_noise_texture.png) repeat,
+    radial-gradient(
+      256.07% 93.91% at 68.72% 78.49%,
+      rgba(73, 103, 253, 0.2) 0%,
+      rgba(73, 103, 253, 0) 100%
+    ),
+    radial-gradient(
+      61.46% 121.01% at 93.21% 58.5%,
+      rgba(141, 90, 197, 0.2) 0%,
+      rgba(141, 90, 197, 0) 100%
+    ),
+    radial-gradient(
+      70.46% 20.36% at 64.23% 12.9%,
+      rgba(73, 103, 253, 0.34) 0%,
+      rgba(73, 103, 253, 0) 100%
+    );
+}
+
+.light-noise-background {
+  background: url(/clear_noise_texture.png) repeat;
+}
+
+.gradient-bold {
+  background: linear-gradient(91deg, var(--purple) 32.12%, var(--blue) 95.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-body);
+  font-weight: 700;
 }
