@@ -48,3 +48,12 @@ body {
 .light-noise-background {
   background: url(/clear_noise_texture.png) repeat;
 }
+
+.gradient-bold {
+  background: linear-gradient(91deg, var(--purple) 32.12%, var(--blue) 95.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-body);
+  font-weight: 700;
+}
