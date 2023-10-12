@@ -5,8 +5,10 @@
 :root {
   --main-background: #050505;
   --main-foreground: #ede8ec;
-  --cta: #f4f4f4;
+
+  --cta-background: #f4f4f4;
   --cta-foreground: #121212;
+
   --blue: #4967fd;
   --purple: #8d5ac5;
 }
