@@ -1,3 +1,5 @@
+import AboutUs from "@/components/AboutUs";
+
 export default function Home() {
   return (
     <main>
@@ -9,6 +11,7 @@ export default function Home() {
         <h1 className='font-header'>Hello world</h1>
         <p className='font-body'>Hello world paragraph</p>
       </section>
+      <AboutUs />
     </main>
   );
 }
