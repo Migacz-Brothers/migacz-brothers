@@ -25,10 +25,14 @@ const config: Config = {
     backgroundColor: {
       main: '--main-background',
       cta: '--cta-background',
+      tag: 'rgba(255, 255, 255, 0.10)',
     },
     lineHeight: {
       header: '128%',
       body: '128%',
+    },
+    backdropBlur: {
+      xsm: '1px',
     },
     colors: {
       main: '--main-foreground',
