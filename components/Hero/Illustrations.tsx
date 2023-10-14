@@ -1,0 +1,84 @@
+'use client';
+
+import { h1, p, section } from '@/components/design-system';
+import cn from 'clsx';
+import Image from 'next/image';
+
+import hero1 from '@/public/hero/1.png';
+import hero2 from '@/public/hero/2.png';
+import hero3 from '@/public/hero/3.png';
+import hero4 from '@/public/hero/4.png';
+import { AnimatePresence, motion, useAnimate } from 'framer-motion';
+import { useEffect, useState } from 'react';
+
+const imagesList = [hero1, hero2, hero3, hero4];
+
+export default function Illustrations() {
+  const [current, setCurrent] = useState(0);
+  const list = [...imagesList, ...imagesList];
+  // const illustrationList = [hero1, hero2, hero3, hero4];
+
+  const nextIllustration = () => {
+    setCurrent((curr) => curr - 1);
+    console.log(current);
+  };
+
+  return (
+    <aside className='w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden'>
+      <button
+        onClick={nextIllustration}
+        className='bg-[#ff0000] absolute top-2 right-2'
+      >
+        Update
+      </button>
+      <ul className='relative w-[47.6%] h-full grid place-items-center'>
+        <AnimatePresence>
+          {list.map((image, key) => {
+            const position = key - current - 4;
+
+            const dislocation = 27 - position * 18;
+            const darkness = position === 3 ? 100 : 40 + position * 10;
+
+            return position > 3 || position < 0 ? null : (
+              <motion.li
+                className='rounded-[4px] absolute overflow-hidden'
+                initial={{
+                  opacity: 0,
+                  x: 300,
+                  y: dislocation,
+                  filter: `brightness(${darkness}%)`,
+                  zIndex: 1,
+                }}
+                transition={{ delay: position === 0 ? 0.2 : 0 }}
+                animate={{
+                  x: dislocation,
+                  y: dislocation,
+                  filter: `brightness(${darkness}%)`,
+                  opacity: 1,
+                  zIndex: 2,
+                }}
+                exit={{
+                  y: -27,
+                  opacity: 0,
+                  x: -300,
+                  zIndex: 3,
+                }}
+                key={`hero_${key}`}
+              >
+                <Image
+                  width={212}
+                  height={458}
+                  src={image}
+                  alt='ASDOSDGFSD'
+                  onClick={() => {
+                    console.log(`position = ${position}`);
+                  }}
+                />
+              </motion.li>
+            );
+          })}
+        </AnimatePresence>
+      </ul>
+    </aside>
+  );
+}

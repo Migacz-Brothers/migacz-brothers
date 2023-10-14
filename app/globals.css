@@ -57,3 +57,7 @@ body {
   font-family: var(--font-body);
   font-weight: 700;
 }
+
+.hero-background {
+  background: linear-gradient(151deg, var(--purple) 7.81%, var(--blue) 100%);
+}
