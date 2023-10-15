@@ -8,8 +8,8 @@ import hero1 from "@/public/hero/1.png";
 import hero2 from "@/public/hero/2.png";
 import hero3 from "@/public/hero/3.png";
 import hero4 from "@/public/hero/4.png";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const imagesList = [hero1, hero2, hero3, hero4];
 
@@ -20,6 +20,14 @@ export default function Illustrations() {
   const nextIllustration = () => {
     setCurrent((curr) => (curr - 1) % 8);
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextIllustration();
+    }, 4000);
+
+    return () => clearInterval(intervalId); //This is important
+  }, []);
 
   return (
     <aside className='w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden'>
@@ -49,7 +57,10 @@ export default function Illustrations() {
                   filter: `brightness(${darkness}%)`,
                   zIndex: 1,
                 }}
-                transition={{ delay: position === 0 ? 0.2 : 0 }}
+                transition={{
+                  delay: position === 0 ? 0.2 : 0,
+                  type: "linear",
+                }}
                 animate={{
                   x: dislocation,
                   y: dislocation,
@@ -62,6 +73,9 @@ export default function Illustrations() {
                   opacity: 0,
                   x: -300,
                   zIndex: 20,
+                  transition: {
+                    ease: "circOut",
+                  },
                 }}
                 key={`hero_${key}`}
               >
@@ -70,6 +84,7 @@ export default function Illustrations() {
                   height={458}
                   src={image}
                   alt='ASDOSDGFSD'
+                  quality={100}
                   // onClick={() => {
                   // }}
                 />
