@@ -24,6 +24,15 @@ const config: Config = {
       padding: {
         18: "4.5rem",
       },
+      animation: {
+        "pulse-fast": "pulse 1000ms linear infinite",
+      },
+      keyframes: {
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.85" },
+        },
+      },
     },
     fontFamily: {
       header: "var(--font-header)",

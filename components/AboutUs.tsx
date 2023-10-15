@@ -77,7 +77,7 @@ const SocialLink = ({ children, className, text }: SocialLinkProps) => {
   return (
     <li
       className={cn(
-        "rounded-[4px] font-body text-xs lg:text-base leading-[12px]",
+        "rounded-[4px] font-body text-xs lg:text-base leading-[12px] hover:brightness-90 hover:underline duration-300",
         className
       )}
     >
