@@ -19,6 +19,7 @@ const config: Config = {
       },
       screens: {
         lg: "1180px",
+        xsm: "400px",
       },
     },
     fontFamily: {
