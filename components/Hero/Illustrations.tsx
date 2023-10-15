@@ -13,7 +13,11 @@ import { useEffect, useState } from "react";
 
 const imagesList = [hero1, hero2, hero3, hero4];
 
-export default function Illustrations() {
+interface IllustrationsProps {
+  className: string;
+}
+
+export default function Illustrations({ className }: IllustrationsProps) {
   const [current, setCurrent] = useState(0);
   const list = [...imagesList, ...imagesList];
 
@@ -30,7 +34,12 @@ export default function Illustrations() {
   }, []);
 
   return (
-    <aside className='w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden'>
+    <aside
+      className={cn(
+        "w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden",
+        className
+      )}
+    >
       <button
         onClick={nextIllustration}
         className='bg-[#ff0000] absolute top-2 right-2'
