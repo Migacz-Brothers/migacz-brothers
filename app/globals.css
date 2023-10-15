@@ -57,3 +57,7 @@ body {
   font-family: var(--font-body);
   font-weight: 700;
 }
+
+.nav-background {
+  background: linear-gradient(90deg, #8d5ac5 0%, #4967fd 100%);
+}
