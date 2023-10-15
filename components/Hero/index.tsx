@@ -41,7 +41,7 @@ const Cta = () => {
     <Link
       href='#'
       className={cn(
-        "group bg-cta text-cta py-[3px] pr-[3px] md:pl-4 pl-2 w-full md:rounded-2xl rounded-lg flex items-center mb-4 lg:mb-0"
+        "group hover:brightness-90 duration-300 bg-cta text-cta py-[3px] pr-[3px] md:pl-4 pl-2 w-full md:rounded-2xl rounded-lg flex items-center mb-4 lg:mb-0"
       )}
     >
       <span className='font-body text-sm md:text-base'>
@@ -50,7 +50,7 @@ const Cta = () => {
           hello@migaczbrothers.com
         </strong>
       </span>
-      <div className='cta-button-gradient md:w-14 md:h-14 xsm:w-8 xsm:h-8 w-11 h-11 aspect-square grid place-items-center md:rounded-[13px] rounded-[5px] ml-auto group-hover:animate-pulse-fast'>
+      <div className='cta-button-gradient md:w-14 md:h-14 xsm:w-8 xsm:h-8 w-11 h-11 aspect-square grid place-items-center md:rounded-[13px] rounded-[5px] ml-auto group-hover:brightness-125 duration-300'>
         <ArrowUpRight
           size={36}
           strokeWidth={2.5}
