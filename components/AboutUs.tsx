@@ -1,31 +1,40 @@
 ////////////Images and Svgs
-import AboutUsImage from '@/public/images/AboutUsImage.png';
-import { BookOpen, Dribbble, Instagram, Linkedin } from 'lucide-react';
-import BehanceIcon from '@/components/svgs/BehanceIcon';
+import AboutUsImage from "@/public/images/AboutUsImage.png";
+import { BookOpen, Dribbble, Instagram, Linkedin } from "lucide-react";
+import BehanceIcon from "@/components/svgs/BehanceIcon";
 
 ////////////Images and Svgs
-import Image from 'next/image';
-import Link from 'next/link';
-import cn from 'clsx';
-import { ReactNode } from 'react';
-import { h2, p } from './design-system';
+import Image from "next/image";
+import Link from "next/link";
+import cn from "clsx";
+import { ReactNode } from "react";
+import { h2, p, section } from "./design-system";
 
 export default function AboutUs() {
   return (
-    <section>
-      <div className='max-w-[1264px] mx-auto lg:px-4 px-8 flex lg:flex-row flex-col justify-between ld:gap-8 gap-4 items-baseline lg:items-center w-fit lg:w-full'>
-        <Image src={AboutUsImage} alt={'A photo about group pro working'} />
-        <div className='max-w-[446px]'>
+    <div className='light-noise-background md:pb-16 pb-9'>
+      <section
+        className={cn(
+          section,
+          "flex lg:flex-row flex-col justify-between ld:gap-8 gap-4 items-start lg:items-center lg:w-full"
+        )}
+      >
+        <Image
+          src={AboutUsImage}
+          alt={"Migacz Borthers team during a meeting"}
+          className='md:rounded-2xl rounded-lg'
+        />
+        <div className='max-w-[445px]'>
           <div>
-            <h2 className={cn(h2, '-mb-[2px]')}>About Us</h2>
+            <h2 className={cn(h2, "-mb-[2px]")}>About Us</h2>
             <h3
               className={
-                'font-header text-main leading-header text-base md:text-lg'
+                "font-header text-main leading-header text-base md:text-lg"
               }
             >
               Design & Code
             </h3>
-            <p className={cn(p, 'mt-2 lg:mt-[24px] lg:mb-[41px] ')}>
+            <p className={cn(p, "mt-2 lg:mt-[24px] lg:mb-[41px] ")}>
               We are a small cooperative company from South Brazil with an
               international team of professionals who have joined forces to
               create unique products for the web.
@@ -53,8 +62,8 @@ export default function AboutUs() {
             </SocialLink>
           </ul>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
@@ -68,12 +77,12 @@ const SocialLink = ({ children, className, text }: SocialLinkProps) => {
   return (
     <li
       className={cn(
-        'rounded-[4px] font-body text-xs lg:text-base leading-[12px]',
+        "rounded-[4px] font-body text-xs lg:text-base leading-[12px]",
         className
       )}
     >
       <Link
-        href={'#'}
+        href={"#"}
         className='w-full h-full flex flex-row gap-1 items-center'
       >
         <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] rounded-[4px] grid place-items-center'>

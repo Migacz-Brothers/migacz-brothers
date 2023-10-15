@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className='light-noise-background py-32'>
+    <div className='light-noise-background md:py-32 py-18'>
       <section
         className={cn(
           section,
@@ -22,7 +22,7 @@ export default function Hero() {
             <strong className='gradient-bold'>digital products</strong>.
           </h1>
         </div>
-        <div className='self-start flex lg:flex-col flex-col-reverse max-w-[534px] w-full mr-4 lg:order-1 order-2 lg:mb-[95px] mb-0'>
+        <div className='self-start flex lg:flex-col flex-col-reverse max-w-[445px] w-full mr-4 lg:order-1 order-2 lg:mb-[95px] mb-0'>
           <p className={cn(p, "font-medium lg:mb-16 mb-0 max-w-[434px]")}>
             Get access to high-end designers, frontend and backend developers,
             branding specialists, and much more in a{" "}

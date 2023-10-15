@@ -21,6 +21,9 @@ const config: Config = {
         lg: "1180px",
         xsm: "400px",
       },
+      padding: {
+        18: "4.5rem",
+      },
     },
     fontFamily: {
       header: "var(--font-header)",
