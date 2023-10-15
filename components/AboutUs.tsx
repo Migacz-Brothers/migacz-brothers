@@ -1,82 +1,56 @@
 ////////////Images and Svgs
 import AboutUsImage from '@/public/images/AboutUsImage.png';
-import BeIcon from '@/public/svgs/BeIcon';
-import BookOpenIcon from '@/public/svgs/BookOpenIcon';
-import DribbbleIcon from '@/public/svgs/DribbbleIcon';
-import InstagramIcon from '@/public/svgs/InstagramIcon';
-import LinkedinIcon from '@/public/svgs/LinkedinIcon';
+import { BookOpen, Dribbble, Instagram, Linkedin } from 'lucide-react';
+import BehanceIcon from '@/components/svgs/BehanceIcon';
 
 ////////////Images and Svgs
 import Image from 'next/image';
 import Link from 'next/link';
+import cn from 'clsx';
+import { ReactNode } from 'react';
+import { h2, p } from './design-system';
 
 export default function AboutUs() {
   return (
     <section>
-      <div className='max-w-[1264px] mx-auto px-4'>
+      <div className='max-w-[1264px] mx-auto lg:px-4 px-8 flex lg:flex-row flex-col justify-between ld:gap-8 gap-4 items-baseline lg:items-center w-fit lg:w-full'>
         <Image src={AboutUsImage} alt={'A photo about group pro working'} />
-        <div>
-          <h2>About Us</h2>
-          <h3>Design & Code</h3>
-          <p>
-            We are a small cooperative company from South Brazil with an
-            international team of professionals who have joined forces to create
-            unique products for the web.
-          </p>
-          <ul className='flex md:gap-2 gap-[6px] pt-2'>
-            <li>
-              <Link
-                href={''}
-                className='w-10 h-10 md:w-[54px] md:h-[54px] rounded-[4px] bg-[#3367CC] grid place-items-center'
-              >
-                <div className='scale-75 md:scale-100'>
-                  <BeIcon />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={''}
-                className='w-10 h-10 md:w-[54px] md:h-[54px] rounded-[4px] bg-[#2966A3] grid place-items-center'
-              >
-                <div className='scale-75 md:scale-100'>
-                  <LinkedinIcon />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={''}
-                className='w-10 h-10 md:w-[54px] md:h-[54px] rounded-[4px] bg-[#7F55B6] grid place-items-center'
-              >
-                <div className='scale-75 md:scale-100'>
-                  <InstagramIcon />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={''}
-                className='w-10 h-10 md:w-[54px] md:h-[54px] rounded-[4px] bg-[#B35598] grid place-items-center'
-              >
-                <div className='scale-75 md:scale-100'>
-                  <DribbbleIcon />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={''}
-                className='min-w-[144px] h-10 md:h-[54px] md:w rounded-[4px] bg-white block'
-              >
-                <div className='scale-75 md:scale-100 flex h-full items-center '>
-                  <div className='pl-[10px] pr-3'>
-                    <BookOpenIcon />
-                  </div>
-                  <p className='text-black pr-3 font-header'>Or read more</p>
-                </div>
-              </Link>
-            </li>
+        <div className='max-w-[446px]'>
+          <div>
+            <h2 className={cn(h2, '-mb-[2px]')}>About Us</h2>
+            <h3
+              className={
+                'font-header text-main leading-header text-base md:text-lg'
+              }
+            >
+              Design & Code
+            </h3>
+            <p className={cn(p, 'mt-2 lg:mt-[24px] lg:mb-[41px] ')}>
+              We are a small cooperative company from South Brazil with an
+              international team of professionals who have joined forces to
+              create unique products for the web.
+            </p>
+          </div>
+
+          <ul className='flex lg:gap-2 gap-[6px] pt-2'>
+            <SocialLink className='bg-[#3367CC]'>
+              <BehanceIcon />
+            </SocialLink>
+            <SocialLink className='bg-[#2966A3]'>
+              <Linkedin size={32} strokeWidth={1.5} />
+            </SocialLink>
+            <SocialLink className='bg-[#7F55B6]'>
+              <Instagram size={32} strokeWidth={1.5} />
+            </SocialLink>
+            <SocialLink className='bg-[#B35598]'>
+              <Dribbble size={32} strokeWidth={1.5} />
+            </SocialLink>
+            <SocialLink
+              className='bg-[#F4F4F4] text-[#121212] pr-2 flex-1'
+              text='Or read more'
+            >
+              <BookOpen size={32} strokeWidth={1.5} />
+            </SocialLink>
           </ul>
         </div>
       </div>
@@ -84,37 +58,29 @@ export default function AboutUs() {
   );
 }
 
-interface ButtonsLinkProps {
-  svg: string;
+interface SocialLinkProps {
+  children: ReactNode;
+  className: string;
+  text?: string;
 }
 
-const ButtonsLink = ({ svg }: ButtonsLinkProps) => {
+const SocialLink = ({ children, className, text }: SocialLinkProps) => {
   return (
-    <li>
+    <li
+      className={cn(
+        'rounded-[4px] font-body text-xs lg:text-base leading-[12px]',
+        className
+      )}
+    >
       <Link
-        href={''}
-        className='w-10 h-10 md:w-[54px] md:h-[54px] rounded-[4px] bg-[#3367CC] grid place-items-center'
+        href={'#'}
+        className='w-full h-full flex flex-row gap-1 items-center'
       >
-        <div className='scale-75 md:scale-100'>{svg}</div>
+        <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] rounded-[4px] grid place-items-center'>
+          {children}
+        </div>
+        {text}
       </Link>
     </li>
   );
 };
-
-// const ContactLink = ({ label, linkText, link }: ContactLinkProps) => {
-//   return (
-//     <li className='gap-[21px] flex'>
-//       <div className='text-sm lg:text-base text-grey-100 min-w-[75px]'>
-//         {label}
-//       </div>
-//       <Link
-//         href={link}
-//         target='_blank'
-//         rel='noopener noreferrer'
-//         className='text-white text-sm lg:text-base max-w-[250px]'
-//       >
-//         {linkText}
-//       </Link>
-//     </li>
-//   );
-// };
