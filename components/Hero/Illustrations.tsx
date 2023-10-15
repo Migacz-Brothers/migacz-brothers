@@ -36,7 +36,7 @@ export default function Illustrations({ className }: IllustrationsProps) {
   return (
     <aside
       className={cn(
-        "w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden",
+        "max-w-full w-[445px] h-[580px] hero-background rounded-2xl grid place-items-center overflow-hidden",
         className
       )}
     >
