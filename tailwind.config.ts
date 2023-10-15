@@ -34,6 +34,9 @@ const config: Config = {
         },
       },
     },
+    boxShadow: {
+      bright: "2px 3px 24px 4px #ffffff6f",
+    },
     fontFamily: {
       header: "var(--font-header)",
       body: "var(--font-body)",
