@@ -9,16 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        sm: "0.875rem",
-        base: "1rem",
-        xl: "1.25rem",
-        "2xl": "1.5rem",
-        "3xl": "1.75rem",
-        "4xl": "2.5rem",
-        "5xl": "3.052rem",
-      },
-      height: {
-        15: "5rem",
+        sm: '0.875rem',
+        base: '1rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.75rem',
+        '4xl': '2.5rem',
+        '5xl': '3rem',
       },
     },
     fontFamily: {
@@ -32,8 +29,8 @@ const config: Config = {
     },
 
     lineHeight: {
-      header: "128%",
-      body: "128%",
+      header: '128%',
+      body: '160%',
     },
     backdropBlur: {
       xsm: "1px",
