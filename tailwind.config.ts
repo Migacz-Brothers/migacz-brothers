@@ -1,10 +1,10 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -19,24 +19,25 @@ const config: Config = {
       },
     },
     fontFamily: {
-      header: 'var(--font-header)',
-      body: 'var(--font-body)',
+      header: "var(--font-header)",
+      body: "var(--font-body)",
     },
     backgroundColor: {
-      main: '--main-background',
-      cta: '--cta-background',
-      tag: 'rgba(255, 255, 255, 0.10)',
+      main: "var(--main-background)",
+      cta: "var(--cta-background)",
+      tag: "rgba(255, 255, 255, 0.10)",
     },
+
     lineHeight: {
       header: '128%',
       body: '160%',
     },
     backdropBlur: {
-      xsm: '1px',
+      xsm: "1px",
     },
     colors: {
-      main: '--main-foreground',
-      cta: '--cta-foreground',
+      main: "var(--main-foreground)",
+      cta: "var(--cta-foreground)",
     },
   },
   plugins: [],

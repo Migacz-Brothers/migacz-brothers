@@ -57,3 +57,16 @@ body {
   font-family: var(--font-body);
   font-weight: 700;
 }
+
+.hero-background {
+  background: linear-gradient(151deg, var(--purple) 7.81%, var(--blue) 100%);
+}
+
+.cta-button-gradient {
+  background: linear-gradient(
+    180deg,
+    #000 0%,
+    var(--purple) 0.01%,
+    var(--blue) 100%
+  );
+}
