@@ -1,26 +1,24 @@
-'use client';
+"use client";
 
-import { h1, p, section } from '@/components/design-system';
-import cn from 'clsx';
-import Image from 'next/image';
+import { h1, p, section } from "@/components/design-system";
+import cn from "clsx";
+import Image from "next/image";
 
-import hero1 from '@/public/hero/1.png';
-import hero2 from '@/public/hero/2.png';
-import hero3 from '@/public/hero/3.png';
-import hero4 from '@/public/hero/4.png';
-import { AnimatePresence, motion, useAnimate } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import hero1 from "@/public/hero/1.png";
+import hero2 from "@/public/hero/2.png";
+import hero3 from "@/public/hero/3.png";
+import hero4 from "@/public/hero/4.png";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 
 const imagesList = [hero1, hero2, hero3, hero4];
 
 export default function Illustrations() {
   const [current, setCurrent] = useState(0);
   const list = [...imagesList, ...imagesList];
-  // const illustrationList = [hero1, hero2, hero3, hero4];
 
   const nextIllustration = () => {
-    setCurrent((curr) => curr - 1);
-    console.log(current);
+    setCurrent((curr) => (curr - 1) % 8);
   };
 
   return (
@@ -34,12 +32,14 @@ export default function Illustrations() {
       <ul className='relative w-[47.6%] h-full grid place-items-center'>
         <AnimatePresence>
           {list.map((image, key) => {
-            const position = key - current - 4;
+            const position = (key - current) % 8;
+
+            if (position < 0 || position > 3) return null;
 
             const dislocation = 27 - position * 18;
             const darkness = position === 3 ? 100 : 40 + position * 10;
 
-            return position > 3 || position < 0 ? null : (
+            return (
               <motion.li
                 className='rounded-[4px] absolute overflow-hidden'
                 initial={{
@@ -55,13 +55,13 @@ export default function Illustrations() {
                   y: dislocation,
                   filter: `brightness(${darkness}%)`,
                   opacity: 1,
-                  zIndex: 2,
+                  zIndex: position,
                 }}
                 exit={{
                   y: -27,
                   opacity: 0,
                   x: -300,
-                  zIndex: 3,
+                  zIndex: 20,
                 }}
                 key={`hero_${key}`}
               >
@@ -70,9 +70,8 @@ export default function Illustrations() {
                   height={458}
                   src={image}
                   alt='ASDOSDGFSD'
-                  onClick={() => {
-                    console.log(`position = ${position}`);
-                  }}
+                  // onClick={() => {
+                  // }}
                 />
               </motion.li>
             );
