@@ -58,6 +58,9 @@ body {
   font-weight: 700;
 }
 
+.nav-background {
+  background: linear-gradient(90deg, #8d5ac5 0%, #4967fd 100%);
+
 .hero-background {
   background: linear-gradient(151deg, var(--purple) 7.81%, var(--blue) 100%);
 }
