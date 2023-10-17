@@ -6,6 +6,7 @@ import { MouseEventHandler, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import cn from 'clsx';
 //////LibraryImports
+import { section } from '../design-system';
 
 //////IconsImports
 import NavbarIcon from '../svgs/NavbarIcon';
@@ -36,7 +37,7 @@ export default function Navbar() {
           // 'bg-[#ffffff10]'
         )}
       >
-        <div className='max-w-[1264px] mx-auto lg:px-4 px-8 flex justify-between'>
+        <div className={cn(section, 'flex justify-between')}>
           <Link href={'#'}>
             <NavbarIcon />
           </Link>
