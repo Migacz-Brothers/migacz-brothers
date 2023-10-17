@@ -13,7 +13,7 @@ export const Tags = ({ tagList }: TagsProps) => (
     {tagList.map((tag, i) => (
       <li
         key={`tag-${i}-${tag}`}
-        className='font-header text-main leading-header text-xs md:text-base px-[12px] md:px-[25px] py-[3px] md:py-[5px] rounded md:rounded-lg bg-tag backdrop-blur-xsm outline outline-1 md:outline-2 -outline-offset-1 md:-outline-offset-1'
+        className='font-header text-main leading-header text-xs md:text-base px-[12px] md:px-[25px] py-[3px] md:py-[5px] rounded md:rounded-lg bg-tag backdrop-blur-xsm outline outline-1 md:outline-2 -outline-offset-1 md:-outline-offset-1 group-hover:bg-tag-hover duration-300'
       >
         {tag}
       </li>

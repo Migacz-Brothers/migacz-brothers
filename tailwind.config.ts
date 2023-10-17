@@ -17,16 +17,37 @@ const config: Config = {
         '4xl': '2.5rem',
         '5xl': '3rem',
       },
+      screens: {
+        lg: '1180px',
+        xsm: '400px',
+      },
+      padding: {
+        18: '4.5rem',
+      },
+      animation: {
+        'pulse-fast': 'pulse 1000ms linear infinite',
+      },
+      keyframes: {
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' },
+        },
+      },
+    },
+    boxShadow: {
+      bright: '2px 3px 24px 4px #ffffff6f',
     },
     fontFamily: {
       header: 'var(--font-header)',
       body: 'var(--font-body)',
     },
     backgroundColor: {
-      main: '--main-background',
-      cta: '--cta-background',
+      main: 'var(--main-background)',
+      cta: 'var(--cta-background)',
       tag: 'rgba(255, 255, 255, 0.10)',
+      'tag-hover': 'rgba(255, 255, 255, 0.20)',
     },
+
     lineHeight: {
       header: '128%',
       body: '160%',
@@ -35,8 +56,8 @@ const config: Config = {
       xsm: '1px',
     },
     colors: {
-      main: '--main-foreground',
-      cta: '--cta-foreground',
+      main: 'var(--main-foreground)',
+      cta: 'var(--cta-foreground)',
     },
   },
   plugins: [],
