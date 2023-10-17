@@ -3,6 +3,8 @@
 //////LibraryImports
 import Link from 'next/link';
 import { MouseEventHandler, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import cn from 'clsx';
 //////LibraryImports
 
 //////IconsImports
@@ -28,16 +30,21 @@ export default function Navbar() {
   return (
     <>
       {/* nav desktop */}
-      <nav className='w-full bg-[#ffffff10] fixed top-0 left-0 py-6 z-[9999]'>
+      <nav
+        className={cn(
+          'w-full fixed top-0 left-0 py-6 z-[9999]'
+          // 'bg-[#ffffff10]'
+        )}
+      >
         <div className='max-w-[1264px] mx-auto lg:px-4 px-8 flex justify-between'>
           <Link href={'#'}>
             <NavbarIcon />
           </Link>
 
           <ul className='md:flex items-center gap-12 hidden'>
-            <NavLinks href='#'>Home</NavLinks>
-            <NavLinks href='#'>About Us</NavLinks>
-            <NavLinks href='#'>Portofolio</NavLinks>
+            <NavLink href='#'>Home</NavLink>
+            <NavLink href='#'>About Us</NavLink>
+            <NavLink href='#'>Portofolio</NavLink>
             <Link
               href={'#'}
               className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
@@ -56,51 +63,121 @@ export default function Navbar() {
       </nav>
 
       {/* mobile navmenu */}
-      <div>
+      <AnimatePresence>
         {mobileOpen ? (
-          <div className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden'>
+          <motion.div
+            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden'
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
+          >
             <ul className='flex flex-col gap-8 mb-10'>
-              <NavMobileLinks href='#' onClick={closeNavbar}>
+              <NavMobileLink href='#' onClick={closeNavbar} delay={0.1}>
                 Home
-              </NavMobileLinks>
-              <NavMobileLinks href='#' onClick={closeNavbar}>
+              </NavMobileLink>
+              <NavMobileLink href='#' onClick={closeNavbar} delay={0.2}>
                 About Us
-              </NavMobileLinks>
-              <NavMobileLinks href='#' onClick={closeNavbar}>
+              </NavMobileLink>
+              <NavMobileLink href='#' onClick={closeNavbar} delay={0.3}>
                 Portfolio
-              </NavMobileLinks>
-            </ul>
-            <ul>
-              <li className='flex justify-center items-center'>
-                <Link href='#' onClick={closeNavbar} target='_blank'>
-                  <BehanceMobileIcon />
-                </Link>
-                <Link href='#' onClick={closeNavbar} target='_blank'>
-                  <InstagramMobileIcon />
-                </Link>
-                <Link href='#' onClick={closeNavbar} target='_blank'>
-                  <LinkedinMobileIcon />
-                </Link>
-                <Link href='#' onClick={closeNavbar} target='_blank'>
-                  <DribbbleMobileIcon />
-                </Link>
+              </NavMobileLink>
+              <li>
+                <ul className='flex justify-center items-center'>
+                  <motion.li
+                    initial={{
+                      y: 60,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                    }}
+                    transition={{
+                      delay: 0.4,
+                    }}
+                  >
+                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                      <BehanceMobileIcon />
+                    </Link>
+                  </motion.li>
+                  <motion.li
+                    initial={{
+                      y: 60,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                    }}
+                    transition={{
+                      delay: 0.5,
+                    }}
+                  >
+                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                      <InstagramMobileIcon />
+                    </Link>
+                  </motion.li>
+                  <motion.li
+                    initial={{
+                      y: 60,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                    }}
+                    transition={{
+                      delay: 0.6,
+                    }}
+                  >
+                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                      <LinkedinMobileIcon />
+                    </Link>
+                  </motion.li>
+                  <motion.li
+                    initial={{
+                      y: 60,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                    }}
+                    transition={{
+                      delay: 0.7,
+                    }}
+                  >
+                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                      <DribbbleMobileIcon />
+                    </Link>
+                  </motion.li>
+                </ul>
               </li>
             </ul>
-          </div>
+          </motion.div>
         ) : null}
-      </div>
+      </AnimatePresence>
 
       {/* mobile navmenu */}
     </>
   );
 }
 
-interface NavLinksProps {
+interface NavLinkProps {
   children: string;
   href: string;
 }
 
-const NavLinks = ({ children, href }: NavLinksProps) => {
+const NavLink = ({ children, href }: NavLinkProps) => {
   return (
     <li>
       <Link
@@ -114,15 +191,33 @@ const NavLinks = ({ children, href }: NavLinksProps) => {
   );
 };
 
-interface NavMobileLinksProps {
+interface NavMobileLinkProps {
   children: string;
   href: string;
   onClick: MouseEventHandler<HTMLAnchorElement>;
+  delay: number;
 }
 
-const NavMobileLinks = ({ children, href, onClick }: NavMobileLinksProps) => {
+const NavMobileLink = ({
+  children,
+  href,
+  onClick,
+  delay,
+}: NavMobileLinkProps) => {
   return (
-    <li>
+    <motion.li
+      initial={{
+        y: 60,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        delay: delay,
+      }}
+    >
       <Link
         href={href}
         className='inline-block text-[#ffffff] font-header font-semibold text-[54px]'
@@ -130,6 +225,6 @@ const NavMobileLinks = ({ children, href, onClick }: NavMobileLinksProps) => {
       >
         {children}
       </Link>
-    </li>
+    </motion.li>
   );
 };
