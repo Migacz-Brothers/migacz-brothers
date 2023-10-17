@@ -35,15 +35,9 @@ export default function Navbar() {
           </Link>
 
           <ul className='md:flex items-center gap-12 hidden'>
-            <NavLinks href='#' onClick={closeNavbar}>
-              Home
-            </NavLinks>
-            <NavLinks href='#' onClick={closeNavbar}>
-              About Us
-            </NavLinks>
-            <NavLinks href='#' onClick={closeNavbar}>
-              Portofolio
-            </NavLinks>
+            <NavLinks href='#'>Home</NavLinks>
+            <NavLinks href='#'>About Us</NavLinks>
+            <NavLinks href='#'>Portofolio</NavLinks>
             <Link
               href={'#'}
               className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
@@ -78,16 +72,16 @@ export default function Navbar() {
             </ul>
             <ul>
               <li className='flex justify-center items-center'>
-                <Link href='#'>
+                <Link href='#' onClick={closeNavbar} target='_blank'>
                   <BehanceMobileIcon />
                 </Link>
-                <Link href='#'>
+                <Link href='#' onClick={closeNavbar} target='_blank'>
                   <InstagramMobileIcon />
                 </Link>
-                <Link href='#'>
+                <Link href='#' onClick={closeNavbar} target='_blank'>
                   <LinkedinMobileIcon />
                 </Link>
-                <Link href='#'>
+                <Link href='#' onClick={closeNavbar} target='_blank'>
                   <DribbbleMobileIcon />
                 </Link>
               </li>
@@ -104,16 +98,14 @@ export default function Navbar() {
 interface NavLinksProps {
   children: string;
   href: string;
-  onClick: MouseEventHandler<HTMLAnchorElement>;
 }
 
-const NavLinks = ({ children, href, onClick }: NavLinksProps) => {
+const NavLinks = ({ children, href }: NavLinksProps) => {
   return (
     <li>
       <Link
         href={href}
         className='inline-block text-[#ffffff] font-header font-medium text-lg group'
-        onClick={onClick}
       >
         {children}
         <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
