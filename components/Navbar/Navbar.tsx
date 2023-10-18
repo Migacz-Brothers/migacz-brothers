@@ -48,20 +48,22 @@ export default function Navbar() {
         )}
       >
         <div className={cn(section, 'flex justify-between')}>
-          <Link href={'#'}>
+          <a href={'#home'}>
             <NavbarIcon />
-          </Link>
+          </a>
 
           <ul className='md:flex items-center gap-12 hidden'>
             <NavLink href='#home'>Home</NavLink>
             <NavLink href='#about'>About Us</NavLink>
             <NavLink href='#portfolio'>Portofolio</NavLink>
-            <Link
-              href={'#contact'}
-              className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
-            >
-              Contact Us
-            </Link>
+            <li>
+              <a
+                href={'#contact'}
+                className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
 
           {/* nav mobile */}
@@ -196,13 +198,13 @@ interface NavLinkProps {
 const NavLink = ({ children, href }: NavLinkProps) => {
   return (
     <li>
-      <Link
+      <a
         href={href}
         className='inline-block text-[#ffffff] font-header font-medium text-lg group'
       >
         {children}
         <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
-      </Link>
+      </a>
     </li>
   );
 };
@@ -234,13 +236,13 @@ const NavMobileLink = ({
         delay: delay,
       }}
     >
-      <Link
+      <a
         href={href}
         className='inline-block text-[#ffffff] font-header font-semibold text-[54px]'
         onClick={onClick}
       >
         {children}
-      </Link>
+      </a>
     </motion.li>
   );
 };
