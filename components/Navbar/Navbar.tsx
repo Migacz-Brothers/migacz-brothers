@@ -3,7 +3,12 @@
 //////LibraryImports
 import Link from 'next/link';
 import { MouseEventHandler, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
 import cn from 'clsx';
 //////LibraryImports
 import { section } from '../design-system';
@@ -19,6 +24,13 @@ import InstagramMobileIcon from '../svgs/InstagramMobileIcon';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    setScrolled(latest > 0);
+  });
 
   const toggleMenu = () => {
     setMobileOpen((prev) => !prev);
@@ -33,8 +45,8 @@ export default function Navbar() {
       {/* nav desktop */}
       <nav
         className={cn(
-          'w-full fixed top-0 left-0 py-6 z-[9999]'
-          // 'bg-[#ffffff10]'
+          'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
+          scrolled && !mobileOpen ? 'navbar-scrolled-bg' : null
         )}
       >
         <div className={cn(section, 'flex justify-between')}>
@@ -53,16 +65,19 @@ export default function Navbar() {
               Contact Us
             </Link>
           </ul>
-          {/* nav desktop */}
 
           {/* nav mobile */}
-          <button className='md:hidden flex' onClick={toggleMenu}>
+          <button
+            className={cn(
+              'md:hidden flex burguer-menu',
+              mobileOpen ? 'burguer-menu-open' : 'burguer-menu-closed'
+            )}
+            onClick={toggleMenu}
+          >
             <BurguerMobileIcon />
           </button>
-          {/* nav mobile */}
         </div>
       </nav>
-
       {/* mobile navmenu */}
       <AnimatePresence>
         {mobileOpen ? (
@@ -167,8 +182,6 @@ export default function Navbar() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-
-      {/* mobile navmenu */}
     </>
   );
 }

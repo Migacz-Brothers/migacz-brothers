@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { h1, p, section } from "@/components/design-system";
-import cn from "clsx";
-import Image from "next/image";
+import { h1, p, section } from '@/components/design-system';
+import cn from 'clsx';
+import Image from 'next/image';
 
-import hero1 from "@/public/hero/1.png";
-import hero2 from "@/public/hero/2.png";
-import hero3 from "@/public/hero/3.png";
-import hero4 from "@/public/hero/4.png";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import hero1 from '@/public/hero/1.png';
+import hero2 from '@/public/hero/2.png';
+import hero3 from '@/public/hero/3.png';
+import hero4 from '@/public/hero/4.png';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const imagesList = [hero1, hero2, hero3, hero4];
 
@@ -36,16 +36,10 @@ export default function Illustrations({ className }: IllustrationsProps) {
   return (
     <aside
       className={cn(
-        "max-w-full w-[445px] md:h-[580px] md:aspect-auto aspect-[89/116] hero-background md:rounded-2xl rounded-lg grid place-items-center overflow-hidden",
+        'max-w-full w-[445px] md:h-[580px] md:aspect-auto aspect-[89/116] hero-background md:rounded-2xl rounded-lg grid place-items-center overflow-hidden',
         className
       )}
     >
-      <button
-        onClick={nextIllustration}
-        className='bg-[#ff0000] absolute top-2 right-2'
-      >
-        Update
-      </button>
       <ul className='relative w-[47.6%] h-full grid place-items-center'>
         <AnimatePresence>
           {list.map((image, key) => {
@@ -68,7 +62,7 @@ export default function Illustrations({ className }: IllustrationsProps) {
                 }}
                 transition={{
                   delay: position === 0 ? 0.2 : 0,
-                  type: "linear",
+                  type: 'linear',
                 }}
                 animate={{
                   x: dislocation,
@@ -83,7 +77,7 @@ export default function Illustrations({ className }: IllustrationsProps) {
                   x: -300,
                   zIndex: 20,
                   transition: {
-                    ease: "circOut",
+                    ease: 'circOut',
                   },
                 }}
                 key={`hero_${key}`}

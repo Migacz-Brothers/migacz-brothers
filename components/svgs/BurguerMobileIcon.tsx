@@ -13,6 +13,7 @@ export default function BurguerMobileIcon() {
         strokeWidth='2.5'
         strokeLinecap='round'
         strokeLinejoin='round'
+        className='topBar'
       />
       <path
         d='M3.75 15.2H26.25'
@@ -20,6 +21,7 @@ export default function BurguerMobileIcon() {
         strokeWidth='2.5'
         strokeLinecap='round'
         strokeLinejoin='round'
+        className='middleBar'
       />
       <path
         d='M3.75 22.7H26.25'
@@ -27,6 +29,7 @@ export default function BurguerMobileIcon() {
         strokeWidth='2.5'
         strokeLinecap='round'
         strokeLinejoin='round'
+        className='bottomBar'
       />
     </svg>
   );

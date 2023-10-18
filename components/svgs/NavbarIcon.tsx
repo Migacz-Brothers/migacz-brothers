@@ -34,8 +34,8 @@ export default function NavbarIcon() {
           y2='38.1207'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#8D5AC5' />
-          <stop offset='1' stop-color='#4967FD' />
+          <stop stopColor='#8D5AC5' />
+          <stop offset='1' stopColor='#4967FD' />
         </linearGradient>
         <linearGradient
           id='paint1_linear_1312_2274'
@@ -45,8 +45,8 @@ export default function NavbarIcon() {
           y2='38.1207'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#8D5AC5' />
-          <stop offset='1' stop-color='#4967FD' />
+          <stop stopColor='#8D5AC5' />
+          <stop offset='1' stopColor='#4967FD' />
         </linearGradient>
         <linearGradient
           id='paint2_linear_1312_2274'
@@ -56,8 +56,8 @@ export default function NavbarIcon() {
           y2='38.1207'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#8D5AC5' />
-          <stop offset='1' stop-color='#4967FD' />
+          <stop stopColor='#8D5AC5' />
+          <stop offset='1' stopColor='#4967FD' />
         </linearGradient>
         <linearGradient
           id='paint3_linear_1312_2274'
@@ -67,8 +67,8 @@ export default function NavbarIcon() {
           y2='38.1207'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#8D5AC5' />
-          <stop offset='1' stop-color='#4967FD' />
+          <stop stopColor='#8D5AC5' />
+          <stop offset='1' stopColor='#4967FD' />
         </linearGradient>
         <clipPath id='clip0_1312_2274'>
           <rect width='90' height='38' fill='white' />
