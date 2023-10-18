@@ -8,6 +8,10 @@ import DietIt from '@/public/portfolio/dietit.png';
 export default function Portfolio() {
   return (
     <div className='blue-noise-background md:pt-16 pt-9'>
+      <span
+        className='opacity-0 h-0 w-0 relative bottom-[136px]'
+        id='portfolio'
+      />
       <section className={cn(section)}>
         <h2 className={cn(h2, 'md:mb-16 mb-6')}>Our Projects Showcase</h2>
         <ul className='grid grid-cols-2 gap-16'>

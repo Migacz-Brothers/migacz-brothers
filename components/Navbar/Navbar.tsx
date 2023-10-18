@@ -10,7 +10,6 @@ import {
   useScroll,
 } from 'framer-motion';
 import cn from 'clsx';
-//////LibraryImports
 import { section } from '../design-system';
 
 //////IconsImports
@@ -20,7 +19,6 @@ import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
 import LinkedinMobileIcon from '../svgs/LinkedinMobileIcon';
 import DribbbleMobileIcon from '../svgs/DribbbleMobileIcon';
 import InstagramMobileIcon from '../svgs/InstagramMobileIcon';
-//////IconsImports
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -55,11 +53,11 @@ export default function Navbar() {
           </Link>
 
           <ul className='md:flex items-center gap-12 hidden'>
-            <NavLink href='#'>Home</NavLink>
-            <NavLink href='#'>About Us</NavLink>
-            <NavLink href='#'>Portofolio</NavLink>
+            <NavLink href='#home'>Home</NavLink>
+            <NavLink href='#about'>About Us</NavLink>
+            <NavLink href='#portfolio'>Portofolio</NavLink>
             <Link
-              href={'#'}
+              href={'#contact'}
               className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
             >
               Contact Us
@@ -97,13 +95,17 @@ export default function Navbar() {
             }}
           >
             <ul className='flex flex-col gap-8 mb-10'>
-              <NavMobileLink href='#' onClick={closeNavbar} delay={0.1}>
+              <NavMobileLink href='#home' onClick={closeNavbar} delay={0.1}>
                 Home
               </NavMobileLink>
-              <NavMobileLink href='#' onClick={closeNavbar} delay={0.2}>
+              <NavMobileLink href='#about' onClick={closeNavbar} delay={0.2}>
                 About Us
               </NavMobileLink>
-              <NavMobileLink href='#' onClick={closeNavbar} delay={0.3}>
+              <NavMobileLink
+                href='#portfolio'
+                onClick={closeNavbar}
+                delay={0.3}
+              >
                 Portfolio
               </NavMobileLink>
               <li>

@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <div className='light-noise-background md:py-32 py-18'>
+    <div className='light-noise-background md:py-32 py-18' id='home'>
       <section
         className={cn(
           section,
