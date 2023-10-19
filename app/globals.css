@@ -75,6 +75,10 @@ body {
   );
 }
 
+.horizontal-background {
+  background: linear-gradient(90deg, #8d5ac5 0%, #4967fd 100%);
+}
+
 /* navbar */
 
 .navbar-scrolled-bg {
