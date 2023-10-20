@@ -2,7 +2,7 @@ interface NavbarIconProps {
   className: string;
 }
 
-export default function NavbarIcon({ className }: NavbarIconProps) {
+export default function CompanyLogo({ className }: NavbarIconProps) {
   return (
     <svg
       width='90'

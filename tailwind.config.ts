@@ -58,7 +58,6 @@ const config: Config = {
     colors: {
       main: 'var(--main-foreground)',
       cta: 'var(--cta-foreground)',
-      accent_white: '#EDE8EC',
     },
   },
   plugins: [],

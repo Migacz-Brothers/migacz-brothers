@@ -4,6 +4,8 @@ import { Tags, h2, h3, section } from './design-system';
 import cn from 'clsx';
 
 import DietIt from '@/public/portfolio/dietit.png';
+import Cordoce from '@/public/portfolio/cordoce.png';
+import Dwight from '@/public/portfolio/dwight.png';
 
 export default function Portfolio() {
   return (
@@ -14,7 +16,7 @@ export default function Portfolio() {
       />
       <section className={cn(section)}>
         <h2 className={cn(h2, 'md:mb-16 mb-6')}>Our Projects Showcase</h2>
-        <ul className='grid grid-cols-2 gap-16'>
+        <ul className='grid ld:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
           <Project
             expand
             name={
@@ -31,7 +33,7 @@ export default function Portfolio() {
                 <strong>DietIt</strong> Project
               </>
             }
-            cover={DietIt}
+            cover={Dwight}
             alt='Multiple interfaces from diet it aligned'
           />
           <Project
@@ -40,7 +42,7 @@ export default function Portfolio() {
                 <strong>DietIt</strong> Project
               </>
             }
-            cover={DietIt}
+            cover={Cordoce}
             alt='Multiple interfaces from diet it aligned'
           />
         </ul>
@@ -58,14 +60,17 @@ interface ProjectProps {
 
 const Project = ({ expand = false, name, cover, alt }: ProjectProps) => {
   return (
-    <li className={expand ? 'col-span-2' : ''}>
+    <li className={expand ? 'lg:col-span-2 col-span-1' : ''}>
       <Link href='#' className='flex flex-col md:gap-4 gap-2 group'>
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
         <Image
           src={cover}
           alt={alt}
           quality={100}
-          className='md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300'
+          className={cn(
+            'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
+            expand ? 'aspect-[1.32 / 1]' : ''
+          )}
         />
 
         <Tags tagList={['UI/UX', 'Mobile App', 'Search engine']} />

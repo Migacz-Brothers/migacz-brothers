@@ -13,7 +13,7 @@ import cn from 'clsx';
 import { section } from '../design-system';
 
 //////IconsImports
-import NavbarIcon from '../svgs/NavbarIcon';
+import CompanyLogo from '../svgs/CompanyLogo';
 import BurguerMobileIcon from '../svgs/BurguerMobileIcon';
 import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
 import LinkedinMobileIcon from '../svgs/LinkedinMobileIcon';
@@ -49,7 +49,7 @@ export default function Navbar() {
       >
         <div className={cn(section, 'flex justify-between')}>
           <a href={'#home'}>
-            <NavbarIcon className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
+            <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
           </a>
 
           <ul className='md:flex items-center gap-12 hidden'>

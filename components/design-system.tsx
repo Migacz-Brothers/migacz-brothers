@@ -2,14 +2,14 @@ export const h1 = 'font-header text-main leading-header text-3xl md:text-5xl';
 export const h2 = 'font-header text-main leading-header text-2xl md:text-4xl';
 export const h3 = 'font-header text-main leading-header text-lg md:text-2xl';
 export const p = 'font-body text-main text-sm md:text-base leading-body';
-export const section = 'max-w-[1232px] md:px-4 px-8 mx-auto';
+export const section = 'max-w-[1232px] md:px-4 px-6 mx-auto';
 
 interface TagsProps {
   tagList: string[];
 }
 
 export const Tags = ({ tagList }: TagsProps) => (
-  <ul className='flex gap-1 md:gap-2'>
+  <ul className='flex gap-1 md:gap-2 flex-wrap'>
     {tagList.map((tag, i) => (
       <li
         key={`tag-${i}-${tag}`}

@@ -1,16 +1,17 @@
 import Link from 'next/link';
-import NavbarIcon from '../svgs/NavbarIcon';
+import CompanyLogo from '../svgs/CompanyLogo';
 import { Dribbble, Instagram, Linkedin } from 'lucide-react';
 import BehanceIcon from '../svgs/BehanceIcon';
 import cn from 'clsx';
+import { section } from '../design-system';
 
 export default function Footer() {
   return (
     <footer className='my-5'>
-      <div className='max-w-[1232px] mx-auto md:px-4 px-8 '>
+      <div className={section}>
         <div className='flex lg:flex-row flex-col justify-between lg:items-center items-start mb-6 gap-8'>
-          <a href={'#'} className='order-none'>
-            <NavbarIcon className='w-[99px] h-[41px]' />
+          <a href={'/#home'} className='order-none'>
+            <CompanyLogo className='w-[99px] h-[41px]' />
           </a>
           <ul className='flex gap-8 lg:order-none order-3'>
             <li>
@@ -63,13 +64,13 @@ export default function Footer() {
             <FooterLink href='#portfolio'>Contact Us</FooterLink>
           </ul>
         </div>
-        <div>
-          <hr className='h-[2px] inline-block w-full border-0 horizontal-background mb-6' />
-          <div className='lg:text-right text-start font-body text-sm'>
-            <a href='' className='font-body text-[#FAFAFA] mb-1'>
-              Migacz Brothers © Todos os direitos reservados.
-            </a>
-            <h3 className='text-accent_white'>CNPJ 48.546.424/0001-82</h3>
+        <hr className='h-[2px] inline-block w-full border-0 horizontal-background mb-6' />
+        <div className='lg:text-right text-start font-body text-sm'>
+          <div className='font-body text-main mb-1'>
+            Migacz Brothers © Todos os direitos reservados.
+          </div>
+          <div className='text-main text-[#7C7C7C]'>
+            CNPJ 48.546.424/0001-82
           </div>
         </div>
       </div>
@@ -87,7 +88,7 @@ const FooterLink = ({ children, href }: FooterLinkProps) => {
     <li>
       <Link
         href={href}
-        className='inline-block text-accent_white font-header font-medium md:text-lg text-sm group'
+        className='inline-block text-main font-header font-medium md:text-lg text-sm group'
       >
         {children}
         <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
