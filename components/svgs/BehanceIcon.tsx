@@ -1,4 +1,8 @@
-export default function BehanceIcon() {
+interface strokeWidthProps {
+  strokeWidth: number;
+}
+
+export default function BehanceIcon({ strokeWidth }: strokeWidthProps) {
   return (
     <svg
       width='28'
@@ -6,6 +10,7 @@ export default function BehanceIcon() {
       viewBox='0 0 28 18'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      strokeWidth={strokeWidth}
     >
       <path
         d='M19.6006 2.2355L24.5547 2.23307'

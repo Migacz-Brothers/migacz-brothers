@@ -1,4 +1,6 @@
 import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
+
 import './globals.css';
 // import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${sora.variable}`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
