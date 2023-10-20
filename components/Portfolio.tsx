@@ -9,7 +9,7 @@ import Dwight from '@/public/portfolio/dwight.png';
 
 export default function Portfolio() {
   return (
-    <div className='blue-noise-background md:pt-16 pt-9 md:pb-16 pb-9'>
+    <div className='blue-noise-background md:pt-16 pt-9 md:pb-16 pb-9 mb-9 md:mb-16'>
       <span
         className='opacity-0 h-0 w-0 relative bottom-[136px]'
         id='portfolio'
