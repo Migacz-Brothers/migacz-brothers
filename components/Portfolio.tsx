@@ -9,14 +9,14 @@ import Dwight from '@/public/portfolio/dwight.png';
 
 export default function Portfolio() {
   return (
-    <div className='blue-noise-background md:pt-16 pt-9'>
+    <div className='blue-noise-background md:pt-16 pt-9 md:pb-16 pb-9'>
       <span
         className='opacity-0 h-0 w-0 relative bottom-[136px]'
         id='portfolio'
       />
       <section className={cn(section)}>
         <h2 className={cn(h2, 'md:mb-16 mb-6')}>Our Projects Showcase</h2>
-        <ul className='grid ld:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
+        <ul className='grid lg:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
           <Project
             expand
             name={
@@ -24,27 +24,53 @@ export default function Portfolio() {
                 <strong>DietIt</strong> Project
               </>
             }
-            cover={DietIt}
-            alt='Multiple interfaces from diet it aligned'
-          />
+          >
+            <Image
+              src={DietIt}
+              alt='Multiple interfaces from diet it aligned'
+              quality={100}
+              className={cn(
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
+                'aspect-[1.32 / 1]  md:h-[480px] h-[280px]'
+              )}
+            />
+          </Project>
           <Project
             name={
               <>
-                <strong>DietIt</strong> Project
+                <strong>Dwight Capital</strong> Project
               </>
             }
-            cover={Dwight}
-            alt='Multiple interfaces from diet it aligned'
-          />
+          >
+            <Image
+              src={Dwight}
+              alt='Multiple interfaces from diet it aligned'
+              quality={100}
+              className={cn(
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-contain w-full',
+                'max-h-[400px]',
+                'dwight-capital-bg'
+              )}
+            />
+          </Project>
           <Project
             name={
               <>
-                <strong>DietIt</strong> Project
+                <strong>Cordoce Store</strong> brand design
               </>
             }
-            cover={Cordoce}
-            alt='Multiple interfaces from diet it aligned'
-          />
+          >
+            <Image
+              src={Cordoce}
+              alt='Multiple interfaces from diet it aligned'
+              quality={100}
+              className={cn(
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-contain w-full',
+                'max-h-[400px]',
+                'bg-[#FF777C]'
+              )}
+            />
+          </Project>
         </ul>
       </section>
     </div>
@@ -54,25 +80,16 @@ export default function Portfolio() {
 interface ProjectProps {
   expand?: boolean;
   name: JSX.Element;
-  cover: any;
-  alt: string;
+  children: JSX.Element;
 }
 
-const Project = ({ expand = false, name, cover, alt }: ProjectProps) => {
+const Project = ({ expand = false, name, children }: ProjectProps) => {
   return (
     <li className={expand ? 'lg:col-span-2 col-span-1' : ''}>
-      <Link href='#' className='flex flex-col md:gap-4 gap-2 group'>
+      <Link href='#' className='flex flex-col md:gap-4 gap-2 group max-h-full'>
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
-        <Image
-          src={cover}
-          alt={alt}
-          quality={100}
-          className={cn(
-            'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
-            expand ? 'aspect-[1.32 / 1]' : ''
-          )}
-        />
 
+        {children}
         <Tags tagList={['UI/UX', 'Mobile App', 'Search engine']} />
       </Link>
     </li>

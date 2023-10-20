@@ -127,3 +127,13 @@ body {
   transform: rotate(43deg) translateX(6.5px) translateY(-6.5px);
   width: 26px;
 }
+
+/* temporary */
+
+.dwight-capital-bg {
+  background: radial-gradient(
+    71.58% 71.32% at 50% 50%,
+    #101e2d 0%,
+    #1d303a 100%
+  );
+}
