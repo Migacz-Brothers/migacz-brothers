@@ -52,10 +52,10 @@ export default function Footer() {
             </li>
           </ul>
           <ul className='flex gap-8 font-header text-lg lg:order-none order-2'>
-            <LangagueButton current href='#'>
+            <LanguageLink current href='#'>
               EN
-            </LangagueButton>
-            <LangagueButton href='/pt'>PT</LangagueButton>
+            </LanguageLink>
+            <LanguageLink href='/pt'>PT</LanguageLink>
           </ul>
           <ul className='flex gap-8 lg:flex-row flex-col lg:order-none order-1'>
             <FooterLink href='#home'>Home</FooterLink>
@@ -97,17 +97,17 @@ const FooterLink = ({ children, href }: FooterLinkProps) => {
   );
 };
 
-interface LangagueButtonProps {
+interface LanguageLinkProps {
   children: string;
   href: string;
   current?: boolean;
 }
 
-const LangagueButton = ({
+const LanguageLink = ({
   children,
   href,
   current = false,
-}: LangagueButtonProps) => {
+}: LanguageLinkProps) => {
   return (
     <li>
       <Link
