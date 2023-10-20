@@ -69,9 +69,7 @@ export default function Footer() {
           <div className='font-body text-main mb-1'>
             Migacz Brothers © Todos os direitos reservados.
           </div>
-          <div className='text-main text-[#7C7C7C]'>
-            CNPJ 48.546.424/0001-82
-          </div>
+          <div className='text-[#7C7C7C]'>CNPJ 48.546.424/0001-82</div>
         </div>
       </div>
     </footer>
