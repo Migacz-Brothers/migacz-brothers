@@ -49,7 +49,7 @@ export default function Navbar() {
       >
         <div className={cn(section, 'flex justify-between')}>
           <a href={'#home'}>
-            <NavbarIcon />
+            <NavbarIcon className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
           </a>
 
           <ul className='md:flex items-center gap-12 hidden'>

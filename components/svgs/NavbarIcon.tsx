@@ -1,4 +1,8 @@
-export default function NavbarIcon() {
+interface NavbarIconProps {
+  className: string;
+}
+
+export default function NavbarIcon({ className }: NavbarIconProps) {
   return (
     <svg
       width='90'
@@ -6,6 +10,7 @@ export default function NavbarIcon() {
       viewBox='0 0 90 38'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      className={className}
     >
       <g clipPath='url(#clip0_1312_2274)'>
         <path
