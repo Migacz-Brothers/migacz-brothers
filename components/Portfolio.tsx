@@ -6,6 +6,8 @@ import cn from 'clsx';
 import DietIt from '@/public/portfolio/dietit.png';
 import Cordoce from '@/public/portfolio/cordoce.png';
 import Dwight from '@/public/portfolio/dwight.png';
+import Knox from '@/public/portfolio/knoxabstract.png';
+import Oneup from '@/public/portfolio/umupsistemas.png';
 
 export default function Portfolio() {
   return (
@@ -16,7 +18,7 @@ export default function Portfolio() {
       />
       <section className={cn(section)}>
         <h2 className={cn(h2, 'md:mb-16 mb-6')}>Our Projects Showcase</h2>
-        <ul className='grid lg:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
+        <ul className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
           <Project
             expand
             name={
@@ -31,7 +33,7 @@ export default function Portfolio() {
               quality={100}
               className={cn(
                 'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
-                'aspect-[1.32 / 1]  md:h-[480px] h-[280px]'
+                'aspect-[17/7]'
               )}
             />
           </Project>
@@ -48,7 +50,7 @@ export default function Portfolio() {
               quality={100}
               className={cn(
                 'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-contain w-full',
-                'max-h-[400px]',
+                'max-h-[400px] md:aspect-[1.2/1] aspect-[17/7]',
                 'dwight-capital-bg'
               )}
             />
@@ -66,8 +68,44 @@ export default function Portfolio() {
               quality={100}
               className={cn(
                 'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-contain w-full',
-                'max-h-[400px]',
+                'max-h-[400px] md:aspect-[1.2/1] aspect-[17/7]',
                 'bg-[#FF777C]'
+              )}
+            />
+          </Project>
+          <Project
+            expand
+            name={
+              <>
+                <strong>Knox Abstract</strong>
+              </>
+            }
+          >
+            <Image
+              src={Knox}
+              alt='Multiple interfaces from diet it aligned'
+              quality={100}
+              className={cn(
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
+                'aspect-[17/7]'
+              )}
+            />
+          </Project>
+          <Project
+            expand
+            name={
+              <>
+                <strong>1up Systems</strong> website
+              </>
+            }
+          >
+            <Image
+              src={Oneup}
+              alt='Multiple interfaces from diet it aligned'
+              quality={100}
+              className={cn(
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
+                'aspect-[17/7]'
               )}
             />
           </Project>
@@ -85,7 +123,7 @@ interface ProjectProps {
 
 const Project = ({ expand = false, name, children }: ProjectProps) => {
   return (
-    <li className={expand ? 'lg:col-span-2 col-span-1' : ''}>
+    <li className={expand ? 'md:col-span-2 col-span-1' : ''}>
       <Link href='#' className='flex flex-col md:gap-4 gap-2 group max-h-full'>
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
 
