@@ -86,7 +86,7 @@ const FooterLink = ({ children, href }: FooterLinkProps) => {
     <li>
       <Link
         href={href}
-        className='inline-block text-main font-header font-medium md:text-lg text-sm group'
+        className='inline-block text-main font-header md:text-lg text-sm group'
       >
         {children}
         <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
@@ -110,7 +110,7 @@ const LanguageLink = ({
     <li>
       <Link
         href={href}
-        className='gradient-language-bold duration-300 inline-block group'
+        className='gradient-language-bold duration-300 inline-block group font'
       >
         {children}
         <div
