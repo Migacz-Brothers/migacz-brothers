@@ -1,8 +1,8 @@
-interface strokeWidthProps {
+interface BehanceIconProps {
   strokeWidth: number;
 }
 
-export default function BehanceIcon({ strokeWidth }: strokeWidthProps) {
+export default function BehanceIcon({ strokeWidth }: BehanceIconProps) {
   return (
     <svg
       width='28'

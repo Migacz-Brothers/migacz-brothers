@@ -44,7 +44,7 @@ export default function AboutUs() {
 
           <ul className='flex lg:gap-2 gap-[6px] pt-2'>
             <SocialLink className='bg-[#3367CC]'>
-              <BehanceIcon />
+              <BehanceIcon strokeWidth={1.5} />
             </SocialLink>
             <SocialLink className='bg-[#2966A3]'>
               <Linkedin size={32} strokeWidth={1.5} />
