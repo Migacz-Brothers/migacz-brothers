@@ -57,7 +57,7 @@ export default function Footer() {
             </LanguageLink>
             <LanguageLink href='/pt'>PT</LanguageLink>
           </ul>
-          <ul className='flex gap-8 lg:flex-row flex-col lg:order-none order-1'>
+          <ul className='flex lg:gap-8 gap-4 lg:flex-row flex-col lg:order-none order-1'>
             <FooterLink href='#home'>Home</FooterLink>
             <FooterLink href='#about'>About Us</FooterLink>
             <FooterLink href='#portfolio'>Portofolio</FooterLink>
