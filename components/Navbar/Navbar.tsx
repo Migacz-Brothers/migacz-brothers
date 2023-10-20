@@ -19,6 +19,7 @@ import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
 import LinkedinMobileIcon from '../svgs/LinkedinMobileIcon';
 import DribbbleMobileIcon from '../svgs/DribbbleMobileIcon';
 import InstagramMobileIcon from '../svgs/InstagramMobileIcon';
+import Supernav from '../Supernav';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,10 +44,12 @@ export default function Navbar() {
       {/* nav desktop */}
       <nav
         className={cn(
-          'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
+          // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
+          'w-full fixed top-0 left-0 pb-6 z-[9999] duration-500',
           scrolled && !mobileOpen ? 'navbar-scrolled-bg' : null
         )}
       >
+        <Supernav />
         <div className={cn(section, 'flex justify-between')}>
           <a href={'#home'}>
             <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
