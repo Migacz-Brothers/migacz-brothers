@@ -18,7 +18,7 @@ export default function Footer() {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-full h-full'
+                className='grid place-items-center w-6 h-6'
               >
                 <Instagram strokeWidth={1.5} />
               </Link>
@@ -27,7 +27,7 @@ export default function Footer() {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-full h-full'
+                className='grid place-items-center w-6 h-6'
               >
                 <BehanceIcon strokeWidth={1.5} />
               </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-full h-full'
+                className='grid place-items-center w-6 h-6'
               >
                 <Linkedin strokeWidth={1.5} />
               </Link>
@@ -45,7 +45,7 @@ export default function Footer() {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-full h-full'
+                className='grid place-items-center w-6 h-6'
               >
                 <Dribbble strokeWidth={1.5} />
               </Link>
