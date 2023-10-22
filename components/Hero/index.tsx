@@ -5,7 +5,10 @@ import Cta from '../Cta';
 
 export default function Hero() {
   return (
-    <div className='light-noise-background md:py-32 pb-18 pt-20' id='home'>
+    <div
+      className='light-noise-background md:pb-32 pb-18 md:pt-40 pt-44'
+      id='home'
+    >
       <section
         className={cn(
           section,
