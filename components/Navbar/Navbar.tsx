@@ -85,7 +85,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen ? (
           <motion.div
-            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden'
+            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden pt-[170px]'
             initial={{
               opacity: 0,
             }}
@@ -112,6 +112,9 @@ export default function Navbar() {
                 delay={0.3}
               >
                 Portfolio
+              </NavMobileLink>
+              <NavMobileLink href='#contact' onClick={closeNavbar} delay={0.3}>
+                Contact Us
               </NavMobileLink>
               <li>
                 <ul className='flex justify-center items-center'>
