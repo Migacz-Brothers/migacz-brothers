@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 export default function Cta() {
   return (
     <Link
-      href='#'
+      href='mailto:hello@migaczbrothers.com'
       className={cn(
         'group hover:shadow-bright duration-1000 ease-in-out bg-cta text-cta py-[3px] pr-[3px] md:pl-4 pl-2 w-full md:rounded-2xl rounded-lg flex items-center mb-4 lg:mb-0'
       )}
