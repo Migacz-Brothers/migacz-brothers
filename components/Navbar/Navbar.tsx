@@ -42,21 +42,23 @@ export default function Navbar() {
   return (
     <>
       {/* nav desktop */}
-      <motion.nav
+      <nav
         className={cn(
           // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
           'w-full fixed top-0 left-0 pb-6 z-[9999] duration-500',
           scrolled && !mobileOpen ? 'navbar-scrolled-bg' : null
         )}
-        initial={{
-          opacity: 0,
-        }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.4, ease: 'easeInOut' }}
       >
         <Supernav />
-        <div className={cn(section, 'flex justify-between')}>
+        <motion.div
+          className={cn(section, 'flex justify-between')}
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.2, ease: 'easeInOut' }}
+        >
           <a href={'#home'}>
             <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
           </a>
@@ -85,8 +87,8 @@ export default function Navbar() {
           >
             <BurguerMobileIcon />
           </button>
-        </div>
-      </motion.nav>
+        </motion.div>
+      </nav>
       {/* mobile navmenu */}
       <AnimatePresence>
         {mobileOpen ? (

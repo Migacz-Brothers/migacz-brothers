@@ -1,5 +1,6 @@
-import { Tags, h1, h2, h3, p, section } from '@/components/design-system';
+import { h1, h2, h3, p, section } from '@/components/design-system';
 import cn from 'clsx';
+import { Tags } from '@/components/Tags';
 
 export default function Home() {
   return (

@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Tags, h2, h3, section } from './design-system';
+import { h2, section } from '@/components/design-system';
 import cn from 'clsx';
 
 import DietIt from '@/public/portfolio/dietit.png';
@@ -8,6 +7,7 @@ import Cordoce from '@/public/portfolio/cordoce.png';
 import Dwight from '@/public/portfolio/dwight.png';
 import Knox from '@/public/portfolio/knoxabstract.png';
 import Oneup from '@/public/portfolio/umupsistemas.png';
+import Project from '@/components/Portfolio/Project';
 
 export default function Portfolio() {
   return (
@@ -20,6 +20,7 @@ export default function Portfolio() {
         <h2 className={cn(h2, 'md:mb-16 mb-6')}>Our Projects Showcase</h2>
         <ul className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6'>
           <Project
+            key={1}
             expand
             name={
               <>
@@ -38,6 +39,7 @@ export default function Portfolio() {
             />
           </Project>
           <Project
+            key={2}
             name={
               <>
                 <strong>Dwight Capital</strong> Project
@@ -56,6 +58,7 @@ export default function Portfolio() {
             />
           </Project>
           <Project
+            key={3}
             name={
               <>
                 <strong>Cordoce Store</strong> brand design
@@ -74,6 +77,7 @@ export default function Portfolio() {
             />
           </Project>
           <Project
+            key={4}
             expand
             name={
               <>
@@ -92,6 +96,7 @@ export default function Portfolio() {
             />
           </Project>
           <Project
+            key={5}
             expand
             name={
               <>
@@ -114,22 +119,3 @@ export default function Portfolio() {
     </div>
   );
 }
-
-interface ProjectProps {
-  expand?: boolean;
-  name: JSX.Element;
-  children: JSX.Element;
-}
-
-const Project = ({ expand = false, name, children }: ProjectProps) => {
-  return (
-    <li className={expand ? 'md:col-span-2 col-span-1' : ''}>
-      <Link href='#' className='flex flex-col md:gap-4 gap-2 group max-h-full'>
-        <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
-
-        {children}
-        <Tags tagList={['UI/UX', 'Mobile App', 'Search engine']} />
-      </Link>
-    </li>
-  );
-};
