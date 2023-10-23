@@ -36,6 +36,7 @@ const config: Config = {
     },
     boxShadow: {
       bright: '2px 3px 24px 4px #ffffff6f',
+      'bright-sm': '1px 2px 30px 3px #ffffff2f',
     },
     fontFamily: {
       header: 'var(--font-header)',

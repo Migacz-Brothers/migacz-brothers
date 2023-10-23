@@ -1,3 +1,5 @@
+'use client';
+
 ////////////Images and Svgs
 import AboutUsImage from '@/public/images/AboutUsImage.png';
 import { BookOpen, Dribbble, Instagram, Linkedin } from 'lucide-react';
@@ -5,16 +7,23 @@ import BehanceIcon from '@/components/svgs/BehanceIcon';
 
 ////////////Images and Svgs
 import Image from 'next/image';
-import Link from 'next/link';
 import cn from 'clsx';
-import { ReactNode } from 'react';
-import { h2, p, section } from './design-system';
+import { h2, p, section } from '../design-system';
+import SocialLink from './SocialLinks';
+import { motion } from 'framer-motion';
 
 export default function AboutUs() {
   return (
     <div className='light-noise-background md:pb-16 pb-9'>
       <span className='opacity-0 h-0 w-0 relative bottom-[136px]' id='about' />
-      <section
+      <motion.section
+        initial={{
+          opacity: 0,
+          y: -50,
+        }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
         className={cn(
           section,
           'flex lg:flex-row flex-col justify-between ld:gap-8 gap-4 items-start lg:items-center lg:w-full'
@@ -43,54 +52,28 @@ export default function AboutUs() {
           </div>
 
           <ul className='flex lg:gap-2 gap-[6px] pt-2'>
-            <SocialLink className='bg-[#3367CC]'>
+            <SocialLink className='bg-[#3367CC]' i={1}>
               <BehanceIcon strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#2966A3]'>
+            <SocialLink className='bg-[#2966A3]' i={2}>
               <Linkedin size={32} strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#7F55B6]'>
+            <SocialLink className='bg-[#7F55B6]' i={3}>
               <Instagram size={32} strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#B35598]'>
+            <SocialLink className='bg-[#B35598]' i={4}>
               <Dribbble size={32} strokeWidth={1.5} />
             </SocialLink>
             <SocialLink
               className='bg-[#F4F4F4] text-[#121212] pr-2 flex-1'
               text='Or read more'
+              i={5}
             >
               <BookOpen size={32} strokeWidth={1.5} />
             </SocialLink>
           </ul>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
-
-interface SocialLinkProps {
-  children: ReactNode;
-  className: string;
-  text?: string;
-}
-
-const SocialLink = ({ children, className, text }: SocialLinkProps) => {
-  return (
-    <li
-      className={cn(
-        'rounded-[4px] font-body text-xs lg:text-base leading-[12px] hover:brightness-90 hover:underline duration-300',
-        className
-      )}
-    >
-      <Link
-        href={'#'}
-        className='w-full h-full flex flex-row gap-1 items-center'
-      >
-        <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] rounded-[4px] grid place-items-center'>
-          {children}
-        </div>
-        {text}
-      </Link>
-    </li>
-  );
-};
