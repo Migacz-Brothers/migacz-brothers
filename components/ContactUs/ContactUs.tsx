@@ -5,6 +5,10 @@ import cn from 'clsx';
 export default function ContactUs() {
   return (
     <section>
+      <span
+        id='contact'
+        className='opacity-0 h-0 w-0 relative bottom-[136px]'
+      />
       <div className={section}>
         <div className='flex lg:flex-row flex-col justify-between md:pb-36 gap-4 lg:items-end pt-28 pb-32'>
           <div>
