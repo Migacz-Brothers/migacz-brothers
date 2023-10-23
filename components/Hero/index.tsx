@@ -1,7 +1,10 @@
+'use client';
+
 import { h1, p, section } from '@/components/design-system';
 import cn from 'clsx';
 import Illustrations from './Illustrations';
 import Cta from '../Cta';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
@@ -9,11 +12,17 @@ export default function Hero() {
       className='light-noise-background md:pb-32 pb-18 md:pt-40 pt-44'
       id='home'
     >
-      <section
+      <motion.section
         className={cn(
           section,
           'flex flex-col flex-wrap lg:max-h-[580px] justify-center'
         )}
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
       >
         <div className='max-w-[652px] flex flex-col self-start mr-4 lg:order-1 lg:mt-[95px] mt-0'>
           <span className={cn(p, 'uppercase underline lg:mb-3 mb-1')}>
@@ -33,7 +42,7 @@ export default function Hero() {
           <Cta />
         </div>
         <Illustrations className='lg:self-end lg:order-1 mb-4 lg:mb-0' />
-      </section>
+      </motion.section>
     </div>
   );
 }

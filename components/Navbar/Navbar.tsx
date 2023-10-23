@@ -42,12 +42,18 @@ export default function Navbar() {
   return (
     <>
       {/* nav desktop */}
-      <nav
+      <motion.nav
         className={cn(
           // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
           'w-full fixed top-0 left-0 pb-6 z-[9999] duration-500',
           scrolled && !mobileOpen ? 'navbar-scrolled-bg' : null
         )}
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
       >
         <Supernav />
         <div className={cn(section, 'flex justify-between')}>
@@ -80,7 +86,7 @@ export default function Navbar() {
             <BurguerMobileIcon />
           </button>
         </div>
-      </nav>
+      </motion.nav>
       {/* mobile navmenu */}
       <AnimatePresence>
         {mobileOpen ? (
