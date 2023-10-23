@@ -42,14 +42,14 @@ export default function Navbar() {
   return (
     <>
       {/* nav desktop */}
+      {!mobileOpen ? <Supernav /> : null}
       <nav
         className={cn(
           // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
-          'w-full fixed top-0 left-0 pb-6 z-[9999] duration-500',
-          scrolled && !mobileOpen ? 'navbar-scrolled-bg' : null
+          'w-full fixed top-0 left-0 z-[9999] duration-500 py-6',
+          scrolled && !mobileOpen ? 'navbar-scrolled-bg' : ''
         )}
       >
-        <Supernav />
         <motion.div
           className={cn(section, 'flex justify-between')}
           initial={{
@@ -93,7 +93,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen ? (
           <motion.div
-            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden pt-[170px]'
+            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden pt-[79px]'
             initial={{
               opacity: 0,
             }}

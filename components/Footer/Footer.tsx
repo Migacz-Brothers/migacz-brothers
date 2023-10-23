@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className='my-5'>
+    <footer className='my-5 pb-18'>
       <motion.div
         className={section}
         initial={{
