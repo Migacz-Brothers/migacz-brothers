@@ -63,7 +63,7 @@ export default function Footer() {
             </li>
           </ul>
           <ul className='flex gap-8 font-header text-lg lg:order-none order-2'>
-            <LanguageLink current href='#'>
+            <LanguageLink current href='/'>
               EN
             </LanguageLink>
             <LanguageLink href='/pt'>PT</LanguageLink>
