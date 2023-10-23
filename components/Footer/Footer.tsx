@@ -56,6 +56,7 @@ export default function Footer() {
               EN
             </LanguageLink>
             <LanguageLink href='/pt'>PT</LanguageLink>
+            <LanguageLink href='/es'>ES</LanguageLink>
           </ul>
           <ul className='flex lg:gap-8 gap-4 lg:flex-row flex-col lg:order-none order-1'>
             <FooterLink href='#home'>Home</FooterLink>
@@ -99,15 +100,17 @@ interface LanguageLinkProps {
   children: string;
   href: string;
   current?: boolean;
+  className?: string;
 }
 
 const LanguageLink = ({
   children,
   href,
   current = false,
+  className = '',
 }: LanguageLinkProps) => {
   return (
-    <li>
+    <li className={className}>
       <Link
         href={href}
         className='gradient-language-bold duration-300 inline-block group font'
