@@ -1,14 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import CompanyLogo from '../svgs/CompanyLogo';
 import { Dribbble, Instagram, Linkedin } from 'lucide-react';
 import BehanceIcon from '../svgs/BehanceIcon';
 import cn from 'clsx';
 import { section } from '../design-system';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
     <footer className='my-5'>
-      <div className={section}>
+      <motion.div
+        className={section}
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
         <div className='flex lg:flex-row flex-col justify-between lg:items-center items-start mb-6 gap-8'>
           <a href={'/#home'} className='order-none'>
             <CompanyLogo className='w-[99px] h-[41px]' />
@@ -65,14 +76,22 @@ export default function Footer() {
             <FooterLink href='#portfolio'>Contact Us</FooterLink>
           </ul>
         </div>
-        <hr className='h-[2px] inline-block w-full border-0 horizontal-background mb-6' />
+        <motion.hr
+          className='h-[2px] inline-block w-full border-0 horizontal-background mb-6'
+          initial={{
+            width: 0,
+          }}
+          whileInView={{ width: '100%' }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+        />
         <div className='lg:text-right text-start font-body text-sm'>
           <div className='font-body text-main mb-1'>
             Migacz Brothers © Todos os direitos reservados.
           </div>
           <div className='text-[#7C7C7C]'>CNPJ 48.546.424/0001-82</div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Cta from '../Cta';
 import { h2, p, section } from '../design-system';
 import cn from 'clsx';
@@ -9,7 +12,15 @@ export default function ContactUs() {
         id='contact'
         className='opacity-0 h-0 w-0 relative bottom-[136px]'
       />
-      <div className={section}>
+      <motion.div
+        className={section}
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
         <div className='flex lg:flex-row flex-col justify-between md:pb-36 gap-4 lg:items-end pt-28 pb-32'>
           <div>
             <h3 className={cn(h2, 'pb-2 lg:pb-3 lg:!text-[2rem]')}>
@@ -24,7 +35,7 @@ export default function ContactUs() {
             <Cta />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
