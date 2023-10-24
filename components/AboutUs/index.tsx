@@ -32,7 +32,8 @@ export default function AboutUs() {
         <Image
           src={AboutUsImage}
           alt={'Migacz Borthers team during a meeting'}
-          className='md:rounded-2xl rounded-lg'
+          className='md:rounded-2xl rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full max-w-[655px]'
+          quality={100}
         />
         <div className='max-w-[445px]'>
           <div>
