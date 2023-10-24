@@ -8,7 +8,11 @@ import cn from 'clsx';
 import { section } from '../design-system';
 import { motion } from 'framer-motion';
 
-export default function Footer() {
+interface FooterProps {
+  home?: boolean;
+}
+
+export default function Footer({ home = false }: FooterProps) {
   return (
     <footer className='my-5 pb-18'>
       <motion.div

@@ -57,11 +57,7 @@ export default function RootLayout({
         <meta name='theme-color' content='#ffffff' />
         {/* favicon */}
       </head>
-      <body className={`${inter.variable} ${sora.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className={`${inter.variable} ${sora.variable}`}>{children}</body>
     </html>
   );
 }

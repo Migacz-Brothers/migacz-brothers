@@ -21,7 +21,11 @@ import DribbbleMobileIcon from '../svgs/DribbbleMobileIcon';
 import InstagramMobileIcon from '../svgs/InstagramMobileIcon';
 import Supernav from '../Supernav';
 
-export default function Navbar() {
+interface NavbarProps {
+  home?: boolean;
+}
+
+export default function Navbar({ home = false }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -59,17 +63,19 @@ export default function Navbar() {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
-          <a href={'#home'}>
+          <a href={(home ? '' : '/') + '#home'}>
             <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
           </a>
 
           <ul className='md:flex items-center gap-12 hidden'>
-            <NavLink href='#home'>Home</NavLink>
-            <NavLink href='#about'>About Us</NavLink>
-            <NavLink href='#portfolio'>Portofolio</NavLink>
+            <NavLink href={(home ? '' : '/') + '#home'}>Home</NavLink>
+            <NavLink href={(home ? '' : '/') + '#about'}>About Us</NavLink>
+            <NavLink href={(home ? '' : '/') + '#portfolio'}>
+              Portofolio
+            </NavLink>
             <li>
               <a
-                href={'#contact'}
+                href={(home ? '' : '/') + '#contact'}
                 className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
               >
                 Contact Us
@@ -108,10 +114,18 @@ export default function Navbar() {
             }}
           >
             <ul className='flex flex-col gap-8 mb-10'>
-              <NavMobileLink href='#home' onClick={closeNavbar} delay={0.1}>
+              <NavMobileLink
+                href={(home ? '' : '/') + '#home'}
+                onClick={closeNavbar}
+                delay={0.1}
+              >
                 Home
               </NavMobileLink>
-              <NavMobileLink href='#about' onClick={closeNavbar} delay={0.2}>
+              <NavMobileLink
+                href={(home ? '' : '/') + '#about'}
+                onClick={closeNavbar}
+                delay={0.2}
+              >
                 About Us
               </NavMobileLink>
               <NavMobileLink
@@ -121,7 +135,11 @@ export default function Navbar() {
               >
                 Portfolio
               </NavMobileLink>
-              <NavMobileLink href='#contact' onClick={closeNavbar} delay={0.3}>
+              <NavMobileLink
+                href={(home ? '' : '/') + '#contact'}
+                onClick={closeNavbar}
+                delay={0.3}
+              >
                 Contact Us
               </NavMobileLink>
               <li>
