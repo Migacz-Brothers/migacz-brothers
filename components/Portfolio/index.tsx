@@ -24,16 +24,18 @@ export default function Portfolio() {
             expand
             name={
               <>
-                <strong>DietIt</strong> Project
+                <strong className='gradient-bold'>DietIt!</strong> A platform
+                made for dieticians
               </>
             }
             tagList={[
               'UI/UX',
-              'Mobile App',
+              'NextJs',
               'Progressive Web App',
-              'Saas',
+              'Mobile App',
               'PostgreSQL',
               'Redis',
+              'SaaS',
             ]}
             href='/dietit'
           >
@@ -51,10 +53,11 @@ export default function Portfolio() {
             key={2}
             name={
               <>
-                <strong>Dwight Capital</strong> Pages
+                <strong className='gradient-bold'>Dwight Capital</strong> Press
+                releases page system
               </>
             }
-            tagList={['UI/UX', 'CMS', 'Blog']}
+            tagList={['UI/UX', 'CMS', 'Blog system', 'SEO']}
             href='/cordoce'
           >
             <Image
@@ -72,7 +75,8 @@ export default function Portfolio() {
             key={3}
             name={
               <>
-                <strong>Cordoce Store</strong> brand design
+                <strong className='gradient-bold'>Cordoce Stores</strong>{' '}
+                branding project
               </>
             }
             tagList={['branding', 'Product Design']}
@@ -83,9 +87,8 @@ export default function Portfolio() {
               alt='Multiple interfaces from diet it aligned'
               quality={100}
               className={cn(
-                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-contain w-full',
-                'max-h-[400px] md:aspect-[1.2/1] aspect-[17/7]',
-                'bg-[#FF777C]'
+                'md:rounded-2xl rounded-lg group-hover:brightness-90 duration-300 object-cover w-full',
+                'max-h-[400px] md:aspect-[1.2/1] aspect-[17/7]'
               )}
             />
           </Project>
@@ -94,10 +97,17 @@ export default function Portfolio() {
             expand
             name={
               <>
-                <strong>Knox Abstract</strong>
+                <strong className='gradient-bold'>Knox Abstract</strong> website
               </>
             }
-            tagList={['UI/UX', 'CMS', 'Website', 'Microinteractions']}
+            tagList={[
+              'UI/UX',
+              'CMS',
+              'Blog System',
+              'SEO',
+              'Performance',
+              'Microinteractions',
+            ]}
             href='/knox-abstract'
           >
             <Image
@@ -115,10 +125,10 @@ export default function Portfolio() {
             expand
             name={
               <>
-                <strong>1up Systems</strong> website
+                <strong className='gradient-bold'>1up Systems</strong> website
               </>
             }
-            tagList={['UI/UX', 'CMS', 'Website', 'Microinteractions']}
+            tagList={['UI/UX', 'CMS', 'Website', 'SEO', 'Analytics']}
             href='/1up'
           >
             <Image
