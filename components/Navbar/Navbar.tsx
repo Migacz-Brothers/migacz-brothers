@@ -129,7 +129,7 @@ export default function Navbar({ home = false }: NavbarProps) {
                 About Us
               </NavMobileLink>
               <NavMobileLink
-                href='#portfolio'
+                href={(home ? '' : '/') + '#portfolio'}
                 onClick={closeNavbar}
                 delay={0.3}
               >
