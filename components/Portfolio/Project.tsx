@@ -13,6 +13,7 @@ interface ProjectProps {
   children: JSX.Element;
   key: number;
   tagList: string[];
+  href: string;
 }
 
 const Project = ({
@@ -21,6 +22,7 @@ const Project = ({
   children,
   key,
   tagList,
+  href,
 }: ProjectProps) => {
   return (
     <motion.li
@@ -32,7 +34,10 @@ const Project = ({
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <Link href='#' className='flex flex-col md:gap-4 gap-2 group max-h-full'>
+      <Link
+        href={href}
+        className='flex flex-col md:gap-4 gap-2 group max-h-full'
+      >
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
 
         {children}

@@ -27,7 +27,15 @@ export default function Portfolio() {
                 <strong>DietIt</strong> Project
               </>
             }
-            tagList={['UI/UX', 'Cross Platform']}
+            tagList={[
+              'UI/UX',
+              'Mobile App',
+              'Progressive Web App',
+              'Saas',
+              'PostgreSQL',
+              'Redis',
+            ]}
+            href='/dietit'
           >
             <Image
               src={DietIt}
@@ -43,10 +51,11 @@ export default function Portfolio() {
             key={2}
             name={
               <>
-                <strong>Dwight Capital</strong> Project
+                <strong>Dwight Capital</strong> Pages
               </>
             }
-            tagList={[]}
+            tagList={['UI/UX', 'CMS', 'Blog']}
+            href='/cordoce'
           >
             <Image
               src={Dwight}
@@ -66,7 +75,8 @@ export default function Portfolio() {
                 <strong>Cordoce Store</strong> brand design
               </>
             }
-            tagList={[]}
+            tagList={['branding', 'Product Design']}
+            href='/dwight-capital'
           >
             <Image
               src={Cordoce}
@@ -87,7 +97,8 @@ export default function Portfolio() {
                 <strong>Knox Abstract</strong>
               </>
             }
-            tagList={[]}
+            tagList={['UI/UX', 'CMS', 'Website', 'Microinteractions']}
+            href='/knox-abstract'
           >
             <Image
               src={Knox}
@@ -107,7 +118,8 @@ export default function Portfolio() {
                 <strong>1up Systems</strong> website
               </>
             }
-            tagList={[]}
+            tagList={['UI/UX', 'CMS', 'Website', 'Microinteractions']}
+            href='/1up'
           >
             <Image
               src={Oneup}
