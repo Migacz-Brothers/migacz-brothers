@@ -10,6 +10,7 @@ interface SocialLinkProps {
   text?: string;
   i: number;
   href: string;
+  samePage?: boolean;
 }
 
 const SocialLink = ({
@@ -18,6 +19,7 @@ const SocialLink = ({
   text,
   i,
   href,
+  samePage = false,
 }: SocialLinkProps) => {
   return (
     <motion.li
@@ -36,6 +38,7 @@ const SocialLink = ({
       <Link
         href={href}
         className='w-full h-full flex flex-row gap-1 items-center rounded-[4px] hover:shadow-bright-sm hover:underline duration-300'
+        target={samePage ? '' : '_blank'}
       >
         <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] grid place-items-center'>
           {children}

@@ -78,6 +78,7 @@ export default function AboutUs() {
               text='Or read more'
               i={5}
               href='/about'
+              samePage
             >
               <BookOpen size={32} strokeWidth={1.5} />
             </SocialLink>
