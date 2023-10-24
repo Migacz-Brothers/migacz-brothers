@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <div
-      className='light-noise-background md:pb-32 pb-18 md:pt-40 pt-44'
+      className='light-noise-background md:pb-32 pb-18 md:pt-40 pt-28'
       id='home'
     >
       <motion.section
