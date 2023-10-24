@@ -63,7 +63,7 @@ export default function Navbar({ home = false }: NavbarProps) {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
-          <a href={(home ? '' : '/') + '#home'}>
+          <a href={(home ? '' : '/') + '#home'} onClick={closeNavbar}>
             <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
           </a>
 
