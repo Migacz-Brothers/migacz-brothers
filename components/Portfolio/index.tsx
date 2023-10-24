@@ -58,7 +58,7 @@ export default function Portfolio() {
               </>
             }
             tagList={['UI/UX', 'CMS', 'Blog system', 'SEO']}
-            href='/cordoce'
+            href='/dwight-capital'
           >
             <Image
               src={Dwight}
@@ -80,7 +80,7 @@ export default function Portfolio() {
               </>
             }
             tagList={['branding', 'Product Design']}
-            href='/dwight-capital'
+            href='/cordoce'
           >
             <Image
               src={Cordoce}
