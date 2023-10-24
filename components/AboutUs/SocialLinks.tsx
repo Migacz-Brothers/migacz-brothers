@@ -9,9 +9,16 @@ interface SocialLinkProps {
   className: string;
   text?: string;
   i: number;
+  href: string;
 }
 
-const SocialLink = ({ children, className, text, i }: SocialLinkProps) => {
+const SocialLink = ({
+  children,
+  className,
+  text,
+  i,
+  href,
+}: SocialLinkProps) => {
   return (
     <motion.li
       initial={{
@@ -27,7 +34,7 @@ const SocialLink = ({ children, className, text, i }: SocialLinkProps) => {
       )}
     >
       <Link
-        href={'#'}
+        href={href}
         className='w-full h-full flex flex-row gap-1 items-center rounded-[4px] hover:shadow-bright-sm hover:underline duration-300'
       >
         <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] grid place-items-center'>

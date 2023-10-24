@@ -52,22 +52,31 @@ export default function AboutUs() {
           </div>
 
           <ul className='flex lg:gap-2 gap-[6px] pt-2'>
-            <SocialLink className='bg-[#3367CC]' i={1}>
+            <SocialLink className='bg-[#3367CC]' i={1} href=''>
               <BehanceIcon strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#2966A3]' i={2}>
+            <SocialLink
+              className='bg-[#2966A3]'
+              i={2}
+              href='https://www.linkedin.com/company/migacz-brothers'
+            >
               <Linkedin size={32} strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#7F55B6]' i={3}>
+            <SocialLink
+              className='bg-[#7F55B6]'
+              i={3}
+              href='https://www.instagram.com/migaczbrothers/'
+            >
               <Instagram size={32} strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#B35598]' i={4}>
+            <SocialLink className='bg-[#B35598]' i={4} href=''>
               <Dribbble size={32} strokeWidth={1.5} />
             </SocialLink>
             <SocialLink
               className='bg-[#F4F4F4] text-[#121212] pr-2 flex-1'
               text='Or read more'
               i={5}
+              href='/about'
             >
               <BookOpen size={32} strokeWidth={1.5} />
             </SocialLink>

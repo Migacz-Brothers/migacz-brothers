@@ -27,6 +27,7 @@ export default function Portfolio() {
                 <strong>DietIt</strong> Project
               </>
             }
+            tagList={['UI/UX', 'Cross Platform']}
           >
             <Image
               src={DietIt}
@@ -45,6 +46,7 @@ export default function Portfolio() {
                 <strong>Dwight Capital</strong> Project
               </>
             }
+            tagList={[]}
           >
             <Image
               src={Dwight}
@@ -64,6 +66,7 @@ export default function Portfolio() {
                 <strong>Cordoce Store</strong> brand design
               </>
             }
+            tagList={[]}
           >
             <Image
               src={Cordoce}
@@ -84,6 +87,7 @@ export default function Portfolio() {
                 <strong>Knox Abstract</strong>
               </>
             }
+            tagList={[]}
           >
             <Image
               src={Knox}
@@ -103,6 +107,7 @@ export default function Portfolio() {
                 <strong>1up Systems</strong> website
               </>
             }
+            tagList={[]}
           >
             <Image
               src={Oneup}

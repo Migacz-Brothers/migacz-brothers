@@ -12,9 +12,16 @@ interface ProjectProps {
   name: JSX.Element;
   children: JSX.Element;
   key: number;
+  tagList: string[];
 }
 
-const Project = ({ expand = false, name, children, key }: ProjectProps) => {
+const Project = ({
+  expand = false,
+  name,
+  children,
+  key,
+  tagList,
+}: ProjectProps) => {
   return (
     <motion.li
       className={expand ? 'md:col-span-2 col-span-1' : ''}
@@ -29,7 +36,7 @@ const Project = ({ expand = false, name, children, key }: ProjectProps) => {
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
 
         {children}
-        <Tags tagList={['UI/UX', 'Mobile App', 'Search engine']} key={key} />
+        <Tags tagList={tagList} key={key} />
       </Link>
     </motion.li>
   );
