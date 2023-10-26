@@ -3,6 +3,7 @@ import cn from 'clsx';
 import { Tags } from '@/components/Tags';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import ScrollAnimated from '@/components/svgs/ScrollAnimated';
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
               'Redis',
             ]}
           />
+        </section>
+        <section className={section}>
+          <ScrollAnimated />
         </section>
       </main>
       <Footer />
