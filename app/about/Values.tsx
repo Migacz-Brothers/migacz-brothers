@@ -11,7 +11,7 @@ export default function Values() {
       className={cn(section, 'flex flex-col items-start !max-w-[916px]')}
     >
       <h2 className={cn(h2, 'md:mb-16 mb-4')}>The Values</h2>
-      <div className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6 '>
+      <ul className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6 '>
         <IndividualValue
           icon={<SpeetchIcon />}
           title={'Get Real'}
@@ -40,7 +40,7 @@ export default function Values() {
             'Every product we create has to be approved by our team. We wanna be know for our quality, and that`s our main goal.'
           }
         />
-      </div>
+      </ul>
     </section>
   );
 }
@@ -53,21 +53,16 @@ interface IndividualValueProps {
 
 const IndividualValue = ({ icon, title, paragraph }: IndividualValueProps) => {
   return (
-    <div>
-      <div className='w-16 h-16 grid place-items-center hero-background rounded-lg mb-8 '>
+    <li>
+      <div className='grid place-items-center hero-background rounded-lg mb-4 md:mb-8 w-[50px] md:w-16 h-[50px] md:h-16'>
         {icon}
       </div>
-      <h3 className='md:text-[32px] text-xl font-semibold font-body mb-6 leading-header'>
+      <h3 className='md:text-[32px] text-xl font-semibold font-body md:mb-6 mb-2 leading-header'>
         {title}
       </h3>
-      <p
-        className={cn(
-          p,
-          'max-w-[410px] !text-main-foreground font-medium leading-body'
-        )}
-      >
+      <p className={cn(p, '!text-main-foreground font-medium leading-body')}>
         {paragraph}
       </p>
-    </div>
+    </li>
   );
 };
