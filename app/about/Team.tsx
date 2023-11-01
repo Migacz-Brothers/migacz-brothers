@@ -71,9 +71,14 @@ const Card = ({ src, title, role, delay }: CardProps) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut', delay: delay }}
+      className='inline-block'
     >
-      <Image src={src} alt={''} className='rounded-2xl mb-1 md:max-w-full' />
-      <h3 className='font-header font-extralight leading-header md:text-2xl text-xl mb-2'>
+      <Image
+        src={src}
+        alt={''}
+        className='rounded-2xl md:mb-1 mb-2 md:max-w-full'
+      />
+      <h3 className='font-header font-extralight leading-header md:text-2xl text-xl md:mb-0 -mb-1'>
         {title}
       </h3>
       <span className='font-body font-medium leading-header tracking-[3.2px] md:text-base text-xs'>
