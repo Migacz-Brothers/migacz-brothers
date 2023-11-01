@@ -1,10 +1,21 @@
+'use client';
+
 import { h2, p, section } from '@/components/design-system';
 import ScrollAnimated from '@/components/svgs/ScrollAnimated';
 import cn from 'clsx';
+import { motion } from 'framer-motion';
 
 export default function Tldr() {
   return (
-    <section className={section}>
+    <motion.section
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
+      className={section}
+    >
       <h2 className={cn(h2, 'md:mb-6 mb-4')}>The tl;dr</h2>
       <div className='max-w-[514px] flex flex-col gap-4'>
         <p className={p}>
@@ -18,6 +29,6 @@ export default function Tldr() {
           If you wanna learn more, just keep scrolling <ScrollAnimated />
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 }
