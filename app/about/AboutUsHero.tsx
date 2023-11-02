@@ -13,7 +13,7 @@ import MB2About from '@/public/images/MB2About.png';
 import CharlieAbout from '@/public/images/CharlieAbout.png';
 import { motion } from 'framer-motion';
 
-export default function AboutUsSection() {
+export default function AboutUsHero() {
   return (
     <motion.section
       initial={{
@@ -25,19 +25,23 @@ export default function AboutUsSection() {
       className={section}
     >
       <h1 className={cn(h1, 'md:mb-16 mb-4')}>About US</h1>
-      <ul className='grid md:grid-cols-4 grid-cols-2 lg:gap-4 md:gap-3 gap-2'>
+      <ul className='grid sml:grid-cols-4 grid-cols-2 lg:gap-4 md:gap-3 gap-2'>
         <Card src={MBAbout} delay={0.1} className='col-span-2' />
-        <Card src={PlantAbout} delay={0.2} className='md:inline-block hidden' />
+        <Card
+          src={PlantAbout}
+          delay={0.2}
+          className='sml:inline-block hidden'
+        />
         <Card src={PedroAbout} delay={0.3} />
         <Card
           src={GustavoAbout}
           delay={0.4}
-          className='md:inline-block hidden'
+          className='sml:inline-block hidden'
         />
         <Card
           src={MB2About}
           delay={0.5}
-          className='col-span-2 md:inline-block hidden'
+          className='col-span-2 sml:inline-block hidden'
         />
         <Card src={CharlieAbout} delay={0.6} />
       </ul>
