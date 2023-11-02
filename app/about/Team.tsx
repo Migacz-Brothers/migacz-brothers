@@ -4,11 +4,11 @@ import { h2, section } from '@/components/design-system';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 
-import PedroImage from './images/PedroImage.png';
-import GustavoImage from './images/GustavoImage.png';
-import KarlaImage from './images/KarlaImage.png';
-import ArthurImage from './images/ArthurImage.png';
-import CharlieImage from './images/CharlieImage.png';
+import PedroImage from '@/public/images/PedroImage.png';
+import GustavoImage from '@/public/images/GustavoImage.png';
+import KarlaImage from '@/public/images/KarlaImage.png';
+import ArthurImage from '@/public/images/ArthurImage.png';
+import CharlieImage from '@/public/images/CharlieImage.png';
 import { delay, motion } from 'framer-motion';
 import cn from 'clsx';
 
