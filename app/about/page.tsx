@@ -6,7 +6,7 @@ import Tldr from './Tldr';
 
 export default function AboutUs() {
   return (
-    <>
+    <div className='light-noise-background'>
       <Navbar />
       <main className='py-20'>
         <Tldr />
@@ -14,6 +14,6 @@ export default function AboutUs() {
         <Team />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
