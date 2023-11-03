@@ -22,7 +22,7 @@ export default function AboutUsHero() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
-      className={cn(section, 'md:mb-56 mb-14 md:pt-32 pt-24')}
+      className={cn(section, 'md:mb-56 mb-14 md:pt-36 pt-24')}
     >
       <h1 className={cn(h1, 'md:mb-16 mb-4')}>About US</h1>
       <ul className='grid sml:grid-cols-4 grid-cols-2 lg:gap-4 md:gap-3 gap-2'>
@@ -35,15 +35,15 @@ export default function AboutUsHero() {
         <Card src={PedroAbout} delay={0.3} />
         <Card
           src={GustavoAbout}
-          delay={0.4}
+          delay={0.1}
           className='sml:inline-block hidden'
         />
         <Card
           src={MB2About}
-          delay={0.5}
+          delay={0.2}
           className='col-span-2 sml:inline-block hidden'
         />
-        <Card src={CharlieAbout} delay={0.6} />
+        <Card src={CharlieAbout} delay={0.3} />
       </ul>
     </motion.section>
   );

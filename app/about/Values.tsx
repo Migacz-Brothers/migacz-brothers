@@ -81,7 +81,7 @@ const IndividualValue = ({
         opacity: 0,
       }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.4, ease: 'easeInOut', delay: delay }}
     >
       <div className='grid place-items-center hero-background rounded-lg mb-4 md:mb-8 w-[50px] md:w-16 h-[50px] md:h-16'>
