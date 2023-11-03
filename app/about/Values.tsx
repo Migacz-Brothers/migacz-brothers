@@ -18,7 +18,10 @@ export default function Values() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
-      className={cn(section, 'flex flex-col items-start !max-w-[916px]')}
+      className={cn(
+        section,
+        'flex flex-col items-start !max-w-[916px] md:mb-64 mb-12'
+      )}
     >
       <h2 className={cn(h2, 'md:mb-16 mb-4')}>The Values</h2>
       <ul className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6 '>

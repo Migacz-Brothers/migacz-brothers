@@ -15,7 +15,7 @@ import cn from 'clsx';
 export default function Team() {
   return (
     <motion.section
-      className={section}
+      className={cn(section, 'md:mb-32 mb-12')}
       initial={{
         opacity: 0,
       }}

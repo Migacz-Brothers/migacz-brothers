@@ -14,7 +14,7 @@ export default function Tldr() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
-      className={section}
+      className={cn(section, 'md:mb-64 mb-12')}
     >
       <h2 className={cn(h2, 'md:mb-6 mb-4')}>The tl;dr</h2>
       <p className={cn(p, 'max-w-[514px] mb-4')}>
