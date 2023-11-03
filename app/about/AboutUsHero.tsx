@@ -22,7 +22,7 @@ export default function AboutUsHero() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
-      className={cn(section, 'md:mb-56 mb-14 md:pt-48 pt-24')}
+      className={cn(section, 'md:mb-56 mb-14 md:pt-32 pt-24')}
     >
       <h1 className={cn(h1, 'md:mb-16 mb-4')}>About US</h1>
       <ul className='grid sml:grid-cols-4 grid-cols-2 lg:gap-4 md:gap-3 gap-2'>
