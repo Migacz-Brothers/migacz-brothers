@@ -26,12 +26,6 @@ export default function Team() {
       <h2 className={cn(h2, 'md:mb-16 mb-4')}>The Team</h2>
       <ul className='grid md:grid-cols-3 sml:grid-cols-2 grid-cols-1 gap-4'>
         <Card
-          src={PedroImage}
-          title={'Pedro Migacz'}
-          role={'BACKEND DEV'}
-          delay={0.1}
-        />
-        <Card
           src={GustavoImage}
           title={'Gustavo Migacz'}
           role={'FRONTEND DEV'}
@@ -48,6 +42,12 @@ export default function Team() {
           title={'Arthur Franceschini'}
           role={'MARKETING SPECIALIST'}
           delay={0.4}
+        />
+        <Card
+          src={PedroImage}
+          title={'Pedro Migacz'}
+          role={'BACKEND DEV'}
+          delay={0.1}
         />
         <Card src={CharlieImage} title={'Charlie'} role={'PET'} delay={0.5} />
       </ul>
