@@ -19,6 +19,7 @@ const config: Config = {
       },
       screens: {
         lg: '1180px',
+        sml: '500px',
         xsm: '400px',
       },
       padding: {
