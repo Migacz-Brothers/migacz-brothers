@@ -70,9 +70,7 @@ export default function Navbar({ home = false }: NavbarProps) {
           <ul className='md:flex items-center gap-12 hidden'>
             <NavLink href={(home ? '' : '/') + '#home'}>Home</NavLink>
             <NavLink href={(home ? '' : '/') + '#about'}>About Us</NavLink>
-            <NavLink href={(home ? '' : '/') + '#portfolio'}>
-              Portofolio
-            </NavLink>
+            <NavLink href={(home ? '' : '/') + '#portfolio'}>Portfolio</NavLink>
             <li>
               <a
                 href={(home ? '' : '/') + '#contact'}

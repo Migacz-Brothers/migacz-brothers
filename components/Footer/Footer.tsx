@@ -79,7 +79,7 @@ export default function Footer({ home = false }: FooterProps) {
               About Us
             </FooterLink>
             <FooterLink href={(home ? '' : '/') + '#portfolio'}>
-              Portofolio
+              Portfolio
             </FooterLink>
             <FooterLink href={(home ? '' : '/') + '#portfolio'}>
               Contact Us
