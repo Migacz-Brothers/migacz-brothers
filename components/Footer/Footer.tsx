@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import CompanyLogo from '../svgs/CompanyLogo';
-import { Dribbble, Instagram, Linkedin } from 'lucide-react';
-import BehanceIcon from '../svgs/BehanceIcon';
 import cn from 'clsx';
-import { section } from '../design-system';
 import { motion } from 'framer-motion';
+import { Dribbble, Instagram, Linkedin } from 'lucide-react';
+
+import { section } from '../design-system';
+import BehanceIcon from '../svgs/BehanceIcon';
+import CompanyLogo from '../svgs/CompanyLogo';
 
 interface FooterProps {
   home?: boolean;
@@ -24,16 +25,16 @@ export default function Footer({ home = false }: FooterProps) {
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <div className='flex lg:flex-row flex-col justify-between lg:items-center items-start mb-6 gap-8'>
+        <div className='mb-6 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center'>
           <a href={(home ? '' : '/') + '#home'} className='order-none'>
-            <CompanyLogo className='w-[99px] h-[41px]' />
+            <CompanyLogo className='h-[41px] w-[99px]' />
           </a>
-          <ul className='flex gap-8 lg:order-none order-3'>
+          <ul className='order-3 flex gap-8 lg:order-none'>
             <li>
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-6 h-6'
+                className='grid h-6 w-6 place-items-center'
               >
                 <Instagram strokeWidth={1.5} />
               </Link>
@@ -42,7 +43,7 @@ export default function Footer({ home = false }: FooterProps) {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-6 h-6'
+                className='grid h-6 w-6 place-items-center'
               >
                 <BehanceIcon strokeWidth={1.5} />
               </Link>
@@ -51,7 +52,7 @@ export default function Footer({ home = false }: FooterProps) {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-6 h-6'
+                className='grid h-6 w-6 place-items-center'
               >
                 <Linkedin strokeWidth={1.5} />
               </Link>
@@ -60,20 +61,20 @@ export default function Footer({ home = false }: FooterProps) {
               <Link
                 href='#'
                 target='_blank'
-                className='grid place-items-center w-6 h-6'
+                className='grid h-6 w-6 place-items-center'
               >
                 <Dribbble strokeWidth={1.5} />
               </Link>
             </li>
           </ul>
-          <ul className='flex gap-8 font-header text-lg lg:order-none order-2'>
+          <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
             <LanguageLink current href='/'>
               EN
             </LanguageLink>
             <LanguageLink href='/pt'>PT</LanguageLink>
             <LanguageLink href='/es'>ES</LanguageLink>
           </ul>
-          <ul className='flex lg:gap-8 gap-4 lg:flex-row flex-col lg:order-none order-1'>
+          <ul className='order-1 flex flex-col gap-4 lg:order-none lg:flex-row lg:gap-8'>
             <FooterLink href={(home ? '' : '/') + '#home'}>Home</FooterLink>
             <FooterLink href={(home ? '' : '/') + '#about'}>
               About Us
@@ -87,7 +88,7 @@ export default function Footer({ home = false }: FooterProps) {
           </ul>
         </div>
         <motion.hr
-          className='h-[2px] inline-block w-full border-0 horizontal-background mb-6'
+          className='horizontal-background mb-6 inline-block h-[2px] w-full border-0'
           initial={{
             width: 0,
           }}
@@ -95,8 +96,8 @@ export default function Footer({ home = false }: FooterProps) {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         />
-        <div className='lg:text-right text-start font-body text-sm'>
-          <div className='font-body text-main mb-1'>
+        <div className='text-start font-body text-sm lg:text-right'>
+          <div className='mb-1 font-body text-main'>
             MigaczBrothers © All rights reserved.
           </div>
           <div className='text-[#7C7C7C]'>CNPJ 48.546.424/0001-82</div>
@@ -116,10 +117,10 @@ const FooterLink = ({ children, href }: FooterLinkProps) => {
     <li>
       <Link
         href={href}
-        className='inline-block text-main font-header md:text-lg text-sm group'
+        className='group inline-block font-header text-sm text-main md:text-lg'
       >
         {children}
-        <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
+        <div className='nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-200 group-hover:opacity-100' />
       </Link>
     </li>
   );
@@ -142,13 +143,13 @@ const LanguageLink = ({
     <li className={className}>
       <Link
         href={href}
-        className='gradient-language-bold duration-300 inline-block group font'
+        className='gradient-language-bold font group inline-block duration-300'
       >
         {children}
         <div
           className={cn(
-            'h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-300',
-            current ? 'opacity-100' : ''
+            'nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-300 group-hover:opacity-100',
+            current ? 'opacity-100' : '',
           )}
         />
       </Link>
