@@ -1,11 +1,11 @@
-import { defineConfig } from "tinacms";
+import { defineConfig, Form, TinaCMS } from 'tinacms';
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
-  "main";
+  'main';
 
 export default defineConfig({
   branch,
@@ -16,40 +16,58 @@ export default defineConfig({
   token: process.env.TINA_TOKEN,
 
   build: {
-    outputFolder: "admin",
-    publicFolder: "public",
+    outputFolder: 'admin',
+    publicFolder: 'public',
   },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "public",
+      mediaRoot: '',
+      publicFolder: 'public',
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: 'projects',
+        label: 'Projetos',
+        path: 'content/projects',
+        format: 'mdx',
         fields: [
           {
-            type: "string",
-            name: "title",
-            label: "Title",
+            type: 'string',
+            name: 'title',
+            label: 'Titulo',
             isTitle: true,
             required: true,
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
+            type: 'string',
+            name: 'date',
+            label: 'Data de execução do projeto',
+            required: true,
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
             isBody: true,
           },
         ],
         ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          filename: {
+            slugify: (form) => {
+              if (!form || !form.title) return '';
+              const slug = form.title
+                .toLowerCase()
+                .replace(/ /g, '-')
+                .replace(/[^\w-]+/g, '');
+
+              return `${slug}`;
+            },
+          },
+          router: ({ collection: Collection, document: Document }) =>
+            `portfolio/${Document._sys.filename}`,
         },
       },
     ],
