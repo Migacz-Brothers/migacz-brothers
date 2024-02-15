@@ -10,12 +10,9 @@ export default async function ProjectPage({
 }: {
   params: { slug: string };
 }) {
-  console.log('slug', slug);
   const res = await client.queries.projects({
     relativePath: `/${slug}.mdx`,
   });
-
-  console.log('res', res);
 
   return (
     <>

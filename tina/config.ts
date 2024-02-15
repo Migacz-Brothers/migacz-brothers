@@ -43,15 +43,50 @@ export default defineConfig({
           },
           {
             type: 'string',
+            name: 'project_description',
+            label: 'Descrição do projeto',
+            required: true,
+          },
+          {
+            type: 'string',
             name: 'date',
             label: 'Data de execução do projeto',
             required: true,
+          },
+          {
+            type: 'string',
+            name: 'read_time',
+            label: 'Tempo de leitura',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'link',
+            label: 'Link do projeto',
           },
           {
             type: 'rich-text',
             name: 'body',
             label: 'Body',
             isBody: true,
+          },
+          {
+            type: 'image',
+            name: 'images_column_one',
+            label: 'Primeira coluna de imagens',
+            list: true,
+          },
+          {
+            type: 'image',
+            name: 'images_column_two',
+            label: 'Segunda coluna de imagens',
+            list: true,
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            list: true,
           },
         ],
         ui: {
