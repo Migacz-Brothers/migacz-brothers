@@ -1,4 +1,9 @@
+import Link from 'next/link';
+import cn from 'clsx';
+import { LogIn } from 'lucide-react';
+
 import { getProejects, getSpecificProeject } from '@/lib/sanity';
+import { section } from '@/components/design-system';
 import Navbar from '@/components/Navbar/Navbar';
 import PortfolioDataLayer from '@/app/[slug]/data_layer';
 
@@ -13,13 +18,26 @@ export default async function ProjectPage({
     return null;
   }
 
+  console.log(project);
+
   return (
     <>
       <Navbar />
-      <main className='pt-28 md:pt-40'>
+      <main className={cn('!max-w-[819px] pt-28 md:pt-40', section)}>
+        <div className='font-header'>
+          <h1 className='text-5xl font-semibold'>{project.title}</h1>
+          <p className='text-4xl'>{project.description}</p>
+          <p className='flex gap-3 font-light'>
+            <span>{project.executedAt}</span>•<span>{project.read_time}</span>
+          </p>
+          <Link
+            href='www.google.com'
+            className='inline-flex gap-2 rounded-md bg-[#ffffff] px-3 py-2 font-medium text-cta'
+          >
+            Acesse a página <LogIn strokeWidth={1.5} />
+          </Link>
+        </div>
         <PortfolioDataLayer />
-        <p>SKIBIDI PAPA</p>
-        <p>SLUG {slug}</p>
       </main>
     </>
   );
