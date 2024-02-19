@@ -1,11 +1,18 @@
+import { getProejects, getSpecificProeject } from '@/lib/sanity';
 import Navbar from '@/components/Navbar/Navbar';
-import PortfolioDataLayer from '@/app/portfolio/[slug]/data_layer';
+import PortfolioDataLayer from '@/app/[slug]/data_layer';
 
 export default async function ProjectPage({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
+  const project = (await getSpecificProeject({ slug }))[0];
+
+  if (!project) {
+    return null;
+  }
+
   return (
     <>
       <Navbar />
@@ -21,8 +28,8 @@ export default async function ProjectPage({
 // app/[...slug]/page.js
 
 // export async function generateStaticParams() {
-//   const projects = (await client.queries.projectsConnection()).data
-//     .projectsConnection.edges;
+//   const projects = await getProejects();
+//   console.log('projects', projects);
 
 //   if (!projects) return [];
 
