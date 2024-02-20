@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
 import cn from 'clsx';
 import { LogIn } from 'lucide-react';
 
@@ -14,21 +15,22 @@ export default async function ProjectPage({
 }) {
   const project = (await getSpecificProeject({ slug }))[0];
 
+  // console.log('project', project);
+
   if (!project) {
     return null;
   }
-
-  console.log(project);
 
   return (
     <>
       <Navbar />
       <main className={cn('!max-w-[819px] pt-28 md:pt-40', section)}>
         <div className='font-header'>
-          <h1 className='text-5xl font-semibold'>{project.title}</h1>
-          <p className='text-4xl'>{project.description}</p>
+          <h1 className='text-5xl font-semibold'>{project.title.pt}</h1>
+          <p className='text-4xl'>{project.description.pt}</p>
           <p className='flex gap-3 font-light'>
-            <span>{project.executedAt}</span>•<span>{project.read_time}</span>
+            <span>{project.executedAt.pt}</span>•
+            <span>{project.read_time.pt}</span>
           </p>
           <Link
             href='www.google.com'
@@ -38,6 +40,7 @@ export default async function ProjectPage({
           </Link>
         </div>
         <PortfolioDataLayer />
+        <PortableText value={project.body.pt} />
       </main>
     </>
   );

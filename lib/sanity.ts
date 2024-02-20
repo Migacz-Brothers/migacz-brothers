@@ -19,7 +19,7 @@ export async function getProejects() {
 
 export async function getSpecificProeject({ slug }: { slug: string }) {
   const post = await client.fetch(
-    `*[_type == "project" && slug.current == "${slug}"]`,
+    `*[_type == "project" && slug.pt.current == "${slug}"]`,
   );
 
   return post;
