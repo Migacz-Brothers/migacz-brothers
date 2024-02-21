@@ -39,7 +39,11 @@ export default function Home() {
           text='Or read more'
         />
         <Portfolio />
-        <ContactUs />
+        <ContactUs
+          title='Wanna Talk? Send us a message!'
+          paragraph='Our team is excited to connect with you. Reach out to discuss your software needs today!'
+          textButton='Contact us at'
+        />
       </main>
       <Footer home />
     </>

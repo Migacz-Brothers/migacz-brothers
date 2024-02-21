@@ -41,7 +41,11 @@ export default function Home() {
           text={'Ou leia mais'}
         />
         <Portfolio />
-        <ContactUs />
+        <ContactUs
+          title='Quer conversar? Nos envie uma mensagem!'
+          paragraph='Nossa equipe está empolgada para se conectar com você. Entre em contato para discutir suas necessidades de software hoje!'
+          textButton='Conta-te nos em'
+        />
       </main>
       <Footer home />
     </>
