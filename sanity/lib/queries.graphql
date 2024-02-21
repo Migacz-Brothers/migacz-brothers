@@ -1,0 +1,58 @@
+query AllProjects {
+  allProject {
+    ...ProjectListing
+  }
+}
+
+query ProjectBySlug($slug: String) {
+  allProject(where: { slug: { pt: { current: { eq: $slug } } } }) {
+    ...ProjectListing
+  }
+}
+
+fragment ProjectListing on Project {
+  title {
+    pt
+  }
+  description {
+    pt
+  }
+  slug {
+    pt {
+      current
+    }
+  }
+  executedAt {
+    pt
+  }
+  read_time {
+    pt
+  }
+  link
+  body {
+    ptRaw
+  }
+  image_column_1 {
+    asset {
+      url
+      metadata {
+        dimensions {
+          width
+          height
+        }
+      }
+    }
+  }
+  image_column_2 {
+    asset {
+      url
+      metadata {
+        dimensions {
+          width
+          height
+        }
+      }
+    }
+  }
+  tags
+}
