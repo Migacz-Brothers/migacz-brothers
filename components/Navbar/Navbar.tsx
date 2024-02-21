@@ -1,31 +1,41 @@
 'use client';
 
 //////LibraryImports
-import Link from 'next/link';
 import { MouseEventHandler, useState } from 'react';
+import Link from 'next/link';
+import cn from 'clsx';
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
 } from 'framer-motion';
-import cn from 'clsx';
-import { section } from '../design-system';
 
+import { section } from '../design-system';
+import Supernav from '../Supernav';
+import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
+import BurguerMobileIcon from '../svgs/BurguerMobileIcon';
 //////IconsImports
 import CompanyLogo from '../svgs/CompanyLogo';
-import BurguerMobileIcon from '../svgs/BurguerMobileIcon';
-import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
-import LinkedinMobileIcon from '../svgs/LinkedinMobileIcon';
 import DribbbleMobileIcon from '../svgs/DribbbleMobileIcon';
 import InstagramMobileIcon from '../svgs/InstagramMobileIcon';
-import Supernav from '../Supernav';
+import LinkedinMobileIcon from '../svgs/LinkedinMobileIcon';
 
 interface NavbarProps {
   home?: boolean;
+  homeButton: string;
+  aboutUsButton: string;
+  portfolioButton: string;
+  contactButton: string;
 }
 
-export default function Navbar({ home = false }: NavbarProps) {
+export default function Navbar({
+  home = false,
+  homeButton,
+  aboutUsButton,
+  portfolioButton,
+  contactButton,
+}: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -50,8 +60,8 @@ export default function Navbar({ home = false }: NavbarProps) {
       <nav
         className={cn(
           // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
-          'w-full fixed top-0 left-0 z-[9999] duration-500 py-6',
-          scrolled && !mobileOpen ? 'navbar-scrolled-bg' : ''
+          'fixed left-0 top-0 z-[9999] w-full py-6 duration-500',
+          scrolled && !mobileOpen ? 'navbar-scrolled-bg' : '',
         )}
       >
         <motion.div
@@ -64,19 +74,23 @@ export default function Navbar({ home = false }: NavbarProps) {
           transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
           <a href={(home ? '' : '/') + '#home'} onClick={closeNavbar}>
-            <CompanyLogo className='w-[72px] h-[31px] md:w-[90px] md:h-[38px]' />
+            <CompanyLogo className='h-[31px] w-[72px] md:h-[38px] md:w-[90px]' />
           </a>
 
-          <ul className='md:flex items-center gap-12 hidden'>
-            <NavLink href={(home ? '' : '/') + '#home'}>Home</NavLink>
-            <NavLink href={(home ? '' : '/') + '#about'}>About Us</NavLink>
-            <NavLink href={(home ? '' : '/') + '#portfolio'}>Portfolio</NavLink>
+          <ul className='hidden items-center gap-12 md:flex'>
+            <NavLink href={(home ? '' : '/') + '#home'}>{homeButton}</NavLink>
+            <NavLink href={(home ? '' : '/') + '#about'}>
+              {aboutUsButton}
+            </NavLink>
+            <NavLink href={(home ? '' : '/') + '#portfolio'}>
+              {portfolioButton}
+            </NavLink>
             <li>
               <a
                 href={(home ? '' : '/') + '#contact'}
-                className='w-[178px] h-10 nav-background grid place-items-center rounded text-lg font-semibold'
+                className='nav-background grid h-10 w-[178px] place-items-center rounded text-lg font-semibold'
               >
-                Contact Us
+                {contactButton}
               </a>
             </li>
           </ul>
@@ -84,8 +98,8 @@ export default function Navbar({ home = false }: NavbarProps) {
           {/* nav mobile */}
           <button
             className={cn(
-              'md:hidden flex burguer-menu',
-              mobileOpen ? 'burguer-menu-open' : 'burguer-menu-closed'
+              'burguer-menu flex md:hidden',
+              mobileOpen ? 'burguer-menu-open' : 'burguer-menu-closed',
             )}
             onClick={toggleMenu}
           >
@@ -97,7 +111,7 @@ export default function Navbar({ home = false }: NavbarProps) {
       <AnimatePresence>
         {mobileOpen ? (
           <motion.div
-            className='fixed h-full w-full top-0 left-0 text-center bg-[#050505] flex flex-col z-50 justify-center md:hidden pt-[79px]'
+            className='fixed left-0 top-0 z-50 flex h-full w-full flex-col justify-center bg-[#050505] pt-[79px] text-center md:hidden'
             initial={{
               opacity: 0,
             }}
@@ -111,37 +125,37 @@ export default function Navbar({ home = false }: NavbarProps) {
               duration: 0.2,
             }}
           >
-            <ul className='flex flex-col gap-8 mb-10'>
+            <ul className='mb-10 flex flex-col gap-8'>
               <NavMobileLink
                 href={(home ? '' : '/') + '#home'}
                 onClick={closeNavbar}
                 delay={0.1}
               >
-                Home
+                {homeButton}
               </NavMobileLink>
               <NavMobileLink
                 href={(home ? '' : '/') + '#about'}
                 onClick={closeNavbar}
                 delay={0.2}
               >
-                About Us
+                {aboutUsButton}
               </NavMobileLink>
               <NavMobileLink
                 href={(home ? '' : '/') + '#portfolio'}
                 onClick={closeNavbar}
                 delay={0.3}
               >
-                Portfolio
+                {portfolioButton}
               </NavMobileLink>
               <NavMobileLink
                 href={(home ? '' : '/') + '#contact'}
                 onClick={closeNavbar}
                 delay={0.3}
               >
-                Contact Us
+                {contactButton}
               </NavMobileLink>
               <li>
-                <ul className='flex justify-center items-center'>
+                <ul className='flex items-center justify-center'>
                   <motion.li
                     initial={{
                       y: 60,
@@ -230,10 +244,10 @@ const NavLink = ({ children, href }: NavLinkProps) => {
     <li>
       <a
         href={href}
-        className='inline-block text-[#ffffff] font-header font-medium text-lg group'
+        className='group inline-block font-header text-lg font-medium text-[#ffffff]'
       >
         {children}
-        <div className='h-[2px] w-full nav-background rounded-[50px] opacity-0 group-hover:opacity-100 duration-200' />
+        <div className='nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-200 group-hover:opacity-100' />
       </a>
     </li>
   );
@@ -268,7 +282,7 @@ const NavMobileLink = ({
     >
       <a
         href={href}
-        className='inline-block text-[#ffffff] font-header font-semibold text-[54px]'
+        className='inline-block font-header text-[54px] font-semibold text-[#ffffff]'
         onClick={onClick}
       >
         {children}

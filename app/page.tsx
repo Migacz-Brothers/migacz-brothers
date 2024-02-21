@@ -8,7 +8,13 @@ import Portfolio from '@/components/Portfolio';
 export default function Home() {
   return (
     <>
-      <Navbar home />
+      <Navbar
+        home
+        homeButton='Home'
+        aboutUsButton='About Us'
+        portfolioButton='Portfolio'
+        contactButton='Contact Us'
+      />
       <main>
         <Hero
           title={
