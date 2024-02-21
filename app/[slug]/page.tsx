@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getSpecificProject } from '@/sanity/lib/sanity';
+import { getAllProjects, getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 import { LogIn } from 'lucide-react';
 
-import { section } from '@/components/design-system';
+import { h1, section } from '@/components/design-system';
 import Navbar from '@/components/Navbar/Navbar';
 import PortfolioDataLayer from '@/app/[slug]/data_layer';
 
@@ -14,9 +14,6 @@ export default async function ProjectPage({
   params: { slug: string };
 }) {
   const res = await getSpecificProject({ slug });
-
-  if (!res) return notFound();
-
   const project = res.allProject[0];
 
   if (!project) return notFound();
@@ -47,15 +44,17 @@ export default async function ProjectPage({
 
 // app/[...slug]/page.js
 
-// export async function generateStaticParams() {
-//   const projects = await getProejects();
-//   console.log('projects', projects);
+export async function generateStaticParams() {
+  const { allProject } = await getAllProjects();
 
-//   if (!projects) return [];
+  if (!allProject) return [];
 
-//   return projects.map((project) => {
-//     return {
-//       slug: project?.node?._sys.filename,
-//     };
-//   });
-// }
+  return allProject.map((project) => {
+    return {
+      slug: project.slug?.pt?.current,
+    };
+  });
+}
+
+export const dynamicParams = false;
+export const revalidate = false;

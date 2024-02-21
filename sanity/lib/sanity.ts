@@ -21,3 +21,9 @@ export async function getSpecificProject({ slug }: { slug: string }) {
 
   return post;
 }
+
+export async function getAllProjects() {
+  const projects = await sdk.AllProjects();
+
+  return projects;
+}
