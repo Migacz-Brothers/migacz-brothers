@@ -19,6 +19,8 @@ export default async function ProjectPage({
 
   const project = res.allProject[0];
 
+  if (!project) return notFound();
+
   return (
     <>
       <Navbar />
@@ -27,7 +29,8 @@ export default async function ProjectPage({
           <h1 className='text-5xl font-semibold'>{project.title?.pt}</h1>
           <p className='text-4xl'>{project.description?.pt}</p>
           <p className='flex gap-3 font-light'>
-            <span>{project.executedAt}</span>•<span>{project.read_time}</span>
+            <span>{project.executedAt?.pt}</span>•
+            <span>{project.read_time?.pt}</span>
           </p>
           <Link
             href='www.google.com'

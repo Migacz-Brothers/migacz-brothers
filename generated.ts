@@ -867,32 +867,63 @@ export type StringFilter = {
 export type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllProjectsQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', _id?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null }> };
+export type AllProjectsQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
 
 export type ProjectBySlugQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type ProjectBySlugQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', _id?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null }> };
+export type ProjectBySlugQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
 
-export type ProjectListingFragment = { __typename: 'Project', _id?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null };
+export type ProjectListingFragment = { __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
 
 export const ProjectListingFragmentDoc = gql`
     fragment ProjectListing on Project {
-  _id
   title {
     pt
   }
-  tags
+  description {
+    pt
+  }
   slug {
     pt {
       current
     }
   }
-  description {
+  executedAt {
     pt
   }
+  read_time {
+    pt
+  }
+  link
+  body {
+    ptRaw
+  }
+  image_column_1 {
+    asset {
+      url
+      metadata {
+        dimensions {
+          width
+          height
+        }
+      }
+    }
+  }
+  image_column_2 {
+    asset {
+      url
+      metadata {
+        dimensions {
+          width
+          height
+        }
+      }
+    }
+  }
+  tags
 }
     `;
 export const AllProjectsDocument = gql`
