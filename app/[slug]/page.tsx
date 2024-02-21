@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 import { LogIn } from 'lucide-react';
 
-import { getProejects, getSpecificProeject } from '@/lib/sanity';
 import { section } from '@/components/design-system';
 import Navbar from '@/components/Navbar/Navbar';
 import PortfolioDataLayer from '@/app/[slug]/data_layer';
@@ -12,21 +13,19 @@ export default async function ProjectPage({
 }: {
   params: { slug: string };
 }) {
-  const project = (await getSpecificProeject({ slug }))[0];
+  const res = await getSpecificProject({ slug });
 
-  if (!project) {
-    return null;
-  }
+  if (!res) return notFound();
 
-  console.log(project);
+  const project = res.allProject[0];
 
   return (
     <>
       <Navbar />
       <main className={cn('!max-w-[819px] pt-28 md:pt-40', section)}>
         <div className='font-header'>
-          <h1 className='text-5xl font-semibold'>{project.title}</h1>
-          <p className='text-4xl'>{project.description}</p>
+          <h1 className='text-5xl font-semibold'>{project.title?.pt}</h1>
+          <p className='text-4xl'>{project.description?.pt}</p>
           <p className='flex gap-3 font-light'>
             <span>{project.executedAt}</span>•<span>{project.read_time}</span>
           </p>

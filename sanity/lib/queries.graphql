@@ -1,0 +1,28 @@
+query AllProjects {
+  allProject {
+    ...ProjectListing
+  }
+}
+
+query ProjectBySlug($slug: String) {
+  allProject(where: { slug: { pt: { current: { eq: $slug } } } }) {
+    ...ProjectListing
+  }
+}
+
+fragment ProjectListing on Project {
+  _id
+  title {
+    pt
+  }
+  tags
+
+  slug {
+    pt {
+      current
+    }
+  }
+  description {
+    pt
+  }
+}
