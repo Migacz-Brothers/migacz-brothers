@@ -11,9 +11,21 @@ import CompanyLogo from '../svgs/CompanyLogo';
 
 interface FooterProps {
   home?: boolean;
+  homeButton: string;
+  aboutUsButton: string;
+  portfolioButton: string;
+  contactUsButton: string;
+  basePath?: string;
 }
 
-export default function Footer({ home = false }: FooterProps) {
+export default function Footer({
+  home = false,
+  homeButton,
+  aboutUsButton,
+  portfolioButton,
+  contactUsButton,
+  basePath = '',
+}: FooterProps) {
   return (
     <footer className='my-5 pb-18'>
       <motion.div
@@ -75,15 +87,17 @@ export default function Footer({ home = false }: FooterProps) {
             <LanguageLink href='/es'>ES</LanguageLink>
           </ul>
           <ul className='order-1 flex flex-col gap-4 lg:order-none lg:flex-row lg:gap-8'>
-            <FooterLink href={(home ? '' : '/') + '#home'}>Home</FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#about'}>
-              About Us
+            <FooterLink href={basePath + (home ? '' : '/') + '#home'}>
+              {homeButton}
             </FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#portfolio'}>
-              Portfolio
+            <FooterLink href={basePath + (home ? '' : '/') + '#about'}>
+              {aboutUsButton}
             </FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#portfolio'}>
-              Contact Us
+            <FooterLink href={basePath + (home ? '' : '/') + '#portfolio'}>
+              {portfolioButton}
+            </FooterLink>
+            <FooterLink href={basePath + (home ? '' : '/') + '#portfolio'}>
+              {contactUsButton}
             </FooterLink>
           </ul>
         </div>

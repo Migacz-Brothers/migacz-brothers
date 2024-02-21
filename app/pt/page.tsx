@@ -48,7 +48,14 @@ export default function Home() {
           textButton='Conta-te nos em'
         />
       </main>
-      <Footer home />
+      <Footer
+        home
+        homeButton='Ínicio'
+        aboutUsButton='Sobre nós'
+        portfolioButton='Portfólio'
+        contactUsButton='Contate-nos'
+        basePath='pt'
+      />
     </>
   );
 }

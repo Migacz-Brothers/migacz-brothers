@@ -45,7 +45,13 @@ export default function Home() {
           textButton='Contact us at'
         />
       </main>
-      <Footer home />
+      <Footer
+        home
+        homeButton='Home'
+        aboutUsButton='About Us'
+        portfolioButton='Portfolio'
+        contactUsButton='Contact Us'
+      />
     </>
   );
 }
