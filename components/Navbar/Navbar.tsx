@@ -27,6 +27,7 @@ interface NavbarProps {
   aboutUsButton: string;
   portfolioButton: string;
   contactButton: string;
+  basePath?: string;
 }
 
 export default function Navbar({
@@ -35,6 +36,7 @@ export default function Navbar({
   aboutUsButton,
   portfolioButton,
   contactButton,
+  basePath = '',
 }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -73,16 +75,21 @@ export default function Navbar({
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
-          <a href={(home ? '' : '/') + '#home'} onClick={closeNavbar}>
+          <a
+            href={basePath + (home ? '' : '/') + '#home'}
+            onClick={closeNavbar}
+          >
             <CompanyLogo className='h-[31px] w-[72px] md:h-[38px] md:w-[90px]' />
           </a>
 
           <ul className='hidden items-center gap-12 md:flex'>
-            <NavLink href={(home ? '' : '/') + '#home'}>{homeButton}</NavLink>
-            <NavLink href={(home ? '' : '/') + '#about'}>
+            <NavLink href={basePath + (home ? '' : '/') + '#home'}>
+              {homeButton}
+            </NavLink>
+            <NavLink href={basePath + (home ? '' : '/') + '#about'}>
               {aboutUsButton}
             </NavLink>
-            <NavLink href={(home ? '' : '/') + '#portfolio'}>
+            <NavLink href={basePath + (home ? '' : '/') + '#portfolio'}>
               {portfolioButton}
             </NavLink>
             <li>
