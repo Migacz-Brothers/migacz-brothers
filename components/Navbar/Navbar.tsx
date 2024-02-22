@@ -176,7 +176,12 @@ export default function Navbar({
                       delay: 0.4,
                     }}
                   >
-                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                    <Link
+                      href='https://www.behance.net/MigaczBrothers'
+                      onClick={closeNavbar}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <BehanceMobileIcon />
                     </Link>
                   </motion.li>
@@ -193,7 +198,12 @@ export default function Navbar({
                       delay: 0.5,
                     }}
                   >
-                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                    <Link
+                      href='https://www.instagram.com/migaczbrothers/'
+                      onClick={closeNavbar}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <InstagramMobileIcon />
                     </Link>
                   </motion.li>
@@ -210,7 +220,12 @@ export default function Navbar({
                       delay: 0.6,
                     }}
                   >
-                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                    <Link
+                      href='https://www.linkedin.com/company/migacz-brothers/'
+                      onClick={closeNavbar}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <LinkedinMobileIcon />
                     </Link>
                   </motion.li>
@@ -227,7 +242,12 @@ export default function Navbar({
                       delay: 0.7,
                     }}
                   >
-                    <Link href='#' onClick={closeNavbar} target='_blank'>
+                    <Link
+                      href='https://dribbble.com/MigaczBrothers'
+                      onClick={closeNavbar}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <DribbbleMobileIcon />
                     </Link>
                   </motion.li>
