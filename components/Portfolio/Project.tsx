@@ -1,11 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import cn from 'clsx';
+import { motion } from 'framer-motion';
 
-import { Tags } from '@/components/Tags';
 import { h3 } from '@/components/design-system';
+import { Tags } from '@/components/Tags';
 
 interface ProjectProps {
   expand?: boolean;
@@ -26,7 +26,7 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <motion.li
-      className={expand ? 'md:col-span-2 col-span-1' : ''}
+      className={expand ? 'col-span-1 md:col-span-2' : ''}
       initial={{
         opacity: 0,
       }}
@@ -36,7 +36,7 @@ const Project = ({
     >
       <Link
         href={href}
-        className='flex flex-col md:gap-4 gap-2 group max-h-full'
+        className='group flex max-h-full flex-col gap-2 md:gap-4'
       >
         <h3 className={cn(h3, 'group-hover:underline')}>{name}</h3>
 

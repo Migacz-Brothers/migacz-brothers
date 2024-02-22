@@ -38,7 +38,37 @@ export default function Home() {
           paragraph='We are a small cooperative company from South Brazil with an international team of professionals who have joined forces to create unique products for the web.'
           text='Or read more'
         />
-        <Portfolio />
+        <Portfolio
+          title='Our Projects Showcase'
+          title_1={
+            <>
+              <strong className='gradient-bold'>DietIt!</strong> A platform made
+              for dieticians
+            </>
+          }
+          title_2={
+            <>
+              <strong className='gradient-bold'>Dwight Capital</strong> Press
+              releases page system
+            </>
+          }
+          title_3={
+            <>
+              <strong className='gradient-bold'>Cordoce Stores</strong> branding
+              project
+            </>
+          }
+          title_4={
+            <>
+              <strong className='gradient-bold'>Knox Abstract</strong> website
+            </>
+          }
+          title_5={
+            <>
+              <strong className='gradient-bold'>1up Systems</strong> website
+            </>
+          }
+        />
         <ContactUs
           title='Wanna Talk? Send us a message!'
           paragraph='Our team is excited to connect with you. Reach out to discuss your software needs today!'

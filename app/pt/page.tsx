@@ -34,14 +34,42 @@ export default function Home() {
           textButton='Contacte-nos em'
         />
         <AboutUs
-          title={'Sobre nós'}
-          subTitle={'Design & Código'}
-          paragraph={
-            'Somos uma pequena empresa cooperativa do Sul do Brasil com uma equipe internacional de profissionais que uniram forças para criar produtos exclusivos para a web.'
-          }
-          text={'Ou leia mais'}
+          title='Sobre nós'
+          subTitle='Design & Código'
+          paragraph='Somos uma pequena empresa cooperativa do Sul do Brasil com uma equipe internacional de profissionais que uniram forças para criar produtos exclusivos para a web.'
+          text='Ou leia mais'
         />
-        <Portfolio />
+        <Portfolio
+          title='Nossa vitrine de projetos'
+          title_1={
+            <>
+              <strong className='gradient-bold'>DietIt!</strong> Uma plataforma
+              feita para nutricionistas.
+            </>
+          }
+          title_2={
+            <>
+              <strong className='gradient-bold'>Dwight Capital</strong> Sistema
+              de página de comunicados de imprensa.
+            </>
+          }
+          title_3={
+            <>
+              <strong className='gradient-bold'>Cordoce Stores</strong> Projeto
+              de branding.
+            </>
+          }
+          title_4={
+            <>
+              <strong className='gradient-bold'>Knox Abstract</strong> Website.
+            </>
+          }
+          title_5={
+            <>
+              <strong className='gradient-bold'>1up Systems</strong> Website.
+            </>
+          }
+        />
         <ContactUs
           title='Quer conversar? Nos envie uma mensagem!'
           paragraph='Nossa equipe está empolgada para se conectar com você. Entre em contato para discutir suas necessidades de software hoje!'
