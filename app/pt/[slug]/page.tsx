@@ -22,7 +22,13 @@ export default async function ProjectPage({
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        basePath='/pt'
+        homeButton='Ínicio'
+        aboutUsButton='Sobre nós'
+        portfolioButton='Portfólio'
+        contactButton='Contate-nos'
+      />
       <main
         className={cn(
           'flex !max-w-[1052px] flex-col !px-3 pb-32 pt-28 md:!px-8 md:pt-40',
@@ -39,7 +45,12 @@ export default async function ProjectPage({
         <PortfolioDataLayer project={project} />
         <Tags tagList={project.tags as string[]} />
       </main>
-      <Footer />
+      <Footer
+        homeButton='Ínicio'
+        aboutUsButton='Sobre nós'
+        portfolioButton='Portfólio'
+        contactUsButton='Contate-nos'
+      />
     </>
   );
 }

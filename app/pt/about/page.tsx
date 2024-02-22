@@ -9,7 +9,6 @@ export default function AboutUs() {
   return (
     <div className='light-noise-background'>
       <Navbar
-        home
         basePath='/pt'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
@@ -37,7 +36,6 @@ export default function AboutUs() {
         <Team title='A Equipe' />
       </main>
       <Footer
-        home
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
