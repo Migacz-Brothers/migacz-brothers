@@ -272,8 +272,6 @@ const NavLink = ({ children, href }: NavLinkProps) => {
       <a
         href={href}
         className='group inline-block font-header text-lg font-medium text-[#ffffff]'
-        target='_blank'
-        rel='noopener noreferrer'
       >
         {children}
         <div className='nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-200 group-hover:opacity-100' />
