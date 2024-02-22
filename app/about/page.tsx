@@ -11,6 +11,7 @@ export default function AboutUs() {
     <div className='light-noise-background'>
       <Navbar
         home
+        basePath='/pt'
         homeButton='Home'
         aboutUsButton='About Us'
         portfolioButton='Portfolio'
@@ -42,6 +43,7 @@ export default function AboutUs() {
       </main>
       <Footer
         home
+        basePath='/pt'
         homeButton='Home'
         aboutUsButton='About Us'
         portfolioButton='Portfolio'
