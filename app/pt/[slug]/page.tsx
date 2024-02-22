@@ -8,7 +8,7 @@ import { project_section, section } from '@/components/design-system';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import { Tags } from '@/components/Tags';
-import PortfolioDataLayer from '@/app/[slug]/data_layer';
+import PortfolioDataLayer from '@/app/pt/[slug]/data_layer';
 
 export default async function ProjectPage({
   params: { slug },
@@ -34,6 +34,7 @@ export default async function ProjectPage({
           description={String(project.description?.pt)}
           executed_at={String(project.executedAt?.pt)}
           read_time={String(project.read_time?.pt)}
+          link={project.link}
         />
         <PortfolioDataLayer project={project} />
         <Tags tagList={project.tags as string[]} />
@@ -48,6 +49,7 @@ interface ProjectHeaderProps {
   description: string;
   executed_at: string;
   read_time: string;
+  link?: string | null;
 }
 
 const ProjectHeader = ({
@@ -55,20 +57,27 @@ const ProjectHeader = ({
   description,
   executed_at,
   read_time,
+  link,
 }: ProjectHeaderProps) => {
   return (
-    <div className={cn(project_section, 'mb-8 font-header')}>
-      <h1 className='text-5xl font-semibold'>{title}</h1>
-      <p className='text-4xl'>{description}</p>
-      <p className='mb-4 flex gap-3 font-light'>
+    <div className={cn(project_section, 'mb-8')}>
+      <h1 className='font-header text-5xl font-semibold leading-header'>
+        {title}
+      </h1>
+      <p className='font-header text-4xl leading-header'>{description}</p>
+      <p className='flex gap-3 font-light'>
         <span>{executed_at}</span>•<span>{read_time}</span>
       </p>
-      <Link
-        href='www.google.com'
-        className='inline-flex gap-2 rounded-md bg-[#ffffff] px-3 py-2 font-medium text-cta'
-      >
-        Acesse a página <LogIn strokeWidth={1.5} />
-      </Link>
+      {link ? (
+        <Link
+          href={link}
+          className='mt-2 inline-flex gap-2 rounded-md bg-[#ffffff] px-3 py-2 font-body font-medium text-cta'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Acesse a página <LogIn strokeWidth={1.5} />
+        </Link>
+      ) : null}
     </div>
   );
 };

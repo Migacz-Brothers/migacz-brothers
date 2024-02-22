@@ -32,14 +32,24 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
   block: {
     h3: ({ children }) => {
       return (
-        <h3 className={cn(project_section, 'text-[32px] leading-header')}>
+        <h3
+          className={cn(
+            project_section,
+            'font-header text-[32px] font-normal leading-header',
+          )}
+        >
           {children}
         </h3>
       );
     },
     normal: ({ children }) => {
       return (
-        <p className={cn(project_section, 'mb-8 text-xl leading-body')}>
+        <p
+          className={cn(
+            project_section,
+            'leading-body_tight mb-8 font-body text-xl font-light',
+          )}
+        >
           {children}
         </p>
       );
