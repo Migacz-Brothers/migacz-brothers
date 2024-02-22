@@ -13,8 +13,6 @@ interface PortfolioDataLayerProps {
 const portable_text_components: Partial<PortableTextReactComponents> = {
   types: {
     image: (data) => {
-      console.log('data.value', data);
-      console.log(urlBuilder.image(data.value).url());
       const { width, height } = getImageDimensions(data.value);
       return (
         <h2>
@@ -35,7 +33,6 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
 export default function PortfolioDataLayer({
   project,
 }: PortfolioDataLayerProps) {
-  console.log('project', project);
   return (
     <>
       <PortableText
@@ -54,6 +51,7 @@ export default function PortfolioDataLayer({
                 alt={''}
                 width={504}
                 height={504}
+                quality={100}
               />
             </li>
           ))}
@@ -69,6 +67,7 @@ export default function PortfolioDataLayer({
                 alt={''}
                 width={504}
                 height={504}
+                quality={100}
               />
             </li>
           ))}
