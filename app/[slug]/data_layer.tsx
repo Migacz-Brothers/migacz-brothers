@@ -5,6 +5,9 @@ import { Project } from '@/generated';
 import urlBuilder from '@/sanity/lib/sanity-image-builder';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import { getImageDimensions } from '@sanity/asset-utils';
+import cn from 'clsx';
+
+import { project_section } from '@/components/design-system';
 
 interface PortfolioDataLayerProps {
   project: Project;
@@ -15,16 +18,30 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
     image: (data) => {
       const { width, height } = getImageDimensions(data.value);
       return (
-        <h2>
-          <Image
-            src={urlBuilder.image(data.value).url()}
-            alt=''
-            width={width}
-            height={height}
-            quality={100}
-          />
-          data.value.asset. {JSON.stringify(urlBuilder.image(data.value).url())}
-        </h2>
+        <Image
+          src={urlBuilder.image(data.value).url()}
+          alt=''
+          width={width}
+          height={height}
+          quality={100}
+          className='mb-8'
+        />
+      );
+    },
+  },
+  block: {
+    h3: ({ children }) => {
+      return (
+        <h3 className={cn(project_section, 'text-[32px] leading-header')}>
+          {children}
+        </h3>
+      );
+    },
+    normal: ({ children }) => {
+      return (
+        <p className={cn(project_section, 'mb-8 text-xl leading-body')}>
+          {children}
+        </p>
       );
     },
   },
@@ -39,7 +56,7 @@ export default function PortfolioDataLayer({
         value={project.body?.ptRaw}
         components={portable_text_components}
       />
-      <div className='grid grid-cols-2 gap-4'>
+      <div className='mb-8 grid gap-4 md:grid-cols-2'>
         <ul className='flex flex-col gap-4'>
           {project.image_column_1?.map((image, i) => (
             <li

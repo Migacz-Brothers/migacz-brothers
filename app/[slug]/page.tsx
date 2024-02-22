@@ -4,8 +4,10 @@ import { getAllProjects, getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 import { LogIn } from 'lucide-react';
 
-import { section } from '@/components/design-system';
+import { project_section, section } from '@/components/design-system';
+import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
+import { Tags } from '@/components/Tags';
 import PortfolioDataLayer from '@/app/[slug]/data_layer';
 
 export default async function ProjectPage({
@@ -22,7 +24,10 @@ export default async function ProjectPage({
     <>
       <Navbar />
       <main
-        className={cn('flex !max-w-[1052px] flex-col pt-28 md:pt-40', section)}
+        className={cn(
+          'flex !max-w-[1052px] flex-col !px-3 pb-32 pt-28 md:!px-8 md:pt-40',
+          section,
+        )}
       >
         <ProjectHeader
           title={String(project.title?.pt)}
@@ -31,7 +36,9 @@ export default async function ProjectPage({
           read_time={String(project.read_time?.pt)}
         />
         <PortfolioDataLayer project={project} />
+        <Tags tagList={project.tags as string[]} />
       </main>
+      <Footer />
     </>
   );
 }
@@ -50,10 +57,10 @@ const ProjectHeader = ({
   read_time,
 }: ProjectHeaderProps) => {
   return (
-    <div className='mx-auto max-w-[819] font-header'>
+    <div className={cn(project_section, 'mb-8 font-header')}>
       <h1 className='text-5xl font-semibold'>{title}</h1>
       <p className='text-4xl'>{description}</p>
-      <p className='flex gap-3 font-light'>
+      <p className='mb-4 flex gap-3 font-light'>
         <span>{executed_at}</span>•<span>{read_time}</span>
       </p>
       <Link
