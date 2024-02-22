@@ -18,19 +18,19 @@ export default function AboutUs() {
       <main>
         <AboutUsHero title='Sobre nós' />
         <Tldr
-          title='O resumo'
-          paragraph='Sabemos que você é uma pessoa ocupada, então vamos direto ao ponto. Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal da nossa empresa localizado no Sul do Brasil.'
+          title='O Resumo'
+          paragraph='Sabemos que você é uma pessoa ocupada, então vamos direto ao ponto. Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil.'
           paragraph_2='Se você quiser saber mais, basta continuar rolando (a página).'
         />
         <Values
-          title='Valores'
-          subTitle_1='Caia na real'
+          title='Os Valores'
+          subTitle_1='Seja direto'
           paragraph_1='Acreditamos que o melhor e mais autêntico trabalho acontece quando todos têm a liberdade de falar sobre qualquer coisa a qualquer momento.'
-          subTitle_2='Nunca deixar de atender a um cliente'
-          paragraph_2='Nós criamos tudo com a manutenção de longo prazo em mente. Uma vez que você se torna nosso cliente, fazemos um compromisso de nunca decepcionar você.'
-          subTitle_3='Não tenha medo do desconhecido.'
+          subTitle_2='Não abandone clientes'
+          paragraph_2='Nós criamos tudo pensando na manutenção de longo prazo. Uma vez que você se torna nosso cliente, assumimos o compromisso de nunca te deixar n mão'
+          subTitle_3='Não tenha medo do desconhecido'
           paragraph_3='Tudo muda, e isso acontece mais rapidamente nesta indústria. Aceitamos projetos mesmo que não tenhamos certeza de como realizar algumas partes deles.'
-          subTitle_4='Temos padrões elevados.'
+          subTitle_4='Temos altos padrões'
           paragraph_4='Cada produto que criamos precisa ser aprovado pela nossa equipe. Queremos ser reconhecidos pela nossa qualidade, e esse é o nosso principal objetivo.'
         />
         <Team title='A Equipe' />
