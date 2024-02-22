@@ -18,6 +18,7 @@ interface AboutUsProps {
   subTitle: string;
   paragraph: string;
   text: string;
+  basePath?: string;
 }
 
 export default function AboutUs({
@@ -25,6 +26,7 @@ export default function AboutUs({
   subTitle,
   paragraph,
   text,
+  basePath = '',
 }: AboutUsProps) {
   return (
     <div className='light-noise-background pb-9 md:pb-16'>
@@ -88,7 +90,7 @@ export default function AboutUs({
               className='flex-1 bg-[#F4F4F4] pr-2 text-[#121212]'
               text={text}
               i={5}
-              href='/about'
+              href={basePath + '/about'}
               samePage
             >
               <BookOpen size={32} strokeWidth={1.5} />

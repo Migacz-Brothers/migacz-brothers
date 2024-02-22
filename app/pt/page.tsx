@@ -34,6 +34,7 @@ export default function Home() {
           textButton='Contacte-nos em'
         />
         <AboutUs
+          basePath='/pt'
           title='Sobre nós'
           subTitle='Design & Código'
           paragraph='Somos uma pequena empresa cooperativa do Sul do Brasil com uma equipe internacional de profissionais que uniram forças para criar produtos exclusivos para a web.'
