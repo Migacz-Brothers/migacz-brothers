@@ -64,7 +64,11 @@ export default function AboutUs({
           </div>
 
           <ul className='flex gap-[6px] pt-2 lg:gap-2'>
-            <SocialLink className='bg-[#3367CC]' i={1} href=''>
+            <SocialLink
+              className='bg-[#3367CC]'
+              i={1}
+              href='https://www.behance.net/MigaczBrothers'
+            >
               <BehanceIcon strokeWidth={1.5} />
             </SocialLink>
             <SocialLink
@@ -81,7 +85,11 @@ export default function AboutUs({
             >
               <Instagram size={32} strokeWidth={1.5} />
             </SocialLink>
-            <SocialLink className='bg-[#B35598]' i={4} href=''>
+            <SocialLink
+              className='bg-[#B35598]'
+              i={4}
+              href='https://dribbble.com/MigaczBrothers'
+            >
               <Dribbble size={32} strokeWidth={1.5} />
             </SocialLink>
             <SocialLink
