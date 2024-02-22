@@ -35,7 +35,7 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
         <h3
           className={cn(
             project_section,
-            'font-header text-[32px] font-normal leading-header',
+            'font-header text-2xl font-normal leading-header md:text-[32px]',
           )}
         >
           {children}
@@ -47,7 +47,7 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
         <p
           className={cn(
             project_section,
-            'leading-body_tight mb-8 font-body text-xl font-light',
+            'leading-body_tight mb-8 font-body text-lg font-light md:text-xl',
           )}
         >
           {children}
