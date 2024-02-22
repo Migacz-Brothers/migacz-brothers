@@ -2,26 +2,31 @@ import Link from 'next/link';
 import cn from 'clsx';
 import { ArrowUpRight } from 'lucide-react';
 
-export default function Cta() {
+interface CtaProps {
+  textButton: string;
+}
+
+export default function Cta({ textButton }: CtaProps) {
   return (
     <Link
       href='mailto:hello@migaczbrothers.com'
       className={cn(
-        'group hover:shadow-bright duration-1000 ease-in-out bg-cta text-cta py-[3px] pr-[3px] md:pl-4 pl-2 w-full md:rounded-2xl rounded-lg flex items-center mb-4 lg:mb-0'
+        'group mb-4 flex w-full items-center rounded-lg bg-cta py-[3px] pl-2 pr-[3px] text-cta duration-1000 ease-in-out hover:shadow-bright md:rounded-2xl md:pl-4 lg:mb-0',
       )}
     >
       <span className='font-body text-sm md:text-base'>
-        Contact us at{' '}
+        {textButton}
         <strong className='font-semibold group-hover:underline'>
+          {' '}
           hello@migaczbrothers.com
         </strong>
       </span>
-      <div className='cta-button-gradient md:w-14 md:h-14 xsm:w-8 xsm:h-8 w-11 h-11 aspect-square grid place-items-center md:rounded-[13px] rounded-[5px] ml-auto'>
+      <div className='cta-button-gradient ml-auto grid aspect-square h-11 w-11 place-items-center rounded-[5px] xsm:h-8 xsm:w-8 md:h-14 md:w-14 md:rounded-[13px]'>
         <ArrowUpRight
           size={36}
           strokeWidth={2.5}
           absoluteStrokeWidth
-          className='text-[#f4f4f4] md:w-auto w-6 md:h-auto h-6'
+          className='h-6 w-6 text-[#f4f4f4] md:h-auto md:w-auto'
         />
       </div>
     </Link>

@@ -1,21 +1,25 @@
 'use client';
 
-import { h2, section } from '@/components/design-system';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
-
-import PedroImage from '@/public/images/PedroImage.png';
-import GustavoImage from '@/public/images/GustavoImage.png';
-import KarlaImage from '@/public/images/KarlaImage.png';
 import ArthurImage from '@/public/images/ArthurImage.png';
 import CharlieImage from '@/public/images/CharlieImage.png';
-import { delay, motion } from 'framer-motion';
+import GustavoImage from '@/public/images/GustavoImage.png';
+import KarlaImage from '@/public/images/KarlaImage.png';
+import PedroImage from '@/public/images/PedroImage.png';
 import cn from 'clsx';
+import { delay, motion } from 'framer-motion';
 
-export default function Team() {
+import { h2, section } from '@/components/design-system';
+
+interface TeamProps {
+  title: string;
+}
+
+export default function Team({ title }: TeamProps) {
   return (
     <motion.section
-      className={cn(section, 'md:mb-32 mb-12')}
+      className={cn(section, 'mb-12 md:mb-32')}
       initial={{
         opacity: 0,
       }}
@@ -23,8 +27,8 @@ export default function Team() {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <h2 className={cn(h2, 'md:mb-16 mb-4')}>The Team</h2>
-      <ul className='grid md:grid-cols-3 sml:grid-cols-2 grid-cols-1 gap-4'>
+      <h2 className={cn(h2, 'mb-4 md:mb-16')}>{title}</h2>
+      <ul className='grid grid-cols-1 gap-4 sml:grid-cols-2 md:grid-cols-3'>
         <Card
           src={GustavoImage}
           title={'Gustavo Migacz'}
@@ -76,12 +80,12 @@ const Card = ({ src, title, role, delay }: CardProps) => {
       <Image
         src={src}
         alt={''}
-        className='rounded-2xl md:mb-1 mb-2 md:max-w-full'
+        className='mb-2 rounded-2xl md:mb-1 md:max-w-full'
       />
-      <h3 className='font-header font-extralight leading-header md:text-2xl text-xl md:mb-0 -mb-1'>
+      <h3 className='-mb-1 font-header text-xl font-extralight leading-header md:mb-0 md:text-2xl'>
         {title}
       </h3>
-      <span className='font-body font-medium leading-header tracking-[3.2px] md:text-base text-xs'>
+      <span className='font-body text-xs font-medium leading-header tracking-[3.2px] md:text-base'>
         {role}
       </span>
     </motion.li>
