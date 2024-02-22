@@ -66,7 +66,7 @@ export default function PortfolioDataLayer({
         value={project.body?.ptRaw}
         components={portable_text_components}
       />
-      <div className='mb-8 grid gap-4 md:grid-cols-2'>
+      <div className='mb-4 grid gap-4 md:mb-8 md:grid-cols-2'>
         <ul className='flex flex-col gap-4'>
           {project.image_column_1?.map((image, i) => (
             <li
