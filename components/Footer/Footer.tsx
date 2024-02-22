@@ -44,36 +44,40 @@ export default function Footer({
           <ul className='order-3 flex gap-8 lg:order-none'>
             <li>
               <Link
-                href='#'
+                href='https://www.instagram.com/migaczbrothers/'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Instagram strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://www.behance.net/MigaczBrothers'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <BehanceIcon strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://www.linkedin.com/company/migacz-brothers/'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Linkedin strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://dribbble.com/MigaczBrothers'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Dribbble strokeWidth={1.5} />
               </Link>
