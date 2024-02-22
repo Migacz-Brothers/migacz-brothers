@@ -9,7 +9,29 @@ import HelpCircleIcon from '@/components/svgs/HelpCircleIcon';
 import ShieldCheckIcon from '@/components/svgs/ShieldCheckIcon';
 import SpeetchIcon from '@/components/svgs/SpeetchIcon';
 
-export default function Values() {
+interface ValuesProps {
+  title: string;
+  subTitle_1: string;
+  subTitle_2: string;
+  subTitle_3: string;
+  subTitle_4: string;
+  paragraph_1: string;
+  paragraph_2: string;
+  paragraph_3: string;
+  paragraph_4: string;
+}
+
+export default function Values({
+  title,
+  subTitle_1,
+  subTitle_2,
+  subTitle_3,
+  subTitle_4,
+  paragraph_1,
+  paragraph_2,
+  paragraph_3,
+  paragraph_4,
+}: ValuesProps) {
   return (
     <motion.section
       initial={{
@@ -20,41 +42,33 @@ export default function Values() {
       transition={{ duration: 0.4, ease: 'easeInOut' }}
       className={cn(
         section,
-        'flex flex-col items-start !max-w-[916px] md:mb-64 mb-12'
+        'mb-12 flex !max-w-[916px] flex-col items-start md:mb-64',
       )}
     >
-      <h2 className={cn(h2, 'md:mb-16 mb-4')}>The Values</h2>
-      <ul className='grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-6 '>
+      <h2 className={cn(h2, 'mb-4 md:mb-16')}>{title}</h2>
+      <ul className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-16 '>
         <IndividualValue
           icon={<SpeetchIcon />}
-          title={'Get Real'}
-          paragraph={
-            'We believe the best and mot authentic work happens when everyone is free to speak about anything at anytime.'
-          }
+          title={subTitle_1}
+          paragraph={paragraph_1}
           delay={0.2}
         />
         <IndividualValue
           icon={<HeartHandShakeIcon />}
-          title={'Never drop a cliente'}
-          paragraph={
-            'We create everything with long-term maintenance in mind. Once you become our client, we make a commitment to never let you down.'
-          }
+          title={subTitle_2}
+          paragraph={paragraph_2}
           delay={0.3}
         />
         <IndividualValue
           icon={<HelpCircleIcon />}
-          title={'Be not afraid of the unknown'}
-          paragraph={
-            'Everything changes, and it happens faster on this industry. We say yes to projects even if we are not sure how to do some parts of it.'
-          }
+          title={subTitle_3}
+          paragraph={paragraph_3}
           delay={0.4}
         />
         <IndividualValue
           icon={<ShieldCheckIcon />}
-          title={'We have high standards'}
-          paragraph={
-            'Every product we create has to be approved by our team. We wanna be know for our quality, and that`s our main goal.'
-          }
+          title={subTitle_4}
+          paragraph={paragraph_4}
           delay={0.5}
         />
       </ul>
@@ -84,10 +98,10 @@ const IndividualValue = ({
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.4, ease: 'easeInOut', delay: delay }}
     >
-      <div className='grid place-items-center hero-background rounded-lg mb-4 md:mb-8 w-[50px] md:w-16 h-[50px] md:h-16'>
+      <div className='hero-background mb-4 grid h-[50px] w-[50px] place-items-center rounded-lg md:mb-8 md:h-16 md:w-16'>
         {icon}
       </div>
-      <h3 className='md:text-[32px] text-xl font-semibold font-body md:mb-6 mb-2 leading-header'>
+      <h3 className='mb-2 font-body text-xl font-semibold leading-header md:mb-6 md:text-[32px]'>
         {title}
       </h3>
       <p className={cn(p, '!text-main-foreground font-medium leading-body')}>
