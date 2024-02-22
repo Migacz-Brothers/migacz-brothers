@@ -38,7 +38,7 @@ export default function AboutUs() {
           subTitle_4='We have high standards'
           paragraph_4='Every product we create has to be approved by our team. We wanna be know for our quality, and that’s our main goal.'
         />
-        <Team />
+        <Team title='The Team' />
       </main>
       <Footer
         home

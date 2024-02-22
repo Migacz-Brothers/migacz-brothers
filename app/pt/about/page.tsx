@@ -33,7 +33,7 @@ export default function AboutUs() {
           subTitle_4='Temos padrões elevados.'
           paragraph_4='Cada produto que criamos precisa ser aprovado pela nossa equipe. Queremos ser reconhecidos pela nossa qualidade, e esse é o nosso principal objetivo.'
         />
-        <Team />
+        <Team title='A Equipe' />
       </main>
       <Footer
         home
