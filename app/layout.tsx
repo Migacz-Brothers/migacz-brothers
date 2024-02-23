@@ -1,10 +1,8 @@
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
-
 import './globals.css';
+
+import { Metadata } from 'next';
 // import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
-import { Metadata } from 'next';
 
 // fonts
 const sora = Sora({
