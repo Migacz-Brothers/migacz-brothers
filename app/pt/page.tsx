@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Navbar
         home
-        basePath='pt'
+        basePath='/pt'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
