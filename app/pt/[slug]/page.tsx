@@ -36,7 +36,7 @@ export default async function ProjectPage({
         )}
       >
         <ProjectHeader
-          title={String(project.title?.pt)}
+          title={String(project.title)}
           description={String(project.description?.pt)}
           executed_at={String(project.executedAt?.pt)}
           read_time={String(project.read_time?.pt)}
@@ -105,7 +105,7 @@ export async function generateStaticParams() {
 
   return allProject.map((project) => {
     return {
-      slug: project.slug?.pt?.current,
+      slug: project.slug?.current,
     };
   });
 }

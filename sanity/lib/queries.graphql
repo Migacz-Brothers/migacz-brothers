@@ -5,32 +5,36 @@ query AllProjects {
 }
 
 query ProjectBySlug($slug: String) {
-  allProject(where: { slug: { pt: { current: { eq: $slug } } } }) {
+  allProject(where: { slug: { current: { eq: $slug } } }) {
     ...ProjectListing
   }
 }
 
 fragment ProjectListing on Project {
-  title {
-    pt
-  }
+  title
   description {
     pt
+    en
+    es
   }
   slug {
-    pt {
-      current
-    }
+    current
   }
   executedAt {
     pt
+    en
+    es
   }
   read_time {
     pt
+    en
+    es
   }
   link
   body {
     ptRaw
+    enRaw
+    esRaw
   }
   image_column_1 {
     asset {

@@ -266,31 +266,6 @@ export type LocalizedBodySorting = {
   _type?: InputMaybe<SortOrder>;
 };
 
-export type LocalizedSlug = {
-  __typename: 'LocalizedSlug';
-  _key?: Maybe<Scalars['String']['output']>;
-  _type?: Maybe<Scalars['String']['output']>;
-  en?: Maybe<Slug>;
-  es?: Maybe<Slug>;
-  pt?: Maybe<Slug>;
-};
-
-export type LocalizedSlugFilter = {
-  _key?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  en?: InputMaybe<SlugFilter>;
-  es?: InputMaybe<SlugFilter>;
-  pt?: InputMaybe<SlugFilter>;
-};
-
-export type LocalizedSlugSorting = {
-  _key?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  en?: InputMaybe<SlugSorting>;
-  es?: InputMaybe<SlugSorting>;
-  pt?: InputMaybe<SlugSorting>;
-};
-
 export type LocalizedString = {
   __typename: 'LocalizedString';
   _key?: Maybe<Scalars['String']['output']>;
@@ -336,9 +311,9 @@ export type Project = Document & {
   image_column_2?: Maybe<Array<Maybe<Image>>>;
   link?: Maybe<Scalars['String']['output']>;
   read_time?: Maybe<LocalizedString>;
-  slug?: Maybe<LocalizedSlug>;
+  slug?: Maybe<Slug>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  title?: Maybe<LocalizedString>;
+  title?: Maybe<Scalars['String']['output']>;
 };
 
 export type ProjectFilter = {
@@ -355,8 +330,8 @@ export type ProjectFilter = {
   executedAt?: InputMaybe<LocalizedStringFilter>;
   link?: InputMaybe<StringFilter>;
   read_time?: InputMaybe<LocalizedStringFilter>;
-  slug?: InputMaybe<LocalizedSlugFilter>;
-  title?: InputMaybe<LocalizedStringFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  title?: InputMaybe<StringFilter>;
 };
 
 export type ProjectSorting = {
@@ -371,8 +346,8 @@ export type ProjectSorting = {
   executedAt?: InputMaybe<LocalizedStringSorting>;
   link?: InputMaybe<SortOrder>;
   read_time?: InputMaybe<LocalizedStringSorting>;
-  slug?: InputMaybe<LocalizedSlugSorting>;
-  title?: InputMaybe<LocalizedStringSorting>;
+  slug?: InputMaybe<SlugSorting>;
+  title?: InputMaybe<SortOrder>;
 };
 
 export type RootQuery = {
@@ -867,39 +842,43 @@ export type StringFilter = {
 export type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllProjectsQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
+export type AllProjectsQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', title?: string | null, link?: string | null, tags?: Array<string | null> | null, description?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, slug?: { __typename: 'Slug', current?: string | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null, enRaw?: any | null, esRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
 
 export type ProjectBySlugQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type ProjectBySlugQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
+export type ProjectBySlugQuery = { __typename: 'RootQuery', allProject: Array<{ __typename: 'Project', title?: string | null, link?: string | null, tags?: Array<string | null> | null, description?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, slug?: { __typename: 'Slug', current?: string | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null, enRaw?: any | null, esRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null }> };
 
-export type ProjectListingFragment = { __typename: 'Project', link?: string | null, tags?: Array<string | null> | null, title?: { __typename: 'LocalizedString', pt?: string | null } | null, description?: { __typename: 'LocalizedString', pt?: string | null } | null, slug?: { __typename: 'LocalizedSlug', pt?: { __typename: 'Slug', current?: string | null } | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
+export type ProjectListingFragment = { __typename: 'Project', title?: string | null, link?: string | null, tags?: Array<string | null> | null, description?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, slug?: { __typename: 'Slug', current?: string | null } | null, executedAt?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, read_time?: { __typename: 'LocalizedString', pt?: string | null, en?: string | null, es?: string | null } | null, body?: { __typename: 'LocalizedBody', ptRaw?: any | null, enRaw?: any | null, esRaw?: any | null } | null, image_column_1?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null, image_column_2?: Array<{ __typename: 'Image', asset?: { __typename: 'SanityImageAsset', url?: string | null, metadata?: { __typename: 'SanityImageMetadata', dimensions?: { __typename: 'SanityImageDimensions', width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
 
 export const ProjectListingFragmentDoc = gql`
     fragment ProjectListing on Project {
-  title {
-    pt
-  }
+  title
   description {
     pt
+    en
+    es
   }
   slug {
-    pt {
-      current
-    }
+    current
   }
   executedAt {
     pt
+    en
+    es
   }
   read_time {
     pt
+    en
+    es
   }
   link
   body {
     ptRaw
+    enRaw
+    esRaw
   }
   image_column_1 {
     asset {
@@ -935,7 +914,7 @@ export const AllProjectsDocument = gql`
     ${ProjectListingFragmentDoc}`;
 export const ProjectBySlugDocument = gql`
     query ProjectBySlug($slug: String) {
-  allProject(where: {slug: {pt: {current: {eq: $slug}}}}) {
+  allProject(where: {slug: {current: {eq: $slug}}}) {
     ...ProjectListing
   }
 }

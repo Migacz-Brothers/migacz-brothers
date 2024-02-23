@@ -8,7 +8,7 @@ import { project_section, section } from '@/components/design-system';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import { Tags } from '@/components/Tags';
-import PortfolioDataLayer from '@/app/es/[slug]/data_layer';
+import PortfolioDataLayer from '@/app/[slug]/data_layer';
 
 export default async function ProjectPage({
   params: { slug },
@@ -23,7 +23,6 @@ export default async function ProjectPage({
   return (
     <>
       <Navbar
-        basePath='/es'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
@@ -37,16 +36,15 @@ export default async function ProjectPage({
       >
         <ProjectHeader
           title={String(project.title)}
-          description={String(project.description?.es)}
-          executed_at={String(project.executedAt?.es)}
-          read_time={String(project.read_time?.es)}
+          description={String(project.description?.en)}
+          executed_at={String(project.executedAt?.en)}
+          read_time={String(project.read_time?.en)}
           link={project.link}
         />
         <PortfolioDataLayer project={project} />
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer
-        basePath='/es'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'

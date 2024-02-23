@@ -63,7 +63,7 @@ export default function PortfolioDataLayer({
   return (
     <>
       <PortableText
-        value={project.body?.esRaw}
+        value={project.body?.enRaw}
         components={portable_text_components}
       />
       <div className='mb-4 grid gap-4 md:mb-8 md:grid-cols-2'>
