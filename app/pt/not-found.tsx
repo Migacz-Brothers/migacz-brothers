@@ -9,6 +9,7 @@ export default function UnderDevelopmentPage() {
   return (
     <>
       <Navbar
+        basePath='/pt'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
@@ -35,6 +36,7 @@ export default function UnderDevelopmentPage() {
         </section>
       </main>{' '}
       <Footer
+        basePath='/pt'
         homeButton='Home'
         aboutUsButton='About Us'
         portfolioButton='Portfolio'
