@@ -16,24 +16,24 @@ export default function AboutUs() {
         contactButton='Contáctenos'
       />
       <main>
-        <AboutUsHero title='Sobre nós' />
+        <AboutUsHero title='Sobre nosotros' />
         <Tldr
-          title='O Resumo'
-          paragraph='Sabemos que você é uma pessoa ocupada, então vamos direto ao ponto. Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil.'
-          paragraph_2='Se você quiser saber mais, basta continuar rolando (a página).'
+          title='El Resumen'
+          paragraph='Sabemos que eres una persona ocupada, así que vamos directo al grano. Somos una cooperativa de diseñadores y desarrolladores de software que se han unido para crear productos de alta calidad que, de otra manera, podrían ser impracticables. Nuestro equipo es global, con la oficina principal ubicada en el Sur de Brasil'
+          paragraph_2='Si quieres saber más, simplemente sigue desplazándote (la página).'
         />
         <Values
-          title='Os Valores'
-          subTitle_1='Seja direto'
-          paragraph_1='Acreditamos que o melhor e mais autêntico trabalho acontece quando todos têm a liberdade de falar sobre qualquer coisa a qualquer momento.'
-          subTitle_2='Não abandone clientes'
-          paragraph_2='Nós criamos tudo pensando na manutenção de longo prazo. Uma vez que você se torna nosso cliente, assumimos o compromisso de nunca te deixar n mão'
-          subTitle_3='Não tenha medo do desconhecido'
-          paragraph_3='Tudo muda, e isso acontece mais rapidamente nesta indústria. Aceitamos projetos mesmo que não tenhamos certeza de como realizar algumas partes deles.'
+          title='Los valores'
+          subTitle_1='Sé directo'
+          paragraph_1='Creemos que el mejor y más auténtico trabajo ocurre cuando todos tienen la libertad de hablar sobre cualquier cosa en cualquier momento.'
+          subTitle_2='No abandones a los clientes'
+          paragraph_2='Creamos todo pensando en el mantenimiento a largo plazo. Una vez que te conviertes en nuestro cliente, asumimos el compromiso de nunca dejarte en la estacada.'
+          subTitle_3='No tengas miedo a lo desconocido'
+          paragraph_3='Todo cambia, y esto sucede más rápidamente en esta industria. Aceptamos proyectos incluso si no estamos seguros de cómo llevar a cabo algunas partes de ellos.'
           subTitle_4='Temos altos padrões'
-          paragraph_4='Cada produto que criamos precisa ser aprovado pela nossa equipe. Queremos ser reconhecidos pela nossa qualidade, e esse é o nosso principal objetivo.'
+          paragraph_4='Cada producto que creamos necesita ser aprobado por nuestro equipo. Queremos ser reconocidos por nuestra calidad, y ese es nuestro objetivo principal.'
         />
-        <Team title='A Equipe' />
+        <Team title='El Equipo' />
       </main>
       <Footer
         basePath='es'
