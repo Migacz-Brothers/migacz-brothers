@@ -38,7 +38,10 @@ export default function Footer({
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <div className='mb-6 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center'>
-          <a href={(home ? '' : '/') + '#home'} className='order-none'>
+          <a
+            href={basePath + (home ? '' : '/') + '#home'}
+            className='order-none'
+          >
             <CompanyLogo className='h-[41px] w-[99px]' />
           </a>
           <ul className='order-3 flex gap-8 lg:order-none'>
