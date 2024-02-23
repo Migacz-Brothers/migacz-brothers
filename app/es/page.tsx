@@ -10,11 +10,11 @@ export default function Home() {
     <>
       <Navbar
         home
-        basePath='pt'
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactButton='Contate-nos'
+        basePath='es'
+        homeButton='Inicio'
+        aboutUsButton='Sobre Nosotros'
+        portfolioButton='Portafolio'
+        contactButton='Contáctenos'
       />
       <main>
         <Hero
