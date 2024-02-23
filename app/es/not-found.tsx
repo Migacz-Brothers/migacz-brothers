@@ -19,9 +19,9 @@ export default function UnderDevelopmentPage() {
           <div className={section}>
             <div className='flex flex-col items-center gap-12 pb-44 pt-48 text-center'>
               <h1 className={h1}>
-                404 - Page Not Found
+                404 - Página no encontrada
                 <br />
-                Sorry, there is nothing here!
+                Lo siento, no hay nada aquí!
               </h1>
               <div>
                 <Image
