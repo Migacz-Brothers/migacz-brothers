@@ -9,7 +9,7 @@ export default function AboutUs() {
   return (
     <div className='light-noise-background'>
       <Navbar
-        basePath='es'
+        basePath='/es'
         homeButton='Inicio'
         aboutUsButton='Sobre Nosotros'
         portfolioButton='Portafolio'
