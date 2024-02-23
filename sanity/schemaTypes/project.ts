@@ -2,15 +2,10 @@ const projectSchema = {
   name: 'project',
   type: 'document',
   title: 'Project',
-  preview: {
-    select: {
-      title: 'title.en',
-    },
-  },
   fields: [
     {
       name: 'title',
-      type: 'localizedString',
+      type: 'string',
       title: 'Title',
       required: true,
     },
@@ -22,7 +17,11 @@ const projectSchema = {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'localizedSlug',
+      type: 'slug',
+      options: {
+        source: `title`,
+        maxLength: 200,
+      },
     },
     {
       name: 'executedAt',

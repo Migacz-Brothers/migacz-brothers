@@ -84,11 +84,15 @@ export default function Footer({
             </li>
           </ul>
           <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
-            <LanguageLink current href='/'>
+            <LanguageLink current={basePath === ''} href='/'>
               EN
             </LanguageLink>
-            <LanguageLink href='/pt'>PT</LanguageLink>
-            <LanguageLink href='/es'>ES</LanguageLink>
+            <LanguageLink href='/pt' current={basePath === '/pt'}>
+              PT
+            </LanguageLink>
+            <LanguageLink href='/es' current={basePath === '/es'}>
+              ES
+            </LanguageLink>
           </ul>
           <ul className='order-1 flex flex-col gap-4 lg:order-none lg:flex-row lg:gap-8'>
             <FooterLink href={basePath + (home ? '' : '/') + '#home'}>

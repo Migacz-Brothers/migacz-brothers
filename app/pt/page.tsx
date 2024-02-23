@@ -79,11 +79,11 @@ export default function Home() {
       </main>
       <Footer
         home
+        basePath='/pt'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
         contactUsButton='Contate-nos'
-        basePath='pt'
       />
     </>
   );
