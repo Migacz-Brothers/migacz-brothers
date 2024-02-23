@@ -46,6 +46,7 @@ export default async function ProjectPage({
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer
+        basePath='/pt'
         homeButton='Ínicio'
         aboutUsButton='Sobre nós'
         portfolioButton='Portfólio'
