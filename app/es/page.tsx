@@ -73,9 +73,9 @@ export default function Home() {
           }
         />
         <ContactUs
-          title='Quer conversar? Nos envie uma mensagem!'
-          paragraph='Nossa equipe está empolgada para se conectar com você. Entre em contato para discutir suas necessidades de software hoje!'
-          textButton='Conta-te nos em'
+          title='¿Quieres conversar? ¡Envíanos un mensaje!'
+          paragraph='Nuestro equipo está emocionado de conectarse contigo. ¡Contáctanos para discutir tus necesidades de software hoy!'
+          textButton='Contáctanos en'
         />
       </main>
       <Footer
