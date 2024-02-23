@@ -9,11 +9,11 @@ export default function AboutUs() {
   return (
     <div className='light-noise-background'>
       <Navbar
-        basePath='/pt'
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactButton='Contate-nos'
+        basePath='es'
+        homeButton='Inicio'
+        aboutUsButton='Sobre Nosotros'
+        portfolioButton='Portafolio'
+        contactButton='Contáctenos'
       />
       <main>
         <AboutUsHero title='Sobre nós' />
@@ -36,10 +36,11 @@ export default function AboutUs() {
         <Team title='A Equipe' />
       </main>
       <Footer
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactUsButton='Contate-nos'
+        basePath='es'
+        homeButton='Inicio'
+        aboutUsButton='Sobre nosotros'
+        portfolioButton='Portafolio'
+        contactUsButton='Contáctenos'
       />
     </div>
   );
