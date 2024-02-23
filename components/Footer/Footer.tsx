@@ -100,7 +100,7 @@ export default function Footer({
             <FooterLink href={basePath + (home ? '' : '/') + '#portfolio'}>
               {portfolioButton}
             </FooterLink>
-            <FooterLink href={basePath + (home ? '' : '/') + '#portfolio'}>
+            <FooterLink href={basePath + (home ? '' : '/') + '#contact'}>
               {contactUsButton}
             </FooterLink>
           </ul>
