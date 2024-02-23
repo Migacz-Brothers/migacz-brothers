@@ -1,12 +1,13 @@
 'use client';
 
+import Image from 'next/image';
+import MBGif from '@/public/images/MBGif.gif';
 import cn from 'clsx';
 import { motion } from 'framer-motion';
 
 import { h1, p, section } from '@/components/design-system';
 
 import Cta from '../Cta';
-import Illustrations from './Illustrations';
 
 interface HeroProps {
   title: JSX.Element;
@@ -46,7 +47,11 @@ export default function Hero({ title, paragraph, textButton }: HeroProps) {
           </p>
           <Cta textButton={textButton} />
         </div>
-        <Illustrations className='mb-4 lg:order-1 lg:mb-0 lg:self-end' />
+        <Image
+          src={MBGif}
+          alt='A Gif about our works'
+          className='mb-4 rounded-2xl lg:order-1 lg:mb-0 lg:self-end'
+        />
       </motion.section>
     </div>
   );
