@@ -80,7 +80,7 @@ export default function Home() {
       </main>
       <Footer
         home
-        basePath='es'
+        basePath='/es'
         homeButton='Inicio'
         aboutUsButton='Sobre nosotros'
         portfolioButton='Portafolio'

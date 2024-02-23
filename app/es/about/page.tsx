@@ -36,7 +36,7 @@ export default function AboutUs() {
         <Team title='El Equipo' />
       </main>
       <Footer
-        basePath='es'
+        basePath='/es'
         homeButton='Inicio'
         aboutUsButton='Sobre nosotros'
         portfolioButton='Portafolio'

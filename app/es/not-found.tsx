@@ -33,8 +33,9 @@ export default function UnderDevelopmentPage() {
             </div>
           </div>
         </section>
-      </main>{' '}
+      </main>
       <Footer
+        basePath='/es'
         homeButton='Home'
         aboutUsButton='About Us'
         portfolioButton='Portfolio'
