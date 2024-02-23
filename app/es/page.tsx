@@ -20,18 +20,18 @@ export default function Home() {
         <Hero
           title={
             <>
-              Ajudando empresas a criar produtos{' '}
-              <strong className='gradient-bold'>digitais únicos</strong>.
+              Ayudando a las empresas a crear productos{' '}
+              <strong className='gradient-bold'>digitales únicos</strong>.
             </>
           }
           paragraph={
             <>
-              Tenha acesso a designers de alta qualidade, desenvolvedores
-              frontend e backend, especialistas em branding e muito mais em um{' '}
+              Acceda a diseñadores de alta calidad, desarrolladores front-end y
+              back-end, especialistas en branding y mucho más en un{' '}
               <strong className='font-medium underline'>único lugar</strong>
             </>
           }
-          textButton='Contacte-nos em'
+          textButton='Contáctenos en'
         />
         <AboutUs
           basePath='/pt'
