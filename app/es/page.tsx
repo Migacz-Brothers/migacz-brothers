@@ -18,6 +18,7 @@ export default function Home() {
       />
       <main>
         <Hero
+          alt='Gif con múltiples imágenes de proyectos seleccionados'
           title={
             <>
               Ayudando a las empresas a crear{' '}

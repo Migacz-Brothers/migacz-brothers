@@ -13,9 +13,10 @@ interface HeroProps {
   title: JSX.Element;
   paragraph: JSX.Element;
   textButton: string;
+  alt: string;
 }
 
-export default function Hero({ title, paragraph, textButton }: HeroProps) {
+export default function Hero({ title, paragraph, textButton, alt }: HeroProps) {
   return (
     <div
       className='light-noise-background pb-18 pt-28 md:pb-32 md:pt-40'
@@ -49,7 +50,7 @@ export default function Hero({ title, paragraph, textButton }: HeroProps) {
         </div>
         <Image
           src={MBGif}
-          alt='A Gif about our works'
+          alt={alt}
           className='mb-4 rounded-2xl lg:order-1 lg:mb-0 lg:self-end'
         />
       </motion.section>
