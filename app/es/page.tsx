@@ -41,33 +41,34 @@ export default function Home() {
           text='o lee más'
         />
         <Portfolio
-          title='Nossa vitrine de projetos'
+          title='Nuestra exhibición de proyectos'
           title_1={
             <>
-              <strong className='gradient-bold'>DietIt!</strong> Uma plataforma
-              feita para nutricionistas.
+              <strong className='gradient-bold'>DietIt!</strong> Una plataforma
+              diseñada para nutricionistas
             </>
           }
           title_2={
             <>
               <strong className='gradient-bold'>Dwight Capital</strong> Sistema
-              de página de comunicados de imprensa.
+              de página de comunicados de prensa
             </>
           }
           title_3={
             <>
-              <strong className='gradient-bold'>Cordoce Stores</strong> Projeto
-              de branding.
+              <strong className='gradient-bold'>Cordoce Stores</strong> Proyecto
+              de branding
             </>
           }
           title_4={
             <>
-              <strong className='gradient-bold'>Knox Abstract</strong> Website.
+              <strong className='gradient-bold'>Knox Abstract</strong> Página
+              web
             </>
           }
           title_5={
             <>
-              <strong className='gradient-bold'>1up Systems</strong> Website.
+              <strong className='gradient-bold'>1up Systems</strong> Página web
             </>
           }
         />
