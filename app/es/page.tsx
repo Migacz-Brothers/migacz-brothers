@@ -20,25 +20,25 @@ export default function Home() {
         <Hero
           title={
             <>
-              Ayudando a las empresas a crear productos{' '}
-              <strong className='gradient-bold'>digitales únicos</strong>.
+              Ayudando a las empresas a crear{' '}
+              <strong className='gradient-bold'>productos digitales</strong>.
             </>
           }
           paragraph={
             <>
-              Acceda a diseñadores de alta calidad, desarrolladores front-end y
-              back-end, especialistas en branding y mucho más en un{' '}
+              Accede a diseñadores de alta calidad, desarrolladores frontend y
+              backend, especialistas en branding y mucho más en un{' '}
               <strong className='font-medium underline'>único lugar</strong>
             </>
           }
           textButton='Contáctenos en'
         />
         <AboutUs
-          basePath='/pt'
-          title='Sobre nós'
-          subTitle='Design & Código'
-          paragraph='Somos uma pequena empresa cooperativa do Sul do Brasil com uma equipe internacional de profissionais que uniram forças para criar produtos exclusivos para a web.'
-          text='Ou leia mais'
+          basePath='/es'
+          title='Sobre nosotros'
+          subTitle='Diseño & Código'
+          paragraph='Somos una pequeña empresa cooperativa del Sur de Brasil con un equipo internacional de profesionales que han unido fuerzas para crear productos exclusivos para la web.'
+          text='o lee más'
         />
         <Portfolio
           title='Nossa vitrine de projetos'
