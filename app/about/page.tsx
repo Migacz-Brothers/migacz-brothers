@@ -30,7 +30,7 @@ export default function AboutUs() {
           paragraph_2='We create everything with long-term maintenance in mind. Once you become our client, we make a commitment to never let you down.'
           subTitle_3='Be not afraid of the unknown'
           paragraph_3='Everything changes, and it happens faster on this industry. We say yes to projects even if we are not sure how to do some parts of it.'
-          subTitle_4='We have high standards'
+          subTitle_4='Hold high standards'
           paragraph_4="Every product we create has to be approved by our team. We wanna be know for our quality, and that's our main goal."
         />
         <Team title='The Team' />

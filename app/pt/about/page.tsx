@@ -26,11 +26,11 @@ export default function AboutUs() {
           title='Os Valores'
           subTitle_1='Seja direto'
           paragraph_1='Acreditamos que o melhor e mais autêntico trabalho acontece quando todos têm a liberdade de falar sobre qualquer coisa a qualquer momento.'
-          subTitle_2='Não abandone clientes'
-          paragraph_2='Nós criamos tudo pensando na manutenção de longo prazo. Uma vez que você se torna nosso cliente, assumimos o compromisso de nunca te deixar n mão'
+          subTitle_2='Nunca abandonamos um cliente'
+          paragraph_2='Nós criamos tudo pensando na manutenção de longo prazo. Uma vez que você se torna nosso cliente, assumimos o compromisso de nunca te deixar na mão'
           subTitle_3='Não tenha medo do desconhecido'
           paragraph_3='Tudo muda, e isso acontece mais rapidamente nesta indústria. Aceitamos projetos mesmo que não tenhamos certeza de como realizar algumas partes deles.'
-          subTitle_4='Temos altos padrões'
+          subTitle_4='Seja criterioso'
           paragraph_4='Cada produto que criamos precisa ser aprovado pela nossa equipe. Queremos ser reconhecidos pela nossa qualidade, e esse é o nosso principal objetivo.'
         />
         <Team title='A Equipe' />
