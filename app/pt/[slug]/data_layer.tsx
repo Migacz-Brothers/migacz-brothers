@@ -47,7 +47,7 @@ const portable_text_components: Partial<PortableTextReactComponents> = {
         <p
           className={cn(
             project_section,
-            'leading-body_tight mb-8 font-body text-lg font-light md:text-xl',
+            'mb-8 font-body text-lg font-light leading-body_tight md:text-xl',
           )}
         >
           {children}

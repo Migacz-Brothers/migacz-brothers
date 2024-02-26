@@ -1,4 +1,5 @@
 'use client';
+
 import { motion } from 'framer-motion';
 
 interface TagsProps {
@@ -7,7 +8,7 @@ interface TagsProps {
 }
 
 export const Tags = ({ tagList, title = '' }: TagsProps) => (
-  <ul className='flex gap-1 md:gap-2 flex-wrap'>
+  <ul className='flex flex-wrap gap-1 md:gap-2'>
     {tagList.map((tag, i) => (
       <motion.li
         initial={{
@@ -19,7 +20,7 @@ export const Tags = ({ tagList, title = '' }: TagsProps) => (
         key={`tag-${i}-${tag}-${title}`}
         className='flex'
       >
-        <motion.span className='font-header text-main leading-header text-xs md:text-base px-[12px] md:px-[25px] py-[3px] md:py-[5px] rounded md:rounded-lg bg-tag backdrop-blur-xsm outline outline-1 md:outline-2 -outline-offset-1 md:-outline-offset-1 group-hover:bg-tag-hover duration-300'>
+        <motion.span className='rounded bg-tag px-[12px] py-[3px] font-header text-xs leading-header text-main outline outline-1 -outline-offset-1 backdrop-blur-xsm duration-300 group-hover:bg-tag-hover md:rounded-lg md:px-[25px] md:py-[5px] md:text-base md:outline-2 md:-outline-offset-1'>
           {tag}
         </motion.span>
       </motion.li>
