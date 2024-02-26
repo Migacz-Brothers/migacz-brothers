@@ -43,6 +43,7 @@ export default function Home() {
         />
         <Portfolio
           title='Nossa vitrine de projetos'
+          basePath='/pt'
           title_1={
             <>
               <strong className='gradient-bold'>DietIt!</strong> Uma plataforma

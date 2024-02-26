@@ -35,7 +35,6 @@ export default function Home() {
           textButton='Contáctenos en'
         />
         <AboutUs
-          basePath='/es'
           title='Sobre nosotros'
           subTitle='Diseño & Código'
           paragraph='Somos una pequeña empresa cooperativa del Sur de Brasil con un equipo internacional de profesionales que han unido fuerzas para crear productos exclusivos para la web.'
@@ -43,6 +42,7 @@ export default function Home() {
         />
         <Portfolio
           title='Nuestra exhibición de proyectos'
+          basePath='/es'
           title_1={
             <>
               <strong className='gradient-bold'>DietIt!</strong> Una plataforma

@@ -16,6 +16,7 @@ interface PortfolioProps {
   title_3: JSX.Element;
   title_4: JSX.Element;
   title_5: JSX.Element;
+  basePath?: string;
 }
 
 export default function Portfolio({
@@ -25,6 +26,7 @@ export default function Portfolio({
   title_3,
   title_4,
   title_5,
+  basePath = '',
 }: PortfolioProps) {
   return (
     <div className='blue-noise-background pb-9 pt-9 md:pb-16 md:pt-16'>
@@ -48,7 +50,7 @@ export default function Portfolio({
               'Redis',
               'SaaS',
             ]}
-            href='/dietit'
+            href={basePath + '/dietit'}
           >
             <Image
               src={DietIt}
@@ -64,7 +66,7 @@ export default function Portfolio({
             key={2}
             name={title_2}
             tagList={['UI/UX', 'CMS', 'Blog system', 'SEO']}
-            href='/dwight-capital'
+            href={basePath + '/dwight-capital'}
           >
             <Image
               src={Dwight}
@@ -81,7 +83,7 @@ export default function Portfolio({
             key={3}
             name={title_3}
             tagList={['branding', 'Product Design']}
-            href='/cordoce'
+            href={basePath + '/cordoce-store'}
           >
             <Image
               src={Cordoce}
@@ -105,7 +107,7 @@ export default function Portfolio({
               'Performance',
               'Microinteractions',
             ]}
-            href='/knox-abstract'
+            href={basePath + '/knox-abstract'}
           >
             <Image
               src={Knox}
@@ -122,7 +124,7 @@ export default function Portfolio({
             expand
             name={title_5}
             tagList={['UI/UX', 'CMS', 'Website', 'SEO', 'Analytics']}
-            href='/1up'
+            href={basePath + '/1up-sistemas'}
           >
             <Image
               src={Oneup}
