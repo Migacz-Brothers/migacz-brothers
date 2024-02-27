@@ -10,10 +10,10 @@ export default function UnderDevelopmentPage() {
     <>
       <Navbar
         basePath='/es'
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactButton='Contate-nos'
+        homeButton='Inicio'
+        aboutUsButton='Sobre Nosotros'
+        portfolioButton='Portafolio'
+        contactButton='Contáctenos'
       />
       <main>
         <section>
