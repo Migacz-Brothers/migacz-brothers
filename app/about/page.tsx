@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 
@@ -44,3 +46,23 @@ export default function AboutUs() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'About us | MigaczBrothers',
+  description:
+    "We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
+  twitter: {
+    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    title: 'About us | MigaczBrothers',
+    card: 'summary',
+    description:
+      "We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
+  },
+  openGraph: {
+    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    title: 'About us | MigaczBrothers',
+    url: 'https://migaczbrothers.com/about',
+    description:
+      "We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
+  },
+};
