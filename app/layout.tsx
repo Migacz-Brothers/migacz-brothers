@@ -1,6 +1,7 @@
 import './globals.css';
 
 import { Inter, Sora } from 'next/font/google';
+import { Metadata } from 'next/types';
 
 import FuzzyOverlay from '@/components/FuzzyBg';
 
@@ -58,3 +59,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://migaczbrothers.com'),
+};
