@@ -4,6 +4,8 @@ import { Metadata } from 'next';
 // import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 
+import FuzzyOverlay from '@/components/FuzzyBg';
+
 // fonts
 const sora = Sora({
   subsets: ['latin'],
@@ -55,7 +57,12 @@ export default function RootLayout({
         <meta name='theme-color' content='#ffffff' />
         {/* favicon */}
       </head>
-      <body className={`${inter.variable} ${sora.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${sora.variable}`}>
+        <div className='relative overflow-hidden'>
+          {children}
+          <FuzzyOverlay />
+        </div>
+      </body>
     </html>
   );
 }
