@@ -18,10 +18,7 @@ interface HeroProps {
 
 export default function Hero({ title, paragraph, textButton, alt }: HeroProps) {
   return (
-    <div
-      className='light-noise-background pb-18 pt-28 md:pb-32 md:pt-40'
-      id='home'
-    >
+    <div className='pb-18 pt-28 md:pb-32 md:pt-40' id='home'>
       <motion.section
         className={cn(
           section,

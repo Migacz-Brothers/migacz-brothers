@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import AboutUs from '@/components/AboutUs';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
@@ -43,6 +45,7 @@ export default function Home() {
         />
         <Portfolio
           title='Nossa vitrine de projetos'
+          basePath='/pt'
           title_1={
             <>
               <strong className='gradient-bold'>DietIt!</strong> Uma plataforma
@@ -89,3 +92,23 @@ export default function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Interfaces e Software Excepcionalmente Projetados | MigaczBrothers',
+  description:
+    'Descubra a arte do design excepcional e desenvolvimento de software com a MigaczBrothers. Especializamo-nos em criar experiências de usuário notáveis para transformar sua visão em realidade.',
+  twitter: {
+    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    title: 'Interfaces e Software Excepcionalmente Projetados | MigaczBrothers',
+    card: 'summary',
+    description:
+      'Descubra a arte do design excepcional e desenvolvimento de software com a MigaczBrothers. Especializamo-nos em criar experiências de usuário notáveis para transformar sua visão em realidade.',
+  },
+  openGraph: {
+    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    title: 'Interfaces e Software Excepcionalmente Projetados | MigaczBrothers',
+    url: 'https://migaczbrothers.com/pt',
+    description:
+      'Descubra a arte do design excepcional e desenvolvimento de software com a MigaczBrothers. Especializamo-nos em criar experiências de usuário notáveis para transformar sua visão em realidade.',
+  },
+};

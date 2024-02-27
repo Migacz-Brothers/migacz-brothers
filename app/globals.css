@@ -26,7 +26,7 @@ body {
   color: var(--main-foreground);
 }
 
-.blue-noise-background {
+/* .blue-noise-background {
   background: url(/dark_noise_texture.png) repeat,
     radial-gradient(
       256.07% 93.91% at 68.72% 78.49%,
@@ -47,7 +47,7 @@ body {
 
 .light-noise-background {
   background: url(/clear_noise_texture.png) repeat;
-}
+} */
 
 .gradient-bold {
   background: linear-gradient(91deg, var(--purple) 32.12%, var(--blue) 95.06%);
@@ -82,8 +82,7 @@ body {
 /* navbar */
 
 .navbar-scrolled-bg {
-  background: #00000050;
-  backdrop-filter: blur(4px);
+  background: #000000ed;
 }
 
 .burguer-menu {

@@ -29,7 +29,7 @@ export default function AboutUs({
   basePath = '',
 }: AboutUsProps) {
   return (
-    <div className='light-noise-background pb-9 md:pb-16'>
+    <div className='pb-9 md:pb-16'>
       <span className='relative bottom-[136px] h-0 w-0 opacity-0' id='about' />
       <motion.section
         initial={{

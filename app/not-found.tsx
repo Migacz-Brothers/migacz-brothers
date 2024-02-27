@@ -33,7 +33,7 @@ export default function UnderDevelopmentPage() {
             </div>
           </div>
         </section>
-      </main>{' '}
+      </main>
       <Footer
         homeButton='Home'
         aboutUsButton='About Us'

@@ -20,7 +20,7 @@ export const Tags = ({ tagList, title = '' }: TagsProps) => (
         key={`tag-${i}-${tag}-${title}`}
         className='flex'
       >
-        <motion.span className='rounded bg-tag px-[12px] py-[3px] font-header text-xs leading-header text-main outline outline-1 -outline-offset-1 backdrop-blur-xsm duration-300 group-hover:bg-tag-hover md:rounded-lg md:px-[25px] md:py-[5px] md:text-base md:outline-2 md:-outline-offset-1'>
+        <motion.span className='rounded bg-tag px-[12px] py-[3px] font-header text-xs leading-header text-main outline outline-1 -outline-offset-1 duration-300 group-hover:bg-tag-hover md:rounded-lg md:px-[25px] md:py-[5px] md:text-base md:outline-2 md:-outline-offset-1'>
           {tag}
         </motion.span>
       </motion.li>

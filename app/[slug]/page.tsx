@@ -110,3 +110,29 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 export const revalidate = false;
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const res = await getSpecificProject({ slug });
+  const project = res.allProject[0];
+
+  return {
+    title: `${project.title} | MigaczBrothers`,
+    description: `Read about the ${project.title} project execution and the technologies used.`,
+    twitter: {
+      images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+      title: `${project.title} | MigaczBrothers`,
+      card: 'summary',
+      description: `Read about the ${project.title} project execution and the technologies used.`,
+    },
+    openGraph: {
+      images: ['https://migaczbrothers.com/meta_image_logo.png'],
+      title: `${project.title} | MigaczBrothers`,
+      url: `https://migaczbrothers.com/${project.slug}`,
+      description: `Read about the ${project.title} project execution and the technologies used.`,
+    },
+  };
+}

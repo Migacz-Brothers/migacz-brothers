@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { Dribbble, Instagram, Linkedin } from 'lucide-react';
@@ -26,6 +27,7 @@ export default function Footer({
   contactUsButton,
   basePath = '',
 }: FooterProps) {
+  const pathname = usePathname();
   return (
     <footer className='my-5 pb-18'>
       <motion.div
@@ -87,13 +89,22 @@ export default function Footer({
             </li>
           </ul>
           <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
-            <LanguageLink current={basePath === ''} href='/'>
+            <LanguageLink
+              href={pathname.replace('/pt', '').replace('/es', '')}
+              current={basePath === ''}
+            >
               EN
             </LanguageLink>
-            <LanguageLink href='/pt' current={basePath === '/pt'}>
+            <LanguageLink
+              href={'/pt' + pathname.replace('/pt', '').replace('/es', '')}
+              current={basePath === '/pt'}
+            >
               PT
             </LanguageLink>
-            <LanguageLink href='/es' current={basePath === '/es'}>
+            <LanguageLink
+              href={'/es' + pathname.replace('/pt', '').replace('/es', '')}
+              current={basePath === '/es'}
+            >
               ES
             </LanguageLink>
           </ul>

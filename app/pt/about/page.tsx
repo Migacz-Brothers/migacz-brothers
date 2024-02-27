@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import AboutUsHero from '@/app/about/AboutUsHero';
@@ -7,7 +9,7 @@ import Values from '@/app/about/Values';
 
 export default function AboutUs() {
   return (
-    <div className='light-noise-background'>
+    <div>
       <Navbar
         basePath='/pt'
         homeButton='Ínicio'
@@ -45,3 +47,23 @@ export default function AboutUs() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Sobre nós | MigaczBrothers',
+  description:
+    'Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil.',
+  twitter: {
+    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    title: 'Sobre nós | MigaczBrothers',
+    card: 'summary',
+    description:
+      'Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil.',
+  },
+  openGraph: {
+    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    title: 'Sobre nós | MigaczBrothers',
+    url: 'https://migaczbrothers.com/pt/about',
+    description:
+      'Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil.',
+  },
+};

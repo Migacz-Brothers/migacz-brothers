@@ -112,3 +112,29 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 export const revalidate = false;
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const res = await getSpecificProject({ slug });
+  const project = res.allProject[0];
+
+  return {
+    title: `${project.title} | MigaczBrothers`,
+    description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+    twitter: {
+      images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+      title: `${project.title} | MigaczBrothers`,
+      card: 'summary',
+      description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+    },
+    openGraph: {
+      images: ['https://migaczbrothers.com/meta_image_logo.png'],
+      title: `${project.title} | MigaczBrothers`,
+      url: `https://migaczbrothers.com/es/${project.slug}`,
+      description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+    },
+  };
+}
