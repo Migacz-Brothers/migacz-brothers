@@ -8,7 +8,7 @@ import GustavoImage from '@/public/images/GustavoImage.png';
 import KarlaImage from '@/public/images/KarlaImage.png';
 import PedroImage from '@/public/images/PedroImage.png';
 import cn from 'clsx';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { h2, section } from '@/components/design-system';
 
