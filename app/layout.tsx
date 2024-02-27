@@ -58,7 +58,7 @@ export default function RootLayout({
         {/* favicon */}
       </head>
       <body className={`${inter.variable} ${sora.variable}`}>
-        <div className='relative overflow-hidden'>
+        <div className='max-w-full'>
           {children}
           <FuzzyOverlay />
         </div>
