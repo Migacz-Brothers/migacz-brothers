@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import AboutUs from '@/components/AboutUs';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
@@ -86,3 +88,23 @@ export default function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
+  description:
+    'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
+  twitter: {
+    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
+    card: 'summary',
+    description:
+      'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
+  },
+  openGraph: {
+    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
+    url: 'https://migaczbrothers.com',
+    description:
+      'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
+  },
+};

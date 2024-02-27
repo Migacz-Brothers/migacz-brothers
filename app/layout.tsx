@@ -1,7 +1,5 @@
 import './globals.css';
 
-import { Metadata } from 'next';
-// import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 
 import FuzzyOverlay from '@/components/FuzzyBg';
@@ -18,12 +16,6 @@ const inter = Inter({
   variable: '--font-body',
   display: 'swap',
 });
-
-export const metadata: Metadata = {
-  title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
-  description:
-    'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
-};
 
 export default function RootLayout({
   children,

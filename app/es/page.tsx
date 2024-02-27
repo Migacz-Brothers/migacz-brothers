@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import AboutUs from '@/components/AboutUs';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
@@ -90,3 +92,23 @@ export default function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Interfaces y Software Excepcionalmente Diseñados | MigaczBrothers',
+  description:
+    'Descubre el arte del diseño excepcional y el desarrollo de software con MigaczBrothers. Nos especializamos en crear experiencias de usuario destacadas para transformar tu visión en realidad.',
+  twitter: {
+    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    title: 'Interfaces y Software Excepcionalmente Diseñados | MigaczBrothers',
+    card: 'summary',
+    description:
+      'Descubre el arte del diseño excepcional y el desarrollo de software con MigaczBrothers. Nos especializamos en crear experiencias de usuario destacadas para transformar tu visión en realidad.',
+  },
+  openGraph: {
+    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    title: 'Interfaces y Software Excepcionalmente Diseñados | MigaczBrothers',
+    url: 'https://migaczbrothers.com/es',
+    description:
+      'Descubre el arte del diseño excepcional y el desarrollo de software con MigaczBrothers. Nos especializamos en crear experiencias de usuario destacadas para transformar tu visión en realidad.',
+  },
+};
