@@ -9,7 +9,7 @@ const FuzzyOverlay = () => {
         initial={{ transform: 'translateX(-10%) translateY(-10%)', opacity: 0 }}
         animate={{
           transform: 'translateX(10%) translateY(10%)',
-          opacity: 0.14,
+          opacity: 0.1,
         }}
         transition={{
           transform: {
