@@ -9,10 +9,10 @@ export default function UnderDevelopmentPage() {
   return (
     <>
       <Navbar
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactButton='Contate-nos'
+        homeButton='Home'
+        aboutUsButton='About Us'
+        portfolioButton='Portfolio'
+        contactButton='Contact Us'
       />
       <main>
         <section>

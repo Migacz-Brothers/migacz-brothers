@@ -37,10 +37,10 @@ export default function UnderDevelopmentPage() {
       </main>{' '}
       <Footer
         basePath='/pt'
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactUsButton='Contact Us'
+        homeButton='Ínicio'
+        aboutUsButton='Sobre nós'
+        portfolioButton='Portfólio'
+        contactUsButton='Contate-nos'
       />
     </>
   );

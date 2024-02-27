@@ -47,10 +47,10 @@ export default async function ProjectPage({
       </main>
       <Footer
         basePath='/es'
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactUsButton='Contate-nos'
+        homeButton='Inicio'
+        aboutUsButton='Sobre nosotros'
+        portfolioButton='Portafolio'
+        contactUsButton='Contáctenos'
       />
     </>
   );

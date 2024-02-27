@@ -22,10 +22,10 @@ export default async function ProjectPage({
   return (
     <>
       <Navbar
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactButton='Contate-nos'
+        homeButton='Home'
+        aboutUsButton='About Us'
+        portfolioButton='Portfolio'
+        contactButton='Contact Us'
       />
       <main
         className={cn(
@@ -44,10 +44,10 @@ export default async function ProjectPage({
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer
-        homeButton='Ínicio'
-        aboutUsButton='Sobre nós'
-        portfolioButton='Portfólio'
-        contactUsButton='Contate-nos'
+        homeButton='Home'
+        aboutUsButton='About Us'
+        portfolioButton='Portfolio'
+        contactUsButton='Contact Us'
       />
     </>
   );
