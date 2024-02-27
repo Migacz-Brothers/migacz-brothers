@@ -7,7 +7,7 @@ import Values from '@/app/about/Values';
 
 export default function AboutUs() {
   return (
-    <div className='light-noise-background'>
+    <div>
       <Navbar
         basePath='/pt'
         homeButton='Ínicio'

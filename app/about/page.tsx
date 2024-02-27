@@ -8,7 +8,7 @@ import Values from './Values';
 
 export default function AboutUs() {
   return (
-    <div className='light-noise-background'>
+    <div>
       <Navbar
         homeButton='Home'
         aboutUsButton='About Us'

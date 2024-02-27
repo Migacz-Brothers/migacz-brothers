@@ -29,7 +29,7 @@ export default function Portfolio({
   basePath = '',
 }: PortfolioProps) {
   return (
-    <div className='blue-noise-background pb-9 pt-9 md:pb-16 md:pt-16'>
+    <div className='pb-9 pt-9 md:pb-16 md:pt-16'>
       <span
         className='relative bottom-[136px] h-0 w-0 opacity-0'
         id='portfolio'
