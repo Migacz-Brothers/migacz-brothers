@@ -28,6 +28,7 @@ export default function Footer({
   basePath = '',
 }: FooterProps) {
   const pathname = usePathname();
+
   return (
     <footer className='my-5 pb-18'>
       <motion.div
@@ -90,7 +91,7 @@ export default function Footer({
           </ul>
           <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
             <LanguageLink
-              href={pathname.replace('/pt', '').replace('/es', '')}
+              href={pathname.replace('/pt', '').replace('/es', '') || '/'}
               current={basePath === ''}
             >
               EN
