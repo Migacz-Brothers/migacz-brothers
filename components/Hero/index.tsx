@@ -1,21 +1,28 @@
 'use client';
 
-import { h1, p, section } from '@/components/design-system';
+import Image from 'next/image';
+import MBGif from '@/public/images/MBGif.gif';
 import cn from 'clsx';
-import Illustrations from './Illustrations';
-import Cta from '../Cta';
 import { motion } from 'framer-motion';
 
-export default function Hero() {
+import { h1, p, section } from '@/components/design-system';
+
+import Cta from '../Cta';
+
+interface HeroProps {
+  title: JSX.Element;
+  paragraph: JSX.Element;
+  textButton: string;
+  alt: string;
+}
+
+export default function Hero({ title, paragraph, textButton, alt }: HeroProps) {
   return (
-    <div
-      className='light-noise-background md:pb-32 pb-18 md:pt-40 pt-28'
-      id='home'
-    >
+    <div className='pb-18 pt-28 md:pb-32 md:pt-40' id='home'>
       <motion.section
         className={cn(
           section,
-          'flex flex-col flex-wrap lg:max-h-[580px] justify-center'
+          'flex flex-col flex-wrap justify-center lg:max-h-[580px]',
         )}
         initial={{
           opacity: 0,
@@ -24,24 +31,25 @@ export default function Hero() {
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
       >
-        <div className='max-w-[652px] flex flex-col self-start mr-4 lg:order-1 lg:mt-[95px] mt-0'>
-          <span className={cn(p, 'uppercase underline lg:mb-3 mb-1')}>
+        <div className='mr-4 mt-0 flex max-w-[652px] flex-col self-start lg:order-1 lg:mt-[95px]'>
+          <span className={cn(p, 'mb-1 uppercase underline lg:mb-3')}>
             MigaczBrothers
           </span>
-          <h1 className={cn(h1, 'lg:mb-6 mb-4 md:max-w-none max-w-[464px]')}>
-            Helping companies create unique{' '}
-            <strong className='gradient-bold'>digital products</strong>.
+          <h1 className={cn(h1, 'mb-4 max-w-[464px] md:max-w-none lg:mb-6')}>
+            {title}
           </h1>
         </div>
-        <div className='self-start flex lg:flex-col flex-col-reverse max-w-[445px] w-full mr-4 lg:order-1 order-2 lg:mb-[95px] mb-0'>
-          <p className={cn(p, 'font-medium lg:mb-16 mb-0 max-w-[434px]')}>
-            Get access to high-end designers, frontend and backend developers,
-            branding specialists, and much more in a{' '}
-            <strong className='font-medium underline'>single place</strong>!
+        <div className='order-2 mb-0 mr-4 flex w-full max-w-[445px] flex-col-reverse self-start lg:order-1 lg:mb-[95px] lg:flex-col'>
+          <p className={cn(p, 'mb-0 max-w-[434px] font-medium lg:mb-16')}>
+            {paragraph}
           </p>
-          <Cta />
+          <Cta textButton={textButton} />
         </div>
-        <Illustrations className='lg:self-end lg:order-1 mb-4 lg:mb-0' />
+        <Image
+          src={MBGif}
+          alt={alt}
+          className='mb-4 rounded-2xl lg:order-1 lg:mb-0 lg:self-end'
+        />
       </motion.section>
     </div>
   );

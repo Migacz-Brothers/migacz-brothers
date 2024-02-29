@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import cn from 'clsx';
 import { motion } from 'framer-motion';
 import { Dribbble, Instagram, Linkedin } from 'lucide-react';
@@ -11,11 +12,25 @@ import CompanyLogo from '../svgs/CompanyLogo';
 
 interface FooterProps {
   home?: boolean;
+  homeButton: string;
+  aboutUsButton: string;
+  portfolioButton: string;
+  contactButton: string;
+  basePath?: string;
 }
 
-export default function Footer({ home = false }: FooterProps) {
+export default function Footer({
+  home = false,
+  homeButton,
+  aboutUsButton,
+  portfolioButton,
+  contactButton,
+  basePath = '',
+}: FooterProps) {
+  const pathname = usePathname();
+
   return (
-    <footer className='my-5 pb-18'>
+    <footer className='my-5 pb-8'>
       <motion.div
         className={section}
         initial={{
@@ -26,64 +41,104 @@ export default function Footer({ home = false }: FooterProps) {
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <div className='mb-6 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center'>
-          <a href={(home ? '' : '/') + '#home'} className='order-none'>
+          <a
+            href={basePath + (home ? '' : '/') + '#home'}
+            className='order-none'
+          >
             <CompanyLogo className='h-[41px] w-[99px]' />
           </a>
           <ul className='order-3 flex gap-8 lg:order-none'>
             <li>
               <Link
-                href='#'
+                href='https://www.instagram.com/migaczbrothers/'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Instagram strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://www.behance.net/MigaczBrothers'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <BehanceIcon strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://www.linkedin.com/company/migacz-brothers/'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Linkedin strokeWidth={1.5} />
               </Link>
             </li>
             <li>
               <Link
-                href='#'
+                href='https://dribbble.com/MigaczBrothers'
                 target='_blank'
                 className='grid h-6 w-6 place-items-center'
+                rel='noopener noreferrer'
               >
                 <Dribbble strokeWidth={1.5} />
               </Link>
             </li>
           </ul>
           <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
-            <LanguageLink current href='/'>
+            <LanguageLink
+              href={
+                '/en' +
+                  pathname
+                    .replace('/pt', '')
+                    .replace('/es', '')
+                    .replace('/en', '') || '/'
+              }
+              current={basePath === '/en'}
+            >
               EN
             </LanguageLink>
-            <LanguageLink href='/pt'>PT</LanguageLink>
-            <LanguageLink href='/es'>ES</LanguageLink>
+            <LanguageLink
+              href={
+                '/pt' +
+                pathname
+                  .replace('/pt', '')
+                  .replace('/es', '')
+                  .replace('/en', '')
+              }
+              current={basePath === '/pt'}
+            >
+              PT
+            </LanguageLink>
+            <LanguageLink
+              href={
+                '/es' +
+                pathname
+                  .replace('/pt', '')
+                  .replace('/es', '')
+                  .replace('/en', '')
+              }
+              current={basePath === '/es'}
+            >
+              ES
+            </LanguageLink>
           </ul>
           <ul className='order-1 flex flex-col gap-4 lg:order-none lg:flex-row lg:gap-8'>
-            <FooterLink href={(home ? '' : '/') + '#home'}>Home</FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#about'}>
-              About Us
+            <FooterLink href={basePath + (home ? '' : '/') + '#home'}>
+              {homeButton}
             </FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#portfolio'}>
-              Portfolio
+            <FooterLink href={basePath + (home ? '' : '/') + '#about'}>
+              {aboutUsButton}
             </FooterLink>
-            <FooterLink href={(home ? '' : '/') + '#portfolio'}>
-              Contact Us
+            <FooterLink href={basePath + (home ? '' : '/') + '#portfolio'}>
+              {portfolioButton}
+            </FooterLink>
+            <FooterLink href={basePath + (home ? '' : '/') + '#contact'}>
+              {contactButton}
             </FooterLink>
           </ul>
         </div>
@@ -115,13 +170,13 @@ interface FooterLinkProps {
 const FooterLink = ({ children, href }: FooterLinkProps) => {
   return (
     <li>
-      <Link
+      <a
         href={href}
         className='group inline-block font-header text-sm text-main md:text-lg'
       >
         {children}
         <div className='nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-200 group-hover:opacity-100' />
-      </Link>
+      </a>
     </li>
   );
 };
@@ -141,7 +196,7 @@ const LanguageLink = ({
 }: LanguageLinkProps) => {
   return (
     <li className={className}>
-      <Link
+      <a
         href={href}
         className='gradient-language-bold font group inline-block duration-300'
       >
@@ -152,7 +207,7 @@ const LanguageLink = ({
             current ? 'opacity-100' : '',
           )}
         />
-      </Link>
+      </a>
     </li>
   );
 };

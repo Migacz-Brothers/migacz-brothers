@@ -1,0 +1,95 @@
+{
+  "navigation": {
+    "home": "Ínicio",
+    "about": "Sobre nós",
+    "portfolio": "Portfólio",
+    "contact": "Contate-nos"
+  },
+  "page": {
+    "home": {
+      "hero": {
+        "title": {
+          "main": "Ajudando empresas a criar produtos ",
+          "bold": "digitais únicos"
+        },
+        "description": {
+          "main": "Tenha acesso a designers de alta qualidade, desenvolvedores frontend e backend, especialistas em branding e muito mais em ",
+          "bold": "um único lugar"
+        },
+        "cta": "Contacte-nos em"
+      },
+      "about": {
+        "title": "Sobre nós",
+        "title_2": "Design & Código",
+        "description": "Somos uma pequena empresa cooperativa do Sul do Brasil com uma equipe internacional de profissionais que uniram forças para criar produtos exclusivos para a web",
+        "cta": "Ou leia mais"
+      },
+      "showcase": {
+        "title": "Alguns Projetos selecionados",
+        "projects": [
+          {
+            "title": "DietIt!",
+            "description": "Uma plataforma para nutricionistas"
+          },
+          {
+            "title": "Dwight Capital",
+            "description": "Sistema de Notícias"
+          },
+          {
+            "title": "Cordoce Stores",
+            "description": "Projeto de Branding"
+          },
+          {
+            "title": "Knox Abstract",
+            "description": "Identidade de Marca e Website"
+          },
+          {
+            "title": "1up Systems",
+            "description": "Website"
+          }
+        ]
+      },
+      "contact": {
+        "title": "Quer conversar? Nos envie uma mensagem!",
+        "description": "Nossa equipe está empolgada para se conectar com você. Entre em contato para discutir suas necessidades de software hoje!",
+        "cta": "Conta-te nos em"
+      }
+    },
+    "not_found": {
+      "title": "404 - Página Não Encontrada",
+      "title2": "Desculpe, não há nada aqui!"
+    },
+    "about": {
+      "title": "Sobre nós",
+      "tldr": {
+        "title": "O Resumo",
+        "description": "Sabemos que você é uma pessoa ocupada, então vamos direto ao ponto. Somos uma cooperativa de designers e desenvolvedores de software que se uniram para criar produtos de alta qualidade que, de outra forma, poderiam ser impraticáveis. Nossa equipe é global, com o escritório principal localizado no Sul do Brasil",
+        "trailing": "Se você quiser saber mais, basta continuar rolando (a página)"
+      },
+      "values": {
+        "title": "Os Valores",
+        "values": [
+          {
+            "title": "Seja direto",
+            "description": "Acreditamos que o melhor e mais autêntico trabalho acontece quando todos têm a liberdade de falar sobre qualquer coisa a qualquer momento"
+          },
+          {
+            "title": "Seja criterioso",
+            "description": "Cada produto que criamos precisa ser aprovado pela nossa equipe. Queremos ser reconhecidos pela nossa qualidade, e esse é o nosso principal objetivo"
+          },
+          {
+            "title": "Não tenha medo do desconhecido",
+            "description": "Tudo muda, e isso acontece mais rapidamente nesta indústria. Aceitamos projetos mesmo que não tenhamos certeza de como realizar algumas partes deles"
+          },
+          {
+            "title": "Nunca abandonamos um cliente",
+            "description": "Nós criamos tudo pensando na manutenção de longo prazo. Uma vez que você se torna nosso cliente, assumimos o compromisso de nunca te deixar na mão"
+          }
+        ]
+      },
+      "team": {
+        "title": "A Equipe"
+      }
+    }
+  }
+}

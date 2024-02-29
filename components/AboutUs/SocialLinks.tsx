@@ -1,8 +1,9 @@
 'use client';
-import { motion } from 'framer-motion';
+
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import cn from 'clsx';
+import { motion } from 'framer-motion';
 
 interface SocialLinkProps {
   children: ReactNode;
@@ -31,16 +32,17 @@ const SocialLink = ({
       transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.05 + 0.1 * i }}
       key={`socialLink-${i}_${text}`}
       className={cn(
-        'rounded-[4px] font-body text-xs lg:text-base leading-[12px]',
-        className
+        'rounded-[4px] font-body text-xs leading-[12px] lg:text-base',
+        className,
       )}
     >
       <Link
         href={href}
-        className='w-full h-full flex flex-row gap-1 items-center rounded-[4px] hover:shadow-bright-sm hover:underline duration-300'
+        className='flex h-full w-full flex-row items-center gap-1 rounded-[4px] duration-300 hover:underline hover:shadow-bright-sm'
         target={samePage ? '' : '_blank'}
+        rel='noopener noreferrer'
       >
-        <div className='scale-75 xl:scale-100 w-10 h-10 xl:w-[54px] xl:h-[54px] grid place-items-center'>
+        <div className='grid h-10 w-10 scale-75 place-items-center xl:h-[54px] xl:w-[54px] xl:scale-100'>
           {children}
         </div>
         {text}

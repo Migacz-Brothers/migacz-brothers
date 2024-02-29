@@ -53,6 +53,7 @@ const config: Config = {
     lineHeight: {
       header: '128%',
       body: '160%',
+      body_tight: '140%',
     },
     backdropBlur: {
       xsm: '1px',
