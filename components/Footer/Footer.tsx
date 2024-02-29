@@ -170,13 +170,13 @@ interface FooterLinkProps {
 const FooterLink = ({ children, href }: FooterLinkProps) => {
   return (
     <li>
-      <Link
+      <a
         href={href}
         className='group inline-block font-header text-sm text-main md:text-lg'
       >
         {children}
         <div className='nav-background h-[2px] w-full rounded-[50px] opacity-0 duration-200 group-hover:opacity-100' />
-      </Link>
+      </a>
     </li>
   );
 };
@@ -196,7 +196,7 @@ const LanguageLink = ({
 }: LanguageLinkProps) => {
   return (
     <li className={className}>
-      <Link
+      <a
         href={href}
         className='gradient-language-bold font group inline-block duration-300'
       >
@@ -207,7 +207,7 @@ const LanguageLink = ({
             current ? 'opacity-100' : '',
           )}
         />
-      </Link>
+      </a>
     </li>
   );
 };
