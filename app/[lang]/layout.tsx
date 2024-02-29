@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter, Sora } from 'next/font/google';
 import { Metadata } from 'next/types';
 import { i18n, Locale } from '@/i18n.config';
+import { Analytics } from '@vercel/analytics/react';
 
 import FuzzyOverlay from '@/components/FuzzyBg';
 
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
           <FuzzyOverlay />
         </div>
+        <Analytics />
       </body>
     </html>
   );
