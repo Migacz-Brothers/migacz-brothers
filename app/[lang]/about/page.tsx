@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Locale } from '@/i18n.config';
+import meta_image_logo from '@/public/meta_image_logo.png';
 
 import { getDictionary } from '@/lib/dictionary';
 import Footer from '@/components/Footer/Footer';
@@ -65,14 +66,14 @@ export const metadata: Metadata = {
   description:
     "We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
   twitter: {
-    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    images: [meta_image_logo.src],
     title: 'About us | MigaczBrothers',
     card: 'summary',
     description:
       "We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
   },
   openGraph: {
-    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    images: [meta_image_logo.src],
     title: 'About us | MigaczBrothers',
     url: 'https://migaczbrothers.com/about',
     description:
