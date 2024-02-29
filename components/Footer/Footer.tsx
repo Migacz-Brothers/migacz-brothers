@@ -30,7 +30,7 @@ export default function Footer({
   const pathname = usePathname();
 
   return (
-    <footer className='my-5 pb-18'>
+    <footer className='my-5 pb-8'>
       <motion.div
         className={section}
         initial={{

@@ -12,7 +12,6 @@ import {
 } from 'framer-motion';
 
 import { section } from '../design-system';
-import Supernav from '../Supernav';
 import BehanceMobileIcon from '../svgs/BehanceMobileIcon';
 import BurguerMobileIcon from '../svgs/BurguerMobileIcon';
 //////IconsImports
@@ -58,7 +57,6 @@ export default function Navbar({
   return (
     <>
       {/* nav desktop */}
-      {!mobileOpen ? <Supernav /> : null}
       <nav
         className={cn(
           // 'w-full fixed top-0 left-0 py-6 z-[9999] duration-500',
