@@ -15,7 +15,7 @@ interface FooterProps {
   homeButton: string;
   aboutUsButton: string;
   portfolioButton: string;
-  contactUsButton: string;
+  contactButton: string;
   basePath?: string;
 }
 
@@ -24,7 +24,7 @@ export default function Footer({
   homeButton,
   aboutUsButton,
   portfolioButton,
-  contactUsButton,
+  contactButton,
   basePath = '',
 }: FooterProps) {
   const pathname = usePathname();
@@ -91,19 +91,37 @@ export default function Footer({
           </ul>
           <ul className='order-2 flex gap-8 font-header text-lg lg:order-none'>
             <LanguageLink
-              href={pathname.replace('/pt', '').replace('/es', '') || '/'}
-              current={basePath === ''}
+              href={
+                '/en' +
+                  pathname
+                    .replace('/pt', '')
+                    .replace('/es', '')
+                    .replace('/en', '') || '/'
+              }
+              current={basePath === '/en'}
             >
               EN
             </LanguageLink>
             <LanguageLink
-              href={'/pt' + pathname.replace('/pt', '').replace('/es', '')}
+              href={
+                '/pt' +
+                pathname
+                  .replace('/pt', '')
+                  .replace('/es', '')
+                  .replace('/en', '')
+              }
               current={basePath === '/pt'}
             >
               PT
             </LanguageLink>
             <LanguageLink
-              href={'/es' + pathname.replace('/pt', '').replace('/es', '')}
+              href={
+                '/es' +
+                pathname
+                  .replace('/pt', '')
+                  .replace('/es', '')
+                  .replace('/en', '')
+              }
               current={basePath === '/es'}
             >
               ES
@@ -120,7 +138,7 @@ export default function Footer({
               {portfolioButton}
             </FooterLink>
             <FooterLink href={basePath + (home ? '' : '/') + '#contact'}>
-              {contactUsButton}
+              {contactButton}
             </FooterLink>
           </ul>
         </div>

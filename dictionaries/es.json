@@ -1,0 +1,70 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "portfolio": "Portafolio",
+    "contact": "Contáctenos"
+  },
+  "page": {
+    "home": {
+      "hero": {
+        "title": {
+          "main": "Ayudando a las empresas a crear ",
+          "bold": "productos digitales"
+        },
+        "description": {
+          "main": "Accede a diseñadores de alta calidad, desarrolladores frontend y backend, especialistas en branding y mucho más en ",
+          "bold": "un solo lugar"
+        },
+        "cta": "Contáctenos en"
+      },
+      "about": {
+        "title": "About Us",
+        "title_2": "Design & Code",
+        "description": "We are a small cooperative company from South Brazil with an international team of professionals who have joined forces to create unique products for the web.",
+        "cta": "Or read more"
+      },
+      "showcase": {
+        "title": "Our Projects Showcase"
+      },
+      "contact": {
+        "title": "Wanna Talk? Send us a message!",
+        "description": "Our team is excited to connect with you. Reach out to discuss your software needs today!",
+        "cta": "Contact us at"
+      }
+    },
+    "not_found": {
+      "title": "404 - Página no encontrada",
+      "title2": "Lo siento, no hay nada aquí!"
+    },
+    "about": {
+      "title": "About Us",
+      "tldr": {
+        "title": "The tl;dr",
+        "description": "We know you are a busy person, so we'll get straight to the point. We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
+        "trailing": "If you wanna learn more, just keep scrolling"
+      },
+      "values": [
+        {
+          "title": "Get Real",
+          "description": "We believe the best and mot authentic work happens when everyone is free to speak about anything at anytime."
+        },
+        {
+          "title": "Hold high standards",
+          "description": "Every product we create has to be approved by our team. We wanna be know for our quality, and that's our main goal."
+        },
+        {
+          "title": "Be not afraid of the unknown",
+          "description": "Everything changes, and it happens faster on this industry. We say yes to projects even if we are not sure how to do some parts of it."
+        },
+        {
+          "title": "Never drop a cliente",
+          "description": "We create everything with long-term maintenance in mind. Once you become our client, we make a commitment to never let you down."
+        }
+      ],
+      "team": {
+        "title": "The Team"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import { Locale } from '@/i18n.config';
 
+import { getDictionary } from '@/lib/dictionary';
 import AboutUs from '@/components/AboutUs';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
@@ -7,42 +9,52 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar/Navbar';
 import Portfolio from '@/components/Portfolio';
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const {
+    navigation,
+    page: { home },
+  } = await getDictionary(lang);
+
   return (
     <>
       <Navbar
         home
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactButton='Contact Us'
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
       <main>
         <Hero
           alt='Gif with multiple images of selected projects'
           title={
             <>
-              Helping companies create unique{' '}
-              <strong className='gradient-bold'>digital products</strong>.
+              {home.hero.title.main}
+              <strong className='gradient-bold'>{home.hero.title.bold}</strong>.
             </>
           }
           paragraph={
             <>
-              Get access to high-end designers, frontend and backend developers,
-              branding specialists, and much more in a{' '}
-              <strong className='font-medium underline'>single place</strong>
+              {home.hero.description.main}{' '}
+              <strong className='font-medium underline'>
+                {home.hero.description.bold}
+              </strong>
             </>
           }
-          textButton='Contact us at'
+          textButton={home.hero.cta}
         />
         <AboutUs
-          title='About Us'
-          subTitle='Design & Code'
-          paragraph='We are a small cooperative company from South Brazil with an international team of professionals who have joined forces to create unique products for the web.'
-          text='Or read more'
+          title={home.about.title}
+          subTitle={home.about.title_2}
+          paragraph={home.about.description}
+          text={home.about.cta}
         />
         <Portfolio
-          title='Our Projects Showcase'
+          title={home.showcase.title}
           title_1={
             <>
               <strong className='gradient-bold'>DietIt!</strong> A platform made
@@ -73,17 +85,18 @@ export default function Home() {
           }
         />
         <ContactUs
-          title='Wanna Talk? Send us a message!'
-          paragraph='Our team is excited to connect with you. Reach out to discuss your software needs today!'
-          textButton='Contact us at'
+          title={home.contact.title}
+          paragraph={home.contact.description}
+          textButton={home.contact.cta}
         />
       </main>
       <Footer
         home
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactUsButton='Contact Us'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
     </>
   );

@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
-import AboutUsHero from '@/app/about/AboutUsHero';
-import Team from '@/app/about/Team';
-import Tldr from '@/app/about/Tldr';
-import Values from '@/app/about/Values';
+import AboutUsHero from '@/app/[lang]/about/AboutUsHero';
+import Team from '@/app/[lang]/about/Team';
+import Tldr from '@/app/[lang]/about/Tldr';
+import Values from '@/app/[lang]/about/Values';
 
 export default function AboutUs() {
   return (
