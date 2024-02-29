@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
+import { Locale } from '@/i18n.config';
 import { getAllProjects, getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 
+import { getDictionary } from '@/lib/dictionary';
 import { section } from '@/components/design-system';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
@@ -10,22 +12,25 @@ import ProjectHeader from '@/components/ProjectHeader';
 import { Tags } from '@/components/Tags';
 
 export default async function ProjectPage({
-  params: { slug },
+  params: { slug, lang },
 }: {
-  params: { slug: string };
+  params: { slug: string; lang: Locale };
 }) {
   const res = await getSpecificProject({ slug });
   const project = res.allProject[0];
 
   if (!project) return notFound();
 
+  const { navigation } = await getDictionary(lang);
+
   return (
     <>
       <Navbar
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactButton='Contact Us'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
       <main
         className={cn(
@@ -44,10 +49,11 @@ export default async function ProjectPage({
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactUsButton='Contact Us'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
     </>
   );
