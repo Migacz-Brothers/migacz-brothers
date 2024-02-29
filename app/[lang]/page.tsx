@@ -52,35 +52,49 @@ export default async function Home({
           subTitle={home.about.title_2}
           paragraph={home.about.description}
           text={home.about.cta}
+          basePath={`/${lang}`}
         />
         <Portfolio
           title={home.showcase.title}
+          basePath={`/${lang}`}
           title_1={
             <>
-              <strong className='gradient-bold'>DietIt!</strong> A platform made
-              for dieticians
+              <strong className='gradient-bold'>
+                {home.showcase.projects[0].title}
+              </strong>{' '}
+              {home.showcase.projects[0].description}
             </>
           }
           title_2={
             <>
-              <strong className='gradient-bold'>Dwight Capital</strong> Press
-              releases page system
+              <strong className='gradient-bold'>
+                {home.showcase.projects[1].title}
+              </strong>{' '}
+              {home.showcase.projects[1].description}
             </>
           }
           title_3={
             <>
-              <strong className='gradient-bold'>Cordoce Stores</strong> branding
-              project
+              <strong className='gradient-bold'>
+                {home.showcase.projects[2].title}
+              </strong>{' '}
+              {home.showcase.projects[2].description}
             </>
           }
           title_4={
             <>
-              <strong className='gradient-bold'>Knox Abstract</strong> website
+              <strong className='gradient-bold'>
+                {home.showcase.projects[3].title}
+              </strong>{' '}
+              {home.showcase.projects[3].description}
             </>
           }
           title_5={
             <>
-              <strong className='gradient-bold'>1up Systems</strong> website
+              <strong className='gradient-bold'>
+                {home.showcase.projects[4].title}
+              </strong>{' '}
+              {home.showcase.projects[4].description}
             </>
           }
         />
