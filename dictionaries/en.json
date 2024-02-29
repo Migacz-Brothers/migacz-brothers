@@ -25,7 +25,29 @@
         "cta": "Or read more"
       },
       "showcase": {
-        "title": "Our Projects Showcase"
+        "title": "Selected Projects",
+        "projects": [
+          {
+            "title": "DietIt!",
+            "description": "A platform made for dieticians"
+          },
+          {
+            "title": "Dwight Capital",
+            "description": "Press releases page system"
+          },
+          {
+            "title": "Cordoce Stores",
+            "description": "Branding project"
+          },
+          {
+            "title": "Knox Abstract",
+            "description": "Brand identity & website"
+          },
+          {
+            "title": "1up Systems",
+            "description": "Website"
+          }
+        ]
       },
       "contact": {
         "title": "Wanna Talk? Send us a message!",

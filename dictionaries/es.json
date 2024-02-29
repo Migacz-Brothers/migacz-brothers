@@ -19,13 +19,35 @@
         "cta": "Contáctenos en"
       },
       "about": {
-        "title": "About Us",
-        "title_2": "Design & Code",
-        "description": "We are a small cooperative company from South Brazil with an international team of professionals who have joined forces to create unique products for the web.",
-        "cta": "Or read more"
+        "title": "Sobre nosotros",
+        "title_2": "Diseño & Código",
+        "description": "Somos una pequeña empresa cooperativa del Sur de Brasil con un equipo internacional de profesionales que han unido fuerzas para crear productos exclusivos para la web",
+        "cta": "o lee más"
       },
       "showcase": {
-        "title": "Our Projects Showcase"
+        "title": "Algunos Proyectos Seleccionados",
+        "projects": [
+          {
+            "title": "DietIt!",
+            "description": "Una plataforma creada para dietistas."
+          },
+          {
+            "title": "Dwight Capital",
+            "description": "Press releases page system"
+          },
+          {
+            "title": "Cordoce Stores",
+            "description": "Proyecto de Branding"
+          },
+          {
+            "title": "Knox Abstract",
+            "description": "Identidad de Marca y website"
+          },
+          {
+            "title": "1up Systems",
+            "description": "Website"
+          }
+        ]
       },
       "contact": {
         "title": "Wanna Talk? Send us a message!",
