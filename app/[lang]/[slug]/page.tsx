@@ -40,12 +40,13 @@ export default async function ProjectPage({
       >
         <ProjectHeader
           title={String(project.title)}
-          description={String(project.description?.en)}
-          executed_at={String(project.executedAt?.en)}
-          read_time={String(project.read_time?.en)}
+          description={String(project.description?.[lang])}
+          executed_at={String(project.executedAt?.[lang])}
+          read_time={String(project.read_time?.[lang])}
           link={project.link}
+          lang={lang}
         />
-        <ProjectContent project={project} lang='en' />
+        <ProjectContent project={project} lang={lang} />
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer

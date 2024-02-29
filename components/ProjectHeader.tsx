@@ -13,6 +13,7 @@ interface ProjectHeaderProps {
   executed_at: string;
   read_time: string;
   link?: string | null;
+  lang: 'pt' | 'en' | 'es';
 }
 
 const ProjectHeader = ({
@@ -21,7 +22,14 @@ const ProjectHeader = ({
   executed_at,
   read_time,
   link,
+  lang,
 }: ProjectHeaderProps) => {
+  const cta_text =
+    lang === 'pt'
+      ? 'Acesse a página'
+      : lang === 'en'
+        ? 'Access the page'
+        : 'Accede a la página';
   return (
     <motion.div
       className={cn(project_section, 'mb-8')}
@@ -48,7 +56,7 @@ const ProjectHeader = ({
           target='_blank'
           rel='noopener noreferrer'
         >
-          Acesse a página <LogIn strokeWidth={1.5} />
+          {cta_text} <LogIn strokeWidth={1.5} />
         </Link>
       ) : null}
     </motion.div>
