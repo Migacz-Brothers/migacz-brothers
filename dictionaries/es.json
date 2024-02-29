@@ -38,32 +38,35 @@
       "title2": "Lo siento, no hay nada aquí!"
     },
     "about": {
-      "title": "About Us",
+      "title": "Sobre nosotros",
       "tldr": {
-        "title": "The tl;dr",
-        "description": "We know you are a busy person, so we'll get straight to the point. We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil.",
-        "trailing": "If you wanna learn more, just keep scrolling"
+        "title": "El Resumen",
+        "description": "Sabemos que eres una persona ocupada, así que vamos directo al grano. Somos una cooperativa de diseñadores y desarrolladores de software que se han unido para crear productos de alta calidad que, de otra manera, podrían ser impracticables. Nuestro equipo es global, con la oficina principal ubicada en el Sur de Brasil",
+        "trailing": "Si quieres saber más, sigue desplazándote (la página)"
       },
-      "values": [
-        {
-          "title": "Get Real",
-          "description": "We believe the best and mot authentic work happens when everyone is free to speak about anything at anytime."
-        },
-        {
-          "title": "Hold high standards",
-          "description": "Every product we create has to be approved by our team. We wanna be know for our quality, and that's our main goal."
-        },
-        {
-          "title": "Be not afraid of the unknown",
-          "description": "Everything changes, and it happens faster on this industry. We say yes to projects even if we are not sure how to do some parts of it."
-        },
-        {
-          "title": "Never drop a cliente",
-          "description": "We create everything with long-term maintenance in mind. Once you become our client, we make a commitment to never let you down."
-        }
-      ],
+      "values": {
+        "title": "Los valores",
+        "values": [
+          {
+            "title": "Sé directo",
+            "description": "Creemos que el mejor y más auténtico trabajo ocurre cuando todos tienen la libertad de hablar sobre cualquier cosa en cualquier momento"
+          },
+          {
+            "title": "Sea criterioso",
+            "description": "Cada producto que creamos necesita ser aprobado por nuestro equipo. Queremos ser reconocidos por nuestra calidad, y ese es nuestro objetivo principal"
+          },
+          {
+            "title": "No tengas miedo a lo desconocido",
+            "description": "Todo cambia, y esto sucede más rápidamente en esta industria. Aceptamos proyectos incluso si no estamos seguros de cómo llevar a cabo algunas partes de ellos"
+          },
+          {
+            "title": "Nunca abandonamos a un cliente",
+            "description": "Creamos todo pensando en el mantenimiento a largo plazo. Una vez que te conviertes en nuestro cliente, asumimos el compromiso de nunca dejarte en la estacada"
+          }
+        ]
+      },
       "team": {
-        "title": "The Team"
+        "title": "El Equipo"
       }
     }
   }

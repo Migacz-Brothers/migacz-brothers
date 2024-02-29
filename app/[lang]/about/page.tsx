@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import { Locale } from '@/i18n.config';
 
+import { getDictionary } from '@/lib/dictionary';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 
@@ -8,40 +10,51 @@ import Team from './Team';
 import Tldr from './Tldr';
 import Values from './Values';
 
-export default function AboutUs() {
+export default async function AboutUs({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const {
+    navigation,
+    page: { about },
+  } = await getDictionary(lang);
+
   return (
     <div>
       <Navbar
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactButton='Contact Us'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
       <main>
-        <AboutUsHero title='About US' />
+        <AboutUsHero title={about.title} />
         <Tldr
-          title='The tl;dr'
-          paragraph="We know you are a busy person, so we'll get straight to the point. We're a cooperative of designers and software developers who united to create high-quality products that might otherwise be impracticable. Our team is global, with our main office located in South Brazil."
-          paragraph_2='If you wanna learn more, just keep scrolling'
+          title={about.tldr.title}
+          paragraph={about.tldr.description}
+          paragraph_2={about.tldr.trailing}
         />
         <Values
-          title='The Values'
-          subTitle_1='Get Real'
-          paragraph_1='We believe the best and mot authentic work happens when everyone is free to speak about anything at anytime.'
-          subTitle_2='Never drop a cliente'
-          paragraph_2='We create everything with long-term maintenance in mind. Once you become our client, we make a commitment to never let you down.'
-          subTitle_3='Be not afraid of the unknown'
-          paragraph_3='Everything changes, and it happens faster on this industry. We say yes to projects even if we are not sure how to do some parts of it.'
-          subTitle_4='Hold high standards'
-          paragraph_4="Every product we create has to be approved by our team. We wanna be know for our quality, and that's our main goal."
+          title={about.values.title}
+          subTitle_1={about.values.values[0].title}
+          paragraph_1={about.values.values[0].description}
+          subTitle_2={about.values.values[1].title}
+          paragraph_2={about.values.values[1].description}
+          subTitle_3={about.values.values[2].title}
+          paragraph_3={about.values.values[2].description}
+          subTitle_4={about.values.values[3].title}
+          paragraph_4={about.values.values[3].description}
         />
-        <Team title='The Team' />
+        <Team title={about.team.title} />
       </main>
       <Footer
-        homeButton='Home'
-        aboutUsButton='About Us'
-        portfolioButton='Portfolio'
-        contactUsButton='Contact Us'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
     </div>
   );

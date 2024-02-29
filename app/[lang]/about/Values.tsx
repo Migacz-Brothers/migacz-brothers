@@ -55,8 +55,8 @@ export default function Values({
         />
         <IndividualValue
           icon={<ShieldCheckIcon />}
-          title={subTitle_4}
-          paragraph={paragraph_4}
+          title={subTitle_2}
+          paragraph={paragraph_2}
           delay={0.3}
         />
         <IndividualValue
@@ -67,8 +67,8 @@ export default function Values({
         />
         <IndividualValue
           icon={<HeartHandShakeIcon />}
-          title={subTitle_2}
-          paragraph={paragraph_2}
+          title={subTitle_4}
+          paragraph={paragraph_4}
           delay={0.5}
         />
       </ul>
