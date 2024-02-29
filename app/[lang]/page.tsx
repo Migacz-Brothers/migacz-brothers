@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Locale } from '@/i18n.config';
+import meta_image_logo from '@/public/meta_image_logo.png';
 
 import { getDictionary } from '@/lib/dictionary';
 import AboutUs from '@/components/AboutUs';
@@ -119,16 +120,16 @@ export default async function Home({
 export const metadata: Metadata = {
   title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
   description:
-    'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
+    'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality',
   twitter: {
-    images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+    images: [meta_image_logo.src],
     title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
     card: 'summary',
     description:
       'Discover the art of exceptional design and software development with MigaczBrothers. We specialize in crafting remarkable user experiences to transform your vision into reality.',
   },
   openGraph: {
-    images: ['https://migaczbrothers.com/meta_image_logo.png'],
+    images: [meta_image_logo.src],
     title: 'Exceptionally Designed Interfaces and Software | MigaczBrothers',
     url: 'https://migaczbrothers.com',
     description:

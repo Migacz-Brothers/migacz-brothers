@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Locale } from '@/i18n.config';
+import meta_image_logo from '@/public/meta_image_logo.png';
 import { getAllProjects, getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 
@@ -89,13 +90,13 @@ export async function generateMetadata({
     title: `${project.title} | MigaczBrothers`,
     description: `Read about the ${project.title} project execution and the technologies used.`,
     twitter: {
-      images: ['https://migaczbrothers.com/meta_image_logoo.png'],
+      images: [meta_image_logo.src],
       title: `${project.title} | MigaczBrothers`,
       card: 'summary',
       description: `Read about the ${project.title} project execution and the technologies used.`,
     },
     openGraph: {
-      images: ['https://migaczbrothers.com/meta_image_logo.png'],
+      images: [meta_image_logo.src],
       title: `${project.title} | MigaczBrothers`,
       url: `https://migaczbrothers.com/${project.slug}`,
       description: `Read about the ${project.title} project execution and the technologies used.`,
