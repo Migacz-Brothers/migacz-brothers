@@ -1,33 +1,36 @@
 import { notFound } from 'next/navigation';
+import { Locale } from '@/i18n.config';
 import { getAllProjects, getSpecificProject } from '@/sanity/lib/sanity';
 import cn from 'clsx';
 
+import { getDictionary } from '@/lib/dictionary';
 import { section } from '@/components/design-system';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import ProjectContent from '@/components/ProjectContent';
 import ProjectHeader from '@/components/ProjectHeader';
 import { Tags } from '@/components/Tags';
-import PortfolioDataLayer from '@/app/es/[slug]/data_layer';
 
 export default async function ProjectPage({
-  params: { slug },
+  params: { slug, lang },
 }: {
-  params: { slug: string };
+  params: { slug: string; lang: Locale };
 }) {
   const res = await getSpecificProject({ slug });
   const project = res.allProject[0];
 
   if (!project) return notFound();
 
+  const { navigation } = await getDictionary(lang);
+
   return (
     <>
       <Navbar
-        basePath='/es'
-        homeButton='Inicio'
-        aboutUsButton='Sobre Nosotros'
-        portfolioButton='Portafolio'
-        contactButton='Contáctenos'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
       <main
         className={cn(
@@ -37,20 +40,21 @@ export default async function ProjectPage({
       >
         <ProjectHeader
           title={String(project.title)}
-          description={String(project.description?.es)}
-          executed_at={String(project.executedAt?.es)}
-          read_time={String(project.read_time?.es)}
+          description={String(project.description?.[lang])}
+          executed_at={String(project.executedAt?.[lang])}
+          read_time={String(project.read_time?.[lang])}
           link={project.link}
+          lang={lang}
         />
-        <ProjectContent project={project} lang='es' />
+        <ProjectContent project={project} lang={lang} />
         <Tags tagList={project.tags as string[]} />
       </main>
       <Footer
-        basePath='/es'
-        homeButton='Inicio'
-        aboutUsButton='Sobre nosotros'
-        portfolioButton='Portafolio'
-        contactUsButton='Contáctenos'
+        basePath={`/${lang}`}
+        homeButton={navigation.home}
+        aboutUsButton={navigation.about}
+        portfolioButton={navigation.portfolio}
+        contactButton={navigation.contact}
       />
     </>
   );
@@ -83,18 +87,18 @@ export async function generateMetadata({
 
   return {
     title: `${project.title} | MigaczBrothers`,
-    description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+    description: `Read about the ${project.title} project execution and the technologies used.`,
     twitter: {
       images: ['https://migaczbrothers.com/meta_image_logoo.png'],
       title: `${project.title} | MigaczBrothers`,
       card: 'summary',
-      description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+      description: `Read about the ${project.title} project execution and the technologies used.`,
     },
     openGraph: {
       images: ['https://migaczbrothers.com/meta_image_logo.png'],
       title: `${project.title} | MigaczBrothers`,
-      url: `https://migaczbrothers.com/es/${project.slug}`,
-      description: `Lea sobre la ejecución del proyecto ${project.title} y las tecnologías utilizadas.`,
+      url: `https://migaczbrothers.com/${project.slug}`,
+      description: `Read about the ${project.title} project execution and the technologies used.`,
     },
   };
 }
