@@ -1,5 +1,6 @@
 'use client';
 
+import white_noise_bg from '@/public/white_noise.png';
 import { motion } from 'framer-motion';
 
 const FuzzyOverlay = () => {
@@ -24,7 +25,7 @@ const FuzzyOverlay = () => {
           },
         }}
         style={{
-          backgroundImage: 'url("/white_noise.png")',
+          backgroundImage: `url("${white_noise_bg.src}")`,
         }}
         className='absolute -inset-[100%]'
       />
