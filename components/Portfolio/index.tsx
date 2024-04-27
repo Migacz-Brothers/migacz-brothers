@@ -62,7 +62,7 @@ export default function Portfolio({
               )}
             />
           </Project>
-          <Project
+          {/* <Project
             key={2}
             name={title_2}
             tagList={['UI/UX', 'CMS', 'Blog system', 'SEO']}
@@ -78,8 +78,8 @@ export default function Portfolio({
                 'dwight-capital-bg',
               )}
             />
-          </Project>
-          <Project
+          </Project> */}
+          {/* <Project
             key={3}
             name={title_3}
             tagList={['branding', 'Product Design']}
@@ -94,8 +94,8 @@ export default function Portfolio({
                 'aspect-[17/7] max-h-[400px] md:aspect-[1.2/1]',
               )}
             />
-          </Project>
-          <Project
+          </Project> */}
+          {/* <Project
             key={4}
             expand
             name={title_4}
@@ -118,7 +118,7 @@ export default function Portfolio({
                 'aspect-[17/7]',
               )}
             />
-          </Project>
+          </Project> */}
           <Project
             key={5}
             expand
