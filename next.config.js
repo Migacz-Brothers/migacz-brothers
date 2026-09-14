@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // As apresentações são lidas do disco em runtime (`presentations/`), então o
+  // tracing do build precisa ser avisado para empacotar esses arquivos.
+  experimental: {
+    outputFileTracingIncludes: {
+      '/apresentacao/**': ['./presentations/**/*'],
+    },
+  },
   images: {
     remotePatterns: [
       {
